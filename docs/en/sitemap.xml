@@ -2,407 +2,407 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://Zhengbledor.github.io/authors/</loc>
+    <loc>https://zhengbledor.github.io/authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/authors/"
+                href="https://zhengbledor.github.io/pt-br/authors/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/authors/"
+                href="https://zhengbledor.github.io/authors/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/authors/hugo-authors/</loc>
+    <loc>https://zhengbledor.github.io/authors/hugo-authors/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/autores/autores-de-hugo/"
+                href="https://zhengbledor.github.io/pt-br/autores/autores-de-hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/authors/hugo-authors/"
+                href="https://zhengbledor.github.io/authors/hugo-authors/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/</loc>
+    <loc>https://zhengbledor.github.io/</loc>
     <lastmod>2023-01-05T01:15:29+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/"
+                href="https://zhengbledor.github.io/pt-br/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/"
+                href="https://zhengbledor.github.io/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/series/hugo/</loc>
+    <loc>https://zhengbledor.github.io/series/hugo/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/mermaid-support/</loc>
+    <loc>https://zhengbledor.github.io/posts/mermaid-support/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/</loc>
-    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="http://Zhengbledor.github.io/posts/"
-                />
-  </url><url>
-    <loc>http://Zhengbledor.github.io/series/</loc>
+    <loc>https://zhengbledor.github.io/posts/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/series/"
+                href="https://zhengbledor.github.io/pt-br/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/series/"
+                href="https://zhengbledor.github.io/posts/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/series/theme/</loc>
+    <loc>https://zhengbledor.github.io/series/</loc>
+    <lastmod>2022-07-25T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="pt-br"
+                href="https://zhengbledor.github.io/pt-br/series/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://zhengbledor.github.io/series/"
+                />
+  </url><url>
+    <loc>https://zhengbledor.github.io/series/theme/</loc>
     <lastmod>2022-07-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://Zhengbledor.github.io/categories/</loc>
+    <loc>https://zhengbledor.github.io/categories/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/categories/"
+                href="https://zhengbledor.github.io/pt-br/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/categories/"
+                href="https://zhengbledor.github.io/categories/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/css/</loc>
+    <loc>https://zhengbledor.github.io/tags/css/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/css/"
+                href="https://zhengbledor.github.io/pt-br/tags/css/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/css/"
+                href="https://zhengbledor.github.io/tags/css/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/html/</loc>
+    <loc>https://zhengbledor.github.io/tags/html/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/html/"
+                href="https://zhengbledor.github.io/pt-br/tags/html/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/html/"
+                href="https://zhengbledor.github.io/tags/html/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/html-and-css-only-tabs/</loc>
+    <loc>https://zhengbledor.github.io/posts/html-and-css-only-tabs/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/markdown/</loc>
+    <loc>https://zhengbledor.github.io/tags/markdown/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/markdown/"
+                href="https://zhengbledor.github.io/pt-br/tags/markdown/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/markdown/"
+                href="https://zhengbledor.github.io/tags/markdown/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/categories/syntax/</loc>
+    <loc>https://zhengbledor.github.io/categories/syntax/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/categoria/sintaxe/"
+                href="https://zhengbledor.github.io/pt-br/categoria/sintaxe/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/categories/syntax/"
+                href="https://zhengbledor.github.io/categories/syntax/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/</loc>
+    <loc>https://zhengbledor.github.io/tags/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/"
+                href="https://zhengbledor.github.io/pt-br/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/"
+                href="https://zhengbledor.github.io/tags/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/categories/themes/</loc>
+    <loc>https://zhengbledor.github.io/categories/themes/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/categoria/temas/"
+                href="https://zhengbledor.github.io/pt-br/categoria/temas/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/categories/themes/"
+                href="https://zhengbledor.github.io/categories/themes/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/series/themes-guide/</loc>
+    <loc>https://zhengbledor.github.io/series/themes-guide/</loc>
     <lastmod>2022-05-15T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/markdown-syntax/</loc>
+    <loc>https://zhengbledor.github.io/posts/markdown-syntax/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/markdown-syntax/"
+                href="https://zhengbledor.github.io/pt-br/posts/markdown-syntax/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/markdown-syntax/"
+                href="https://zhengbledor.github.io/posts/markdown-syntax/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/privacy/</loc>
+    <loc>https://zhengbledor.github.io/tags/privacy/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/privacy/"
+                href="https://zhengbledor.github.io/pt-br/tags/privacy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/privacy/"
+                href="https://zhengbledor.github.io/tags/privacy/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/rich-content/</loc>
+    <loc>https://zhengbledor.github.io/posts/rich-content/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/rich-content/"
+                href="https://zhengbledor.github.io/pt-br/posts/rich-content/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/rich-content/"
+                href="https://zhengbledor.github.io/posts/rich-content/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/shortcodes/</loc>
+    <loc>https://zhengbledor.github.io/tags/shortcodes/</loc>
     <lastmod>2019-03-10T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/shortcodes/"
+                href="https://zhengbledor.github.io/pt-br/tags/shortcodes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/shortcodes/"
+                href="https://zhengbledor.github.io/tags/shortcodes/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/more-rich-content/</loc>
+    <loc>https://zhengbledor.github.io/posts/more-rich-content/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/more-rich-content/"
+                href="https://zhengbledor.github.io/pt-br/posts/more-rich-content/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/more-rich-content/"
+                href="https://zhengbledor.github.io/posts/more-rich-content/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/placeholder-text/</loc>
+    <loc>https://zhengbledor.github.io/posts/placeholder-text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/placeholder-text/"
+                href="https://zhengbledor.github.io/pt-br/posts/placeholder-text/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/placeholder-text/"
+                href="https://zhengbledor.github.io/posts/placeholder-text/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/text/</loc>
+    <loc>https://zhengbledor.github.io/tags/text/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/text/"
+                href="https://zhengbledor.github.io/pt-br/tags/text/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/text/"
+                href="https://zhengbledor.github.io/tags/text/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/math-typesetting/</loc>
+    <loc>https://zhengbledor.github.io/posts/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/math-typesetting/"
+                href="https://zhengbledor.github.io/pt-br/posts/math-typesetting/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/math-typesetting/"
+                href="https://zhengbledor.github.io/posts/math-typesetting/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/emoji/</loc>
+    <loc>https://zhengbledor.github.io/tags/emoji/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/emoji/"
+                href="https://zhengbledor.github.io/pt-br/tags/emoji/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/emoji/"
+                href="https://zhengbledor.github.io/tags/emoji/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/emoji-support/</loc>
+    <loc>https://zhengbledor.github.io/posts/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/emoji-support/"
+                href="https://zhengbledor.github.io/pt-br/posts/emoji-support/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/emoji-support/"
+                href="https://zhengbledor.github.io/posts/emoji-support/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/development/</loc>
+    <loc>https://zhengbledor.github.io/tags/development/</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/development/"
+                href="https://zhengbledor.github.io/pt-br/tags/development/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/development/"
+                href="https://zhengbledor.github.io/tags/development/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/categories/development/</loc>
+    <loc>https://zhengbledor.github.io/categories/development/</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/categories/development/"
+                href="https://zhengbledor.github.io/pt-br/categories/development/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/categories/development/"
+                href="https://zhengbledor.github.io/categories/development/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/posts/hugo-coder-wiki/</loc>
+    <loc>https://zhengbledor.github.io/posts/hugo-coder-wiki/</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/posts/hugo-coder-wiki/"
+                href="https://zhengbledor.github.io/pt-br/posts/hugo-coder-wiki/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/posts/hugo-coder-wiki/"
+                href="https://zhengbledor.github.io/posts/hugo-coder-wiki/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/hugo/</loc>
+    <loc>https://zhengbledor.github.io/tags/hugo/</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/hugo/"
+                href="https://zhengbledor.github.io/pt-br/tags/hugo/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/hugo/"
+                href="https://zhengbledor.github.io/tags/hugo/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/tags/themes/</loc>
+    <loc>https://zhengbledor.github.io/tags/themes/</loc>
     <lastmod>2019-03-04T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/tags/themes/"
+                href="https://zhengbledor.github.io/pt-br/tags/themes/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/tags/themes/"
+                href="https://zhengbledor.github.io/tags/themes/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/about/</loc>
+    <loc>https://zhengbledor.github.io/about/</loc>
     <lastmod>2019-02-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/about/"
+                href="https://zhengbledor.github.io/pt-br/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/about/"
+                href="https://zhengbledor.github.io/about/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/contact/</loc>
+    <loc>https://zhengbledor.github.io/contact/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/contact/"
+                href="https://zhengbledor.github.io/pt-br/contact/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/contact/"
+                href="https://zhengbledor.github.io/contact/"
                 />
   </url><url>
-    <loc>http://Zhengbledor.github.io/projects/</loc>
+    <loc>https://zhengbledor.github.io/projects/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="pt-br"
-                href="http://Zhengbledor.github.io/pt-br/projects/"
+                href="https://zhengbledor.github.io/pt-br/projects/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="http://Zhengbledor.github.io/projects/"
+                href="https://zhengbledor.github.io/projects/"
                 />
   </url>
 </urlset>
