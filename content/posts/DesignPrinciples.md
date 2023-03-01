@@ -377,7 +377,7 @@ public class DrawControl{
 }
 ```
 
-当业务需要扩展到的时候，只能在BetUser中新增接口，且代码会暴增，难以维护。
+当业务需要扩展到的时候，只能在DrawControl中新增接口，且代码会暴增，难以维护。
 
 
 
