@@ -13,6 +13,23 @@ publishDir = "docs"
 # Enable Disqus comments
 # disqusShortname = "yourdiscussshortname"
 
+# 代码高亮
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    hl_inline = false
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'doom-one'
+    tabWidth = 4
+
 [params]
 author = "Zhengbledor"
 # license = '<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA-4.0</a>'

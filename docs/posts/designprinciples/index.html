@@ -202,17 +202,17 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">VideoUserSerice</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> serveGrade(String usrType){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(usrType == <span style="font-style:italic">&#34;VIP&#34;</span>){
-</span></span><span style="display:flex;"><span>      <span style="font-style:italic">// 视频1080P，无广告
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    }<span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span>(usrType == <span style="font-style:italic">&#34;普通会员&#34;</span>){
-</span></span><span style="display:flex;"><span>      <span style="font-style:italic">// 视频720P，有广告
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    }<span style="font-weight:bold">else</span> <span style="font-weight:bold">if</span>(usrType == <span style="font-style:italic">&#34;访客用户&#34;</span>){
-</span></span><span style="display:flex;"><span>      <span style="font-style:italic">// 视频480P，有广告
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    }
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">VideoUserSerice</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">serveGrade</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">usrType</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">if</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">usrType</span> <span style="color:#c7bf54">==</span> <span style="color:#98c379">&#34;VIP&#34;</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#8a93a5;font-style:italic">// 视频1080P，无广告
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>    <span style="color:#c7bf54">}</span><span style="color:#c678dd">else</span> <span style="color:#c678dd">if</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">usrType</span> <span style="color:#c7bf54">==</span> <span style="color:#98c379">&#34;普通会员&#34;</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#8a93a5;font-style:italic">// 视频720P，有广告
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>    <span style="color:#c7bf54">}</span><span style="color:#c678dd">else</span> <span style="color:#c678dd">if</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">usrType</span> <span style="color:#c7bf54">==</span> <span style="color:#98c379">&#34;访客用户&#34;</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#8a93a5;font-style:italic">// 视频480P，有广告
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h4 id="改进方案">
   改进方案
   <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88">
@@ -220,13 +220,13 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">IVideoUserService</span>{<span style="">`</span>
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 清晰度 1080P、720P、480P
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> definition();
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">IVideoUserService</span><span style="color:#c7bf54">{</span>`
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 清晰度 1080P、720P、480P
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">definition</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 广告播放方式，有广告、无广告
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> advertisement();
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 广告播放方式，有广告、无广告
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">advertisement</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h3 id="二开闭原则">
   二、开闭原则
   <a class="heading-link" href="#%e4%ba%8c%e5%bc%80%e9%97%ad%e5%8e%9f%e5%88%99">
@@ -246,21 +246,21 @@ VIP用户可以看1080P视频，且无广告</p>
 </h4>
 <p>计算三种形状的面积，长方形、三角形、圆形。
 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CalculationArea</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> <span style="font-weight:bold">static</span> <span style="">double</span> pai = 3.14D;
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> retangle(<span style="">double</span> x,<span style="">double</span> y){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> x * y;
-</span></span><span style="display:flex;"><span>  }
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CalculationArea</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c678dd">static</span> <span style="color:#ef8383">double</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">=</span> <span style="color:#d19a66">3.14D</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">retangle</span><span style="color:#c7bf54">(</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">x</span><span style="color:#c7bf54">,</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">y</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">x</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">y</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> triangle(<span style="">double</span> x,<span style="">double</span> y,<span style="">double</span> z){
-</span></span><span style="display:flex;"><span>    <span style="">double</span> p = (x+y+z)/2;
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> Math.sqrt(p*(p-x)(p-y)(p-z));
-</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">triangle</span><span style="color:#c7bf54">(</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">x</span><span style="color:#c7bf54">,</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">y</span><span style="color:#c7bf54">,</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">z</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ef8383">double</span> <span style="color:#c1abea">p</span> <span style="color:#c7bf54">=</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">x</span><span style="color:#c7bf54">+</span><span style="color:#c1abea">y</span><span style="color:#c7bf54">+</span><span style="color:#c1abea">z</span><span style="color:#c7bf54">)/</span><span style="color:#d19a66">2</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">Math</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">sqrt</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">p</span><span style="color:#c7bf54">*(</span><span style="color:#c1abea">p</span><span style="color:#c7bf54">-</span><span style="color:#c1abea">x</span><span style="color:#c7bf54">)(</span><span style="color:#c1abea">p</span><span style="color:#c7bf54">-</span><span style="color:#c1abea">y</span><span style="color:#c7bf54">)(</span><span style="color:#c1abea">p</span><span style="color:#c7bf54">-</span><span style="color:#c1abea">z</span><span style="color:#c7bf54">));</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> circular(<span style="">double</span> r){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> pai * r * r;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">circular</span><span style="color:#c7bf54">(</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h4 id="违背原则-1">
   违背原则
   <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-1">
@@ -269,10 +269,10 @@ VIP用户可以看1080P视频，且无广告</p>
   </a>
 </h4>
 <p>直接修改pai值</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> <span style="font-weight:bold">static</span> <span style="">double</span> pai = 3.141592653D;
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="">double</span> circular(<span style="">double</span> r){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> pai * r * r;
-</span></span><span style="display:flex;"><span>  }
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c678dd">static</span> <span style="color:#ef8383">double</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">=</span> <span style="color:#d19a66">3.141592653D</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">circular</span><span style="color:#c7bf54">(</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h4 id="改进方案-1">
   改进方案
   <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88-1">
@@ -280,13 +280,13 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CalculationAreExt</span> <span style="font-weight:bold">extends</span> CalculationArea{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> <span style="font-weight:bold">static</span> <span style="">double</span> pai = 3.141592653D;
-</span></span><span style="display:flex;"><span>  @override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> circular(<span style="">double</span> r){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> pai * r * r;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CalculationAreExt</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">CalculationArea</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c678dd">static</span> <span style="color:#ef8383">double</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">=</span> <span style="color:#d19a66">3.141592653D</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">circular</span><span style="color:#c7bf54">(</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h3 id="三里氏替换原则">
   三、里氏替换原则
   <a class="heading-link" href="#%e4%b8%89%e9%87%8c%e6%b0%8f%e6%9b%bf%e6%8d%a2%e5%8e%9f%e5%88%99">
@@ -321,24 +321,24 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CashCard</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 取钱
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String withdrawal();
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CashCard</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 取钱
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">withdrawal</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 存钱
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String recharge();
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 存钱
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">recharge</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 打印流水
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String tradeFlow();
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 打印流水
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">tradeFlow</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CreditCard</span> <span style="font-weight:bold">extends</span> CashCard{
-</span></span><span style="display:flex;"><span>  @override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String withdrawal();
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CreditCard</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">CashCard</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">withdrawal</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  @override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String recharge();
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">recharge</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><p>信用卡直接继承了储蓄卡的类并重写了有关取钱和存钱的内容，由于打印流水实现相同则没有重写。</p>
 <h4 id="改进方案-2">
   改进方案
@@ -347,36 +347,36 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">abstract</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">BankCard</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 流入钱
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String positive();
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">abstract</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">BankCard</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 流入钱
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">positive</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 流出钱
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String negative();
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 流出钱
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">negative</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 打印流水
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String tradeFlow();
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 打印流水
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">tradeFlow</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CashCard</span> <span style="font-weight:bold">extends</span> BankCard{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String withdrawal(){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> <span style="font-weight:bold">super</span>.negative();
-</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CashCard</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">BankCard</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">withdrawal</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c678dd">super</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">negative</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String recharge(){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> <span style="font-weight:bold">super</span>.positive();
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">recharge</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c678dd">super</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">positive</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CreditCard</span> <span style="font-weight:bold">extends</span> BankCard{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String loan(){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> <span style="font-weight:bold">super</span>.negative();
-</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CreditCard</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">BankCard</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">loan</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c678dd">super</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">negative</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String repayment(){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> <span style="font-weight:bold">super</span>.positive();
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">repayment</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c678dd">super</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">positive</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h3 id="四迪米特法则">
   四、迪米特法则
   <a class="heading-link" href="#%e5%9b%9b%e8%bf%aa%e7%b1%b3%e7%89%b9%e6%b3%95%e5%88%99">
@@ -403,26 +403,26 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Student</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="">double</span> grade;
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Student</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#ef8383">double</span> <span style="color:#c1abea">grade</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Teacher</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> List&lt;Student&gt; studentList;
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Teacher</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">Student</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">studentList</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;Student&gt; getStudentList(){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> studentList;
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">Student</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">getStudentList</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">studentList</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Principal</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> Teacher teacher;
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Principal</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">Teacher</span> <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> classTotalScore(){
-</span></span><span style="display:flex;"><span>    teacher.getStudentList();
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do more
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">classTotalScore</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getStudentList</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do more
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h4 id="改进代码">
   改进代码
   <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e4%bb%a3%e7%a0%81">
@@ -430,26 +430,26 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Student</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="">double</span> grade;
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Student</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#ef8383">double</span> <span style="color:#c1abea">grade</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Teacher</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> List&lt;Student&gt; studentList;
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Teacher</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">Student</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">studentList</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> classTotalScore(){
-</span></span><span style="display:flex;"><span>    teacher.getStudentList();
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do more
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">classTotalScore</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getStudentList</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do more
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Principal</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> Teacher teacher;
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Principal</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">Teacher</span> <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> classTotalScore(){
-</span></span><span style="display:flex;"><span>    teacher.classTotalScore();
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">classTotalScore</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">classTotalScore</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h3 id="五接口隔离原则">
   五、接口隔离原则
   <a class="heading-link" href="#%e4%ba%94%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99">
@@ -477,35 +477,35 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkill</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 射箭
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doArchery();
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 隐身
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doInvisible();
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 沉默
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doSilent();
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 眩晕
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doVertigo();
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">ISkill</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 射箭
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doArchery</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 隐身
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doInvisible</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 沉默
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doSilent</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 眩晕
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doVertigo</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">HeroHouYi</span> <span style="font-weight:bold">implements</span> ISkill{
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doArchery(){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do archery
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doVertigo(){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do vertigo
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doSilent(){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do nothing
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>	@Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doInvisible(){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do nothing
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">HeroHouYi</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">ISkill</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doArchery</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do archery
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doVertigo</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do vertigo
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doSilent</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do nothing
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doInvisible</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do nothing
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h4 id="改进方案-3">
   改进方案
   <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88-3">
@@ -513,30 +513,30 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillArchery</span>{
-</span></span><span style="display:flex;"><span>  <span style="">void</span> doArchery();
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillInvisible</span>{
-</span></span><span style="display:flex;"><span>  <span style="">void</span> doInvisible();
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillSilent</span>{
-</span></span><span style="display:flex;"><span>  <span style="">void</span> doSilent();
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillVertigo</span>{
-</span></span><span style="display:flex;"><span>  <span style="">void</span> doVertigo();
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">ISkillArchery</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doArchery</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">ISkillInvisible</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doInvisible</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">ISkillSilent</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doSilent</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">ISkillVertigo</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doVertigo</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">HeroHouYi</span> implement ISkillArchery,ISkillVertigo{
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doArchery(){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do archery
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">HeroHouYi</span> <span style="color:#c1abea">implement</span> <span style="color:#c1abea">ISkillArchery</span><span style="color:#c7bf54">,</span><span style="color:#c1abea">ISkillVertigo</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doArchery</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do archery
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doVertigo(){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do vertigo
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">doVertigo</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do vertigo
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h3 id="六依赖倒置原则">
   六、依赖倒置原则
   <a class="heading-link" href="#%e5%85%ad%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99">
@@ -563,20 +563,20 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">BetUser</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> String userName;
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="">int</span> userWeight;
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">BetUser</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">userName</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">userWeight</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawControl</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; doDrawRandom(List&lt;BetUser&gt; list,<span style="">int</span> count){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do something
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">DrawControl</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">doDrawRandom</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">list</span><span style="color:#c7bf54">,</span><span style="color:#ef8383">int</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; doDrawWeight(List&lt;BetUser&gt; list,<span style="">int</span> count){
-</span></span><span style="display:flex;"><span>  	<span style="font-style:italic">// do something
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">doDrawWeight</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">list</span><span style="color:#c7bf54">,</span><span style="color:#ef8383">int</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>  	<span style="color:#8a93a5;font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><p>当业务需要扩展到的时候，只能在BetUser中新增接口，且代码会暴增，难以维护。</p>
 <h4 id="改进方案-4">
   改进方案
@@ -586,34 +586,34 @@ VIP用户可以看1080P视频，且无广告</p>
   </a>
 </h4>
 <p><strong>获取抽奖用户接口</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">IDraw</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 获取抽奖用户接口
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  List&lt;BetUser&gt; prize(List&lt;BetUser&gt; list, <span style="">int</span> count);
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">IDraw</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// 获取抽奖用户接口
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">prize</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">list</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><p><strong>抽奖具体实现类</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-style:italic">// 随机抽奖
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawRandom</span> <span style="font-weight:bold">implements</span> IDraw{
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; prize(List&lt;BetUser&gt; list, <span style="">int</span> count){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do something
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 随机抽奖
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">DrawRandom</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">IDraw</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">prize</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">list</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="font-style:italic">// 权重抽奖
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawWeight</span> <span style="font-weight:bold">implements</span> IDraw{
-</span></span><span style="display:flex;"><span>  @Override
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; prize(List&lt;BetUser&gt; list, <span style="">int</span> count){
-</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do something
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
-</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 权重抽奖
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">DrawWeight</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">IDraw</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">prize</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">list</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><p><strong>抽奖服务</strong></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-style:italic">// 创建抽奖服务
-</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawControl</span>{
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> IDraw draw;
-</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; doDraw(IDraw draw, List&lt;BetUser&gt; betUserList, <span style="">int</span> count){
-</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> draw.prize(betUserList, count);
-</span></span><span style="display:flex;"><span>  }
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 创建抽奖服务
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">DrawControl</span><span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">IDraw</span> <span style="color:#c1abea">draw</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#00b1f7">doDraw</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">IDraw</span> <span style="color:#c1abea">draw</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">BetUser</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">betUserList</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">draw</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">prize</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">betUserList</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">count</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div>
       </div>
 
