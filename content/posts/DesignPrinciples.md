@@ -11,7 +11,7 @@ date = "2023-02-28"
 
 
 
-**模拟场景**
+#### 模拟场景
 
 一个视频网站有对用户分类的场景
 
@@ -21,7 +21,7 @@ VIP用户可以看1080P视频，且无广告
 
 
 
-**违背原则**
+#### 违背原则
 
 ```java
 public class VideoUserSerice{
@@ -39,7 +39,7 @@ public class VideoUserSerice{
 
 
 
-**改进方案**
+#### 改进方案
 
 ```java
 public interface IVideoUserService{`
@@ -59,7 +59,7 @@ public interface IVideoUserService{`
 
 
 
-**模拟场景**
+#### 模拟场景
 
 计算三种形状的面积，长方形、三角形、圆形。
 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。
@@ -84,7 +84,7 @@ public class CalculationArea{
 
 
 
-**违背原则**
+#### 违背原则
 
 直接修改pai值
 
@@ -97,7 +97,7 @@ public double circular(double r){
 
 
 
-**改进方案**
+#### 改进方案
 
 ```java
 public class CalculationAreExt extends CalculationArea{
@@ -127,13 +127,13 @@ public class CalculationAreExt extends CalculationArea{
 
 
 
-**模拟场景**
+#### 模拟场景
 
 实现储蓄卡和信用卡
 
 
 
-**违背原则**
+#### 违背原则
 
 ```java
 public class CashCard{
@@ -160,7 +160,7 @@ public class CreditCard extends CashCard{
 
 
 
-**改进方案**
+#### 改进方案
 
 ```java
 public abstract class BankCard{
@@ -199,7 +199,9 @@ public class CreditCard extends BankCard{
 
 > 一个对象类对于其他对象类来说，知道得越少越好。
 
-**模拟场景**
+
+
+#### 模拟场景
 
 模拟学生、老师、校长的关系。
 
@@ -207,7 +209,7 @@ public class CreditCard extends BankCard{
 
 
 
-**违背原则**
+#### 违背原则
 
 ```java
 public class Student{
@@ -234,7 +236,7 @@ public class Principal{
 
 
 
-**改进代码**
+#### 改进代码
 
 ```java
 public class Student{
@@ -255,6 +257,173 @@ public class Principal{
   
   public double classTotalScore(){
     teacher.classTotalScore();
+  }
+}
+```
+
+
+
+### 五、接口隔离原则
+
+> 客户端不应该被破依赖于它不是用的方法。
+> 一个类对另一个类的依赖应该是建立在最小的接口上的。
+>
+> 要求尽量将臃肿庞大的接口拆分成更小的和更具体的接口。
+
+
+
+#### 模拟场景
+
+王者荣耀有不同的技能特性，每个英雄的技能都属于其中
+
+
+
+#### 违背原则
+
+```java
+public interface ISkill{
+  // 射箭
+  void doArchery();
+  // 隐身
+  void doInvisible();
+  // 沉默
+  void doSilent();
+  // 眩晕
+  void doVertigo();
+}
+
+public class HeroHouYi implements ISkill{
+  @Override
+  public void doArchery(){
+    // do archery
+  }
+  @Override
+  public void doVertigo(){
+    // do vertigo
+  }
+  @Override
+  public void doSilent(){
+    // do nothing
+  }
+	@Override
+  public void doInvisible(){
+    // do nothing
+  }
+}
+```
+
+
+
+#### 改进方案
+
+```java
+public interface ISkillArchery{
+  void doArchery();
+}
+public interface ISkillInvisible{
+  void doInvisible();
+}
+public interface ISkillSilent{
+  void doSilent();
+}
+public interface ISkillVertigo{
+  void doVertigo();
+}
+
+public class HeroHouYi implement ISkillArchery,ISkillVertigo{
+  @Override
+  public void doArchery(){
+    // do archery
+  }
+  
+  @Override
+  public void doVertigo(){
+    // do vertigo
+  }
+}
+```
+
+
+
+### 六、依赖倒置原则
+
+> 高层模块不应该依赖于底层模块，二者都应该依赖于抽象。
+> 抽象不应该依赖于细节，细节应该依赖于抽象。
+
+
+
+#### 模拟场景
+
+权重抽奖、随机抽奖
+
+
+
+#### 违背原则
+
+```java
+public class BetUser{
+  private String userName;
+  private int userWeight;
+}
+
+public class DrawControl{
+  public List<BetUser> doDrawRandom(List<BetUser> list,int count){
+    // do something
+  }
+  
+  public List<BetUser> doDrawWeight(List<BetUser> list,int count){
+  	// do something
+  }
+}
+```
+
+当业务需要扩展到的时候，只能在BetUser中新增接口，且代码会暴增，难以维护。
+
+
+
+#### 改进方案
+
+**获取抽奖用户接口**
+
+```java
+public interface IDraw{
+  // 获取抽奖用户接口
+  List<BetUser> prize(List<BetUser> list, int count);
+}
+```
+
+
+
+**抽奖具体实现类**
+
+```java
+// 随机抽奖
+public class DrawRandom implements IDraw{
+  @Override
+  public List<BetUser> prize(List<BetUser> list, int count){
+    // do something
+  }
+}
+
+// 权重抽奖
+public class DrawWeight implements IDraw{
+  @Override
+  public List<BetUser> prize(List<BetUser> list, int count){
+    // do something
+  }
+}
+```
+
+
+
+**抽奖服务**
+
+```java
+// 创建抽奖服务
+public class DrawControl{
+  private IDraw draw;
+  public List<BetUser> doDraw(IDraw draw, List<BetUser> betUserList, int count){
+    return draw.prize(betUserList, count);
   }
 }
 ```

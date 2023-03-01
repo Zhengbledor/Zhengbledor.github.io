@@ -13,41 +13,23 @@
 
 <meta name="author" content="Zhengbledor">
 <meta name="description" content="Design Principles Link to heading 一、单一职责原则 Link to heading 一个类应该只有一个发生变化的原因。
-模拟场景
-一个视频网站有对用户分类的场景
+模拟场景 Link to heading 一个视频网站有对用户分类的场景
 访客用户只能观看480P视频，且有广告 普通会员只能观看720P视频，且有广告 VIP用户可以看1080P视频，且无广告
-违背原则
-public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &#34;VIP&#34;){ // 视频1080P，无广告 }else if(usrType == &#34;普通会员&#34;){ // 视频720P，有广告 }else if(usrType == &#34;访客用户&#34;){ // 视频480P，有广告 } } } 改进方案
-public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。
-模拟场景
-计算三种形状的面积，长方形、三角形、圆形。 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。
-public class CalculationArea{ private final static double pai = 3.">
+违背原则 Link to heading public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &#34;VIP&#34;){ // 视频1080P，无广告 }else if(usrType == &#34;普通会员&#34;){ // 视频720P，有广告 }else if(usrType == &#34;访客用户&#34;){ // 视频480P，有广告 } } } 改进方案 Link to heading public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。">
 <meta name="keywords" content="blog">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="六大设计原则"/>
 <meta name="twitter:description" content="Design Principles Link to heading 一、单一职责原则 Link to heading 一个类应该只有一个发生变化的原因。
-模拟场景
-一个视频网站有对用户分类的场景
+模拟场景 Link to heading 一个视频网站有对用户分类的场景
 访客用户只能观看480P视频，且有广告 普通会员只能观看720P视频，且有广告 VIP用户可以看1080P视频，且无广告
-违背原则
-public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &#34;VIP&#34;){ // 视频1080P，无广告 }else if(usrType == &#34;普通会员&#34;){ // 视频720P，有广告 }else if(usrType == &#34;访客用户&#34;){ // 视频480P，有广告 } } } 改进方案
-public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。
-模拟场景
-计算三种形状的面积，长方形、三角形、圆形。 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。
-public class CalculationArea{ private final static double pai = 3."/>
+违背原则 Link to heading public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &#34;VIP&#34;){ // 视频1080P，无广告 }else if(usrType == &#34;普通会员&#34;){ // 视频720P，有广告 }else if(usrType == &#34;访客用户&#34;){ // 视频480P，有广告 } } } 改进方案 Link to heading public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。"/>
 
 <meta property="og:title" content="六大设计原则" />
 <meta property="og:description" content="Design Principles Link to heading 一、单一职责原则 Link to heading 一个类应该只有一个发生变化的原因。
-模拟场景
-一个视频网站有对用户分类的场景
+模拟场景 Link to heading 一个视频网站有对用户分类的场景
 访客用户只能观看480P视频，且有广告 普通会员只能观看720P视频，且有广告 VIP用户可以看1080P视频，且无广告
-违背原则
-public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &#34;VIP&#34;){ // 视频1080P，无广告 }else if(usrType == &#34;普通会员&#34;){ // 视频720P，有广告 }else if(usrType == &#34;访客用户&#34;){ // 视频480P，有广告 } } } 改进方案
-public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。
-模拟场景
-计算三种形状的面积，长方形、三角形、圆形。 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。
-public class CalculationArea{ private final static double pai = 3." />
+违背原则 Link to heading public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &#34;VIP&#34;){ // 视频1080P，无广告 }else if(usrType == &#34;普通会员&#34;){ // 视频720P，有广告 }else if(usrType == &#34;访客用户&#34;){ // 视频480P，有广告 } } } 改进方案 Link to heading public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zhengbledor.github.io/posts/designprinciples/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-02-28T00:00:00+00:00" />
@@ -174,7 +156,7 @@ public class CalculationArea{ private final static double pai = 3." />
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              2-minute read
+              3-minute read
             </span>
           </div>
           
@@ -202,12 +184,24 @@ public class CalculationArea{ private final static double pai = 3." />
 <blockquote>
 <p>一个类应该只有一个发生变化的原因。</p>
 </blockquote>
-<p><strong>模拟场景</strong></p>
+<h4 id="模拟场景">
+  模拟场景
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e5%9c%ba%e6%99%af">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <p>一个视频网站有对用户分类的场景</p>
 <p>访客用户只能观看480P视频，且有广告
 普通会员只能观看720P视频，且有广告
 VIP用户可以看1080P视频，且无广告</p>
-<p><strong>违背原则</strong></p>
+<h4 id="违背原则">
+  违背原则
+  <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">VideoUserSerice</span>{
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> serveGrade(String usrType){
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">if</span>(usrType == <span style="font-style:italic">&#34;VIP&#34;</span>){
@@ -219,7 +213,13 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>    }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>改进方案</strong></p>
+</span></span></code></pre></div><h4 id="改进方案">
+  改进方案
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">IVideoUserService</span>{<span style="">`</span>
 </span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 清晰度 1080P、720P、480P
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> definition();
@@ -237,7 +237,13 @@ VIP用户可以看1080P视频，且无广告</p>
 <blockquote>
 <p>对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。</p>
 </blockquote>
-<p><strong>模拟场景</strong></p>
+<h4 id="模拟场景-1">
+  模拟场景
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e5%9c%ba%e6%99%af-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <p>计算三种形状的面积，长方形、三角形、圆形。
 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CalculationArea</span>{
@@ -255,13 +261,25 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> pai * r * r;
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>违背原则</strong></p>
+</span></span></code></pre></div><h4 id="违背原则-1">
+  违背原则
+  <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <p>直接修改pai值</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> <span style="font-weight:bold">static</span> <span style="">double</span> pai = 3.141592653D;
 </span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="">double</span> circular(<span style="">double</span> r){
 </span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> pai * r * r;
 </span></span><span style="display:flex;"><span>  }
-</span></span></code></pre></div><p><strong>改进方案</strong></p>
+</span></span></code></pre></div><h4 id="改进方案-1">
+  改进方案
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88-1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CalculationAreExt</span> <span style="font-weight:bold">extends</span> CalculationArea{
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="font-weight:bold">final</span> <span style="font-weight:bold">static</span> <span style="">double</span> pai = 3.141592653D;
 </span></span><span style="display:flex;"><span>  @override
@@ -288,9 +306,21 @@ VIP用户可以看1080P视频，且无广告</p>
 <li>当子类的方法重载父类的方法时，方法的前置条件（方法的输入）要比父类更宽松。</li>
 <li>当子类的方法实现父类的方法（重写、重载、实现）时，方法的后置条件（即方法的输出或返回值）要比父类的方法更加严格或与父类方法相等。</li>
 </ul>
-<p><strong>模拟场景</strong></p>
+<h4 id="模拟场景-2">
+  模拟场景
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e5%9c%ba%e6%99%af-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <p>实现储蓄卡和信用卡</p>
-<p><strong>违背原则</strong></p>
+<h4 id="违背原则-2">
+  违背原则
+  <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">CashCard</span>{
 </span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 取钱
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String withdrawal();
@@ -310,7 +340,13 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> String recharge();
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>信用卡直接继承了储蓄卡的类并重写了有关取钱和存钱的内容，由于打印流水实现相同则没有重写。</p>
-<p><strong>改进方案</strong></p>
+<h4 id="改进方案-2">
+  改进方案
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">abstract</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">BankCard</span>{
 </span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 流入钱
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="font-weight:bold">public</span> String positive();
@@ -351,10 +387,22 @@ VIP用户可以看1080P视频，且无广告</p>
 <blockquote>
 <p>一个对象类对于其他对象类来说，知道得越少越好。</p>
 </blockquote>
-<p><strong>模拟场景</strong></p>
+<h4 id="模拟场景-3">
+  模拟场景
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e5%9c%ba%e6%99%af-3">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <p>模拟学生、老师、校长的关系。</p>
 <p>老师需要知道具体学生的成绩，而校长只关心某个班级的总成绩。</p>
-<p><strong>违背原则</strong></p>
+<h4 id="违背原则-3">
+  违背原则
+  <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-3">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Student</span>{
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="">double</span> grade;
 </span></span><span style="display:flex;"><span>}
@@ -375,7 +423,13 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do more
 </span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><strong>改进代码</strong></p>
+</span></span></code></pre></div><h4 id="改进代码">
+  改进代码
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e4%bb%a3%e7%a0%81">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
 <div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">Student</span>{
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="">double</span> grade;
 </span></span><span style="display:flex;"><span>}
@@ -394,6 +448,170 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">double</span> classTotalScore(){
 </span></span><span style="display:flex;"><span>    teacher.classTotalScore();
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="五接口隔离原则">
+  五、接口隔离原则
+  <a class="heading-link" href="#%e4%ba%94%e6%8e%a5%e5%8f%a3%e9%9a%94%e7%a6%bb%e5%8e%9f%e5%88%99">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<blockquote>
+<p>客户端不应该被破依赖于它不是用的方法。
+一个类对另一个类的依赖应该是建立在最小的接口上的。</p>
+<p>要求尽量将臃肿庞大的接口拆分成更小的和更具体的接口。</p>
+</blockquote>
+<h4 id="模拟场景-4">
+  模拟场景
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e5%9c%ba%e6%99%af-4">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>王者荣耀有不同的技能特性，每个英雄的技能都属于其中</p>
+<h4 id="违背原则-4">
+  违背原则
+  <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-4">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkill</span>{
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 射箭
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doArchery();
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 隐身
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doInvisible();
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 沉默
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doSilent();
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 眩晕
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  <span style="">void</span> doVertigo();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">HeroHouYi</span> <span style="font-weight:bold">implements</span> ISkill{
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doArchery(){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do archery
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doVertigo(){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do vertigo
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doSilent(){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do nothing
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>	@Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doInvisible(){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do nothing
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h4 id="改进方案-3">
+  改进方案
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88-3">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillArchery</span>{
+</span></span><span style="display:flex;"><span>  <span style="">void</span> doArchery();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillInvisible</span>{
+</span></span><span style="display:flex;"><span>  <span style="">void</span> doInvisible();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillSilent</span>{
+</span></span><span style="display:flex;"><span>  <span style="">void</span> doSilent();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">ISkillVertigo</span>{
+</span></span><span style="display:flex;"><span>  <span style="">void</span> doVertigo();
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">HeroHouYi</span> implement ISkillArchery,ISkillVertigo{
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doArchery(){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do archery
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> <span style="">void</span> doVertigo(){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do vertigo
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="六依赖倒置原则">
+  六、依赖倒置原则
+  <a class="heading-link" href="#%e5%85%ad%e4%be%9d%e8%b5%96%e5%80%92%e7%bd%ae%e5%8e%9f%e5%88%99">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<blockquote>
+<p>高层模块不应该依赖于底层模块，二者都应该依赖于抽象。
+抽象不应该依赖于细节，细节应该依赖于抽象。</p>
+</blockquote>
+<h4 id="模拟场景-5">
+  模拟场景
+  <a class="heading-link" href="#%e6%a8%a1%e6%8b%9f%e5%9c%ba%e6%99%af-5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>权重抽奖、随机抽奖</p>
+<h4 id="违背原则-5">
+  违背原则
+  <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">BetUser</span>{
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> String userName;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> <span style="">int</span> userWeight;
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawControl</span>{
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; doDrawRandom(List&lt;BetUser&gt; list,<span style="">int</span> count){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; doDrawWeight(List&lt;BetUser&gt; list,<span style="">int</span> count){
+</span></span><span style="display:flex;"><span>  	<span style="font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>当业务需要扩展到的时候，只能在BetUser中新增接口，且代码会暴增，难以维护。</p>
+<h4 id="改进方案-4">
+  改进方案
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88-4">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><strong>获取抽奖用户接口</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-weight:bold">public</span> <span style="font-weight:bold">interface</span> <span style="font-weight:bold">IDraw</span>{
+</span></span><span style="display:flex;"><span>  <span style="font-style:italic">// 获取抽奖用户接口
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  List&lt;BetUser&gt; prize(List&lt;BetUser&gt; list, <span style="">int</span> count);
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>抽奖具体实现类</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-style:italic">// 随机抽奖
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawRandom</span> <span style="font-weight:bold">implements</span> IDraw{
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; prize(List&lt;BetUser&gt; list, <span style="">int</span> count){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="font-style:italic">// 权重抽奖
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawWeight</span> <span style="font-weight:bold">implements</span> IDraw{
+</span></span><span style="display:flex;"><span>  @Override
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; prize(List&lt;BetUser&gt; list, <span style="">int</span> count){
+</span></span><span style="display:flex;"><span>    <span style="font-style:italic">// do something
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>抽奖服务</strong></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="font-style:italic">// 创建抽奖服务
+</span></span></span><span style="display:flex;"><span><span style="font-style:italic"></span><span style="font-weight:bold">public</span> <span style="font-weight:bold">class</span> <span style="font-weight:bold">DrawControl</span>{
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">private</span> IDraw draw;
+</span></span><span style="display:flex;"><span>  <span style="font-weight:bold">public</span> List&lt;BetUser&gt; doDraw(IDraw draw, List&lt;BetUser&gt; betUserList, <span style="">int</span> count){
+</span></span><span style="display:flex;"><span>    <span style="font-weight:bold">return</span> draw.prize(betUserList, count);
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div>
