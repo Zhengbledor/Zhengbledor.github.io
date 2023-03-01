@@ -29,6 +29,23 @@
     </item>
     
     <item>
+      <title>创建型-工厂模式</title>
+      <link>https://zhengbledor.github.io/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <description>创建型-工厂模式 Link to heading 工厂模式又称为简单工厂模式，属于创建型设计模式的一种。
+这种设计模式提供了按需创建对象的最佳方式。不会对外暴露创建细节，并且会通过一个统一的接口创建所需的对象。
+它主要的意图是定义一个创建对象的接口，让其子类自己决定将哪一个工厂类实例化，工厂模式使创建过程延迟到子类中进行。
+场景模拟 Link to heading 模拟发放多种奖品，在营销场景中，经常会约定在用户完成打卡、分享、留言、邀请注册等一系列行为操作后进行返利积分的操作。用户再通过返利积分兑换奖品，让整个系统构成一个生态闭环。
+现假设有以下三种类型的商品接口。
+// 优惠券 CouponResult sendCoupon(String uId, String couponNumber, String uuid); // 实物商品 Boolean deliverGoods(DeliverReq req); // 第三方兑换卡 void grantToken(String bindMobileNumber, String cardId); 三个接口返回值类型不同，入参不同，并且未来可能会扩展的兑换场景。
+最初设计 Link to heading 工程结构
+├─AwardReq.java ├─AwardRes.java └─PrizeController.java 实现
+public class PrizeController{ public AwardRes awardToUser(AwardReq req){ if(req.type == &amp;#34;优惠券&amp;#34;){ // do something CouponResult result = sendCoupon(req.uId,req.conponNumber,req.uuid); return AwardRes(result); }else if(req.type == &amp;#34;实物&amp;#34;){ DelilverReq deliverReq = new DeliverReq(); // do something Boolean result = deliverGoods(deliverReq); return AwardRes(result); }else if(req.</description>
+    </item>
+    
+    <item>
       <title>Contact</title>
       <link>https://zhengbledor.github.io/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
