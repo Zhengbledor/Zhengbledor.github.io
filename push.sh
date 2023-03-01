@@ -1,6 +1,6 @@
 #!/bin/sh
 
-hudo -D
+hugo -D
 git add .
 git commit -m "update"
 git push

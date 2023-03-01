@@ -8,7 +8,7 @@
     <language>en</language>
     <lastBuildDate>Tue, 28 Feb 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Nothing</title>
+      <title>六大设计原则</title>
       <link>https://zhengbledor.github.io/posts/designprinciples/</link>
       <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
       
@@ -19,19 +19,10 @@
 访客用户只能观看480P视频，且有广告 普通会员只能观看720P视频，且有广告 VIP用户可以看1080P视频，且无广告
 违背原则
 public class VideoUserSerice{ public void serveGrade(String usrType){ if(usrType == &amp;#34;VIP&amp;#34;){ // 视频1080P，无广告 }else if(usrType == &amp;#34;普通会员&amp;#34;){ // 视频720P，有广告 }else if(usrType == &amp;#34;访客用户&amp;#34;){ // 视频480P，有广告 } } } 改进方案
-public interface IVideoUserService{ // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。
+public interface IVideoUserService{` // 清晰度 1080P、720P、480P void definition(); // 广告播放方式，有广告、无广告 void advertisement(); } 二、开闭原则 Link to heading 对象、类、模块和函数对扩展应该是开放的，但是对于修改是封闭的。
 模拟场景
 计算三种形状的面积，长方形、三角形、圆形。 但是后续由于pai取值的精度对于某些场景是不足的，需要扩展。
 public class CalculationArea{ private final static double pai = 3.</description>
-    </item>
-    
-    <item>
-      <title>Nothing</title>
-      <link>https://zhengbledor.github.io/posts/nothing/</link>
-      <pubDate>Tue, 28 Feb 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/nothing/</guid>
-      <description></description>
     </item>
     
   </channel>
