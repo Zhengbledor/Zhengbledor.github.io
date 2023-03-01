@@ -102,7 +102,7 @@ public double circular(double r){
 ```java
 public class CalculationAreExt extends CalculationArea{
   private final static double pai = 3.141592653D;
-  @override
+  @Override
   public double circular(double r){
     return pai * r * r;
   }
@@ -115,7 +115,7 @@ public class CalculationAreExt extends CalculationArea{
 
 > 如果S是T的子类型，那么所有T类型的对象都可以在不破坏程序的情况下被S类型的对象替换。
 >
-> 简单来说，子类可以扩展夫类的功能，但不能改变父类原有的功能。
+> 简单来说，子类可以扩展父类的功能，但不能改变父类原有的功能。
 > 当子类继承父类时，除添加新的方法且完成新增功能外，尽量不要重写父类方法。
 
 主要包含四点含义：
@@ -148,10 +148,10 @@ public class CashCard{
 }
 
 public class CreditCard extends CashCard{
-  @override
+  @Override
   public String withdrawal();
   
-  @override
+  @Override
   public String recharge();
 }
 ```
@@ -247,7 +247,6 @@ public class Teacher{
   private List<Student> studentList;
   
   public double classTotalScore(){
-    teacher.getStudentList();
     // do more
   }
 }
@@ -256,7 +255,7 @@ public class Principal{
   private Teacher teacher;
   
   public double classTotalScore(){
-    teacher.classTotalScore();
+    return teacher.classTotalScore();
   }
 }
 ```
@@ -265,7 +264,7 @@ public class Principal{
 
 ### 五、接口隔离原则
 
-> 客户端不应该被破依赖于它不是用的方法。
+> 客户端不应该被破依赖于它不使用的方法。
 > 一个类对另一个类的依赖应该是建立在最小的接口上的。
 >
 > 要求尽量将臃肿庞大的接口拆分成更小的和更具体的接口。
@@ -274,7 +273,7 @@ public class Principal{
 
 #### 模拟场景
 
-王者荣耀有不同的技能特性，每个英雄的技能都属于其中
+王者荣耀有不同的技能特性，每个英雄的技能都属于其中一类。
 
 
 
