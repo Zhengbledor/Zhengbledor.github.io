@@ -282,7 +282,7 @@ VIP用户可以看1080P视频，且无广告</p>
 </h4>
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CalculationAreExt</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">CalculationArea</span><span style="color:#c7bf54">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c678dd">static</span> <span style="color:#ef8383">double</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">=</span> <span style="color:#d19a66">3.141592653D</span><span style="color:#c7bf54">;</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@override</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">circular</span><span style="color:#c7bf54">(</span><span style="color:#ef8383">double</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">){</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">pai</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span> <span style="color:#c7bf54">*</span> <span style="color:#c1abea">r</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
@@ -296,7 +296,7 @@ VIP用户可以看1080P视频，且无广告</p>
 </h3>
 <blockquote>
 <p>如果S是T的子类型，那么所有T类型的对象都可以在不破坏程序的情况下被S类型的对象替换。</p>
-<p>简单来说，子类可以扩展父类的功能，但不能改变父类原有的功能。
+<p>简单来说，子类可以扩展夫类的功能，但不能改变父类原有的功能。
 当子类继承父类时，除添加新的方法且完成新增功能外，尽量不要重写父类方法。</p>
 </blockquote>
 <p>主要包含四点含义：</p>
@@ -333,10 +333,10 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CreditCard</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">CashCard</span><span style="color:#c7bf54">{</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@override</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">withdrawal</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  
-</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#e5c07b">@override</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">recharge</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><p>信用卡直接继承了储蓄卡的类并重写了有关取钱和存钱的内容，由于打印流水实现相同则没有重写。</p>
@@ -438,6 +438,7 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">List</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">Student</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">studentList</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">classTotalScore</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getStudentList</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#8a93a5;font-style:italic">// do more
 </span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
@@ -446,7 +447,7 @@ VIP用户可以看1080P视频，且无广告</p>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">Teacher</span> <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">;</span>
 </span></span><span style="display:flex;"><span>  
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">public</span> <span style="color:#ef8383">double</span> <span style="color:#00b1f7">classTotalScore</span><span style="color:#c7bf54">(){</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">classTotalScore</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">teacher</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">classTotalScore</span><span style="color:#c7bf54">();</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">}</span>
 </span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
 </span></span></code></pre></div><h3 id="五接口隔离原则">
@@ -457,7 +458,7 @@ VIP用户可以看1080P视频，且无广告</p>
   </a>
 </h3>
 <blockquote>
-<p>客户端不应该被破依赖于它不使用的方法。
+<p>客户端不应该被破依赖于它不是用的方法。
 一个类对另一个类的依赖应该是建立在最小的接口上的。</p>
 <p>要求尽量将臃肿庞大的接口拆分成更小的和更具体的接口。</p>
 </blockquote>
@@ -468,7 +469,7 @@ VIP用户可以看1080P视频，且无广告</p>
     <span class="sr-only">Link to heading</span>
   </a>
 </h4>
-<p>王者荣耀有不同的技能特性，每个英雄的技能都属于其中一类。</p>
+<p>王者荣耀有不同的技能特性，每个英雄的技能都属于其中</p>
 <h4 id="违背原则-4">
   违背原则
   <a class="heading-link" href="#%e8%bf%9d%e8%83%8c%e5%8e%9f%e5%88%99-4">
