@@ -1,5 +1,5 @@
 +++
-title = "Nothing"
+title = "六大设计原则"
 date = "2023-02-28"
 +++
 
@@ -42,7 +42,7 @@ public class VideoUserSerice{
 **改进方案**
 
 ```java
-public interface IVideoUserService{
+public interface IVideoUserService{`
   // 清晰度 1080P、720P、480P
   void definition();
   
