@@ -6,7 +6,30 @@
     <description>Recent content in Posts on Zhengbledor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 01 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>创建型-建造者模式</title>
+      <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
+      <description> 创建型-建造者模式 Link to heading </description>
+    </item>
+    
+    <item>
+      <title>创建型-抽象工厂模式</title>
+      <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
+      <description>创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
+场景模拟 Link to heading 此前业务使用的数据库为单机Redis
+但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
+public class EGM { private Map&amp;lt;String, String&amp;gt; dataMap = new ConcurrentHashMap&amp;lt;&amp;gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&amp;lt;String, String&amp;gt; dataMap = new ConcurrentHashMap&amp;lt;&amp;gt;(); public String get(String key) { return dataMap.</description>
+    </item>
+    
     <item>
       <title>创建型-工厂模式</title>
       <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
@@ -22,20 +45,6 @@
 最初设计 Link to heading 工程结构
 ├─AwardReq.java ├─AwardRes.java └─PrizeController.java 实现
 public class PrizeController{ public AwardRes awardToUser(AwardReq req){ if(req.type == &amp;#34;优惠券&amp;#34;){ // do something CouponResult result = sendCoupon(req.uId,req.conponNumber,req.uuid); return AwardRes(result); }else if(req.type == &amp;#34;实物&amp;#34;){ DelilverReq deliverReq = new DeliverReq(); // do something Boolean result = deliverGoods(deliverReq); return AwardRes(result); }else if(req.</description>
-    </item>
-    
-    <item>
-      <title>创建型-抽象工厂模式</title>
-      <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
-      <description>创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
-场景模拟 Link to heading 此前业务使用的数据库为单机Redis
-但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
-很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
-├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
-public class EGM { private Map&amp;lt;String, String&amp;gt; dataMap = new ConcurrentHashMap&amp;lt;&amp;gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&amp;lt;String, String&amp;gt; dataMap = new ConcurrentHashMap&amp;lt;&amp;gt;(); public String get(String key) { return dataMap.</description>
     </item>
     
     <item>
