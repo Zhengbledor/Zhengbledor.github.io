@@ -73,6 +73,18 @@ public class Employee { private String name; private String dept; private int sa
     </item>
     
     <item>
+      <title>创建型-装饰模式</title>
+      <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E8%A3%85%E9%A5%B0%E6%A8%A1%E5%BC%8F/</guid>
+      <description>结构型-装饰模式 Link to heading 装饰模式就像其名字一样，为了对现有的类进行装饰。比如一张相片就一张纸，如果直接贴在墙上，总感觉少了点什么，但是我们给其添加一个好看的相框，就会变得非常对味。装饰模式的核心就在于不改变一个对象本身功能的基础上，给对象添加额外的行为，并且它是通过组合的形式完成的，而不是传统的继承关系。
+比如我们现在有一个普通的功能类：
+public abstract class Base { //顶层抽象类，定义了一个test方法执行业务 public abstract void test(); } public class BaseImpl extends Base{ @Override public void test() { System.out.println(&amp;#34;我是业务方法&amp;#34;); //具体的业务方法 } } 不过现在的实现类太单调了，我们来添加一点装饰上去：
+public class Decorator extends Base{ //装饰者需要将装饰目标组合到类中 protected Base base; public Decorator(Base base) { this.base = base; } @Override public void test() { base.test(); //这里暂时还是使用目标的原本方法实现 } } public class DecoratorImpl extends Decorator{ //装饰实现 public DecoratorImpl(Base base) { super(base); } @Override public void test() { //对原本的方法进行装饰，我们可以在前后都去添加额外操作 System.</description>
+    </item>
+    
+    <item>
       <title>创建型-适配器模式</title>
       <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
@@ -135,6 +147,15 @@ public class PrizeController{ public AwardRes awardToUser(AwardReq req){ if(req.
       
       <guid>https://zhengbledor.github.io/about/</guid>
       <description>郑布利多的博客，平时记载一点技术、生活的文章(万一哪天被裁了)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</guid>
+      <description>结构型-代理模式 Link to heading 代理模式和装饰模式很像，初学者很容易搞混，所以这里我们得紧接着来讲解一下。首先请记住，当无法直接访问某个对象或访问某个对象存在困难时，我们就可以通过一个代理对象来间接访问。</description>
     </item>
     
     <item>
