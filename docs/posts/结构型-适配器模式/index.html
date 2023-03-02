@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-  创建型-适配器模式 · Zhengbledor
+  结构型-适配器模式 · Zhengbledor
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@ public StandardAdapter implements interfaceBritishStandard{ private ChineseStand
 <meta name="keywords" content="blog">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="创建型-适配器模式"/>
+<meta name="twitter:title" content="结构型-适配器模式"/>
 <meta name="twitter:description" content="结构型-适配器模式 Link to heading 将一个类的接口转换成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的哪些类可以一起工作。
 其中主要有三个角色
 目标角色：该角色定义把其他类转换为何种接口，也就是我们的期望接口。
@@ -35,7 +35,7 @@ public StandardAdapter implements interfaceBritishStandard{ private ChineseStand
 public class ChineseStandard{ public String getChineseStandard(){ return &#34;中式插座&#34;; } } public class interfaceBritishStandard{ String getBritishStandard(); } public StandardAdapter extends ChineseStandard implements interfaceBritishStandard{ @Override public String getBritishStandard(){ return this.getChineseStandard(); } } 对象适配器 Link to heading 通过实例对象（构造器传递）来实现适配器，而不是再用继承，其余基本同类适配器。
 public StandardAdapter implements interfaceBritishStandard{ private ChineseStandard chineseStandard = new ChineseStandard(); @Override public String getBritishStandard(){ return chineseStandard."/>
 
-<meta property="og:title" content="创建型-适配器模式" />
+<meta property="og:title" content="结构型-适配器模式" />
 <meta property="og:description" content="结构型-适配器模式 Link to heading 将一个类的接口转换成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的哪些类可以一起工作。
 其中主要有三个角色
 目标角色：该角色定义把其他类转换为何种接口，也就是我们的期望接口。
@@ -157,7 +157,7 @@ public StandardAdapter implements interfaceBritishStandard{ private ChineseStand
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/">
-              创建型-适配器模式
+              结构型-适配器模式
             </a>
           </h1>
         </div>

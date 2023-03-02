@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-  创建型-代理模式 · Zhengbledor
+  结构型-代理模式 · Zhengbledor
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@ public interface Subject { //JDK提供的动态代理只支持接口 void test()
 <meta name="keywords" content="blog">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="创建型-代理模式"/>
+<meta name="twitter:title" content="结构型-代理模式"/>
 <meta name="twitter:description" content="结构型-代理模式 Link to heading 代理模式和装饰模式很像，初学者很容易搞混，所以这里我们得紧接着来讲解一下。首先请记住，当无法直接访问某个对象或访问某个对象存在困难时，我们就可以通过一个代理对象来间接访问。
 比如现在有一个目标类，但是我们现在需要通过代理来使用它：
 public abstract class Subject { public abstract void test(); } public class SubjectImpl extends Subject{ //此类无法直接使用，需要我们进行代理 @Override public void test() { System.out.println(&#34;我是测试方法！&#34;); } } 现在我们为其建立一个代理类：
@@ -35,7 +35,7 @@ public class Proxy extends Subject{ //为了保证和Subject操作方式一样�
 当然实现代理模式除了我们上面所说的这种方式之外，我们还可以使用JDK为我们提供的动态代理机制，我们不再需要手动编写继承关系创建代理类，它能够在运行时通过反射机制为我们自动生成代理类：
 public interface Subject { //JDK提供的动态代理只支持接口 void test(); } public class SubjectImpl implements Subject{ @Override public void test() { System."/>
 
-<meta property="og:title" content="创建型-代理模式" />
+<meta property="og:title" content="结构型-代理模式" />
 <meta property="og:description" content="结构型-代理模式 Link to heading 代理模式和装饰模式很像，初学者很容易搞混，所以这里我们得紧接着来讲解一下。首先请记住，当无法直接访问某个对象或访问某个对象存在困难时，我们就可以通过一个代理对象来间接访问。
 比如现在有一个目标类，但是我们现在需要通过代理来使用它：
 public abstract class Subject { public abstract void test(); } public class SubjectImpl extends Subject{ //此类无法直接使用，需要我们进行代理 @Override public void test() { System.out.println(&#34;我是测试方法！&#34;); } } 现在我们为其建立一个代理类：
@@ -157,7 +157,7 @@ public interface Subject { //JDK提供的动态代理只支持接口 void test()
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/">
-              创建型-代理模式
+              结构型-代理模式
             </a>
           </h1>
         </div>

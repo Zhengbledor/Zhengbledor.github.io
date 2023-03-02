@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-  创建型-桥接模式 · Zhengbledor
+  结构型-桥接模式 · Zhengbledor
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,13 +19,13 @@
 <meta name="keywords" content="blog">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="创建型-桥接模式"/>
+<meta name="twitter:title" content="结构型-桥接模式"/>
 <meta name="twitter:description" content="结构型-桥接模式 Link to heading 桥接模式是将抽象部分与它的实现部分分离，使它们都可以独立地变化。
 【GOF95】在提出桥梁模式的时候指出，桥梁模式的用意是&quot;将抽象化(Abstraction)与实现化(Implementation)脱耦，使得二者可以独立地变化&quot;。这句话有三个关键词，也就是抽象化、实现化和脱耦。
 下列各语言的代码都用于写出两个不同的圆的坐标和半径。
 /** &#34;Implementor&#34; */ interface DrawingAPI{ public void drawCircle(double x, double y, double radius); } /** &#34;ConcreteImplementor&#34; 1/2 */ class DrawingAPI1 implements DrawingAPI{ public void drawCircle(double x, double y, double radius){ System.out.printf(&#34;API1.circle at %f:%f radius %f\n&#34;, x, y, radius); } } /** &#34;ConcreteImplementor&#34; 2/2 */ class DrawingAPI2 implements DrawingAPI{ public void drawCircle(double x, double y, double radius){ System.out.printf(&#34;API2.circle at %f:%f radius %f\n&#34;, x, y, radius); } }/** &#34;Abstraction&#34; */ interface Shape{ public void draw(); // low-level public void resizeByPercentage(double pct); // high-level } /** &#34;Refined Abstraction&#34; */ class CircleShape implements Shape{ private double x, y, radius; private DrawingAPI drawingAPI; public CircleShape(double x, double y, double radius, DrawingAPI drawingAPI){ this."/>
 
-<meta property="og:title" content="创建型-桥接模式" />
+<meta property="og:title" content="结构型-桥接模式" />
 <meta property="og:description" content="结构型-桥接模式 Link to heading 桥接模式是将抽象部分与它的实现部分分离，使它们都可以独立地变化。
 【GOF95】在提出桥梁模式的时候指出，桥梁模式的用意是&quot;将抽象化(Abstraction)与实现化(Implementation)脱耦，使得二者可以独立地变化&quot;。这句话有三个关键词，也就是抽象化、实现化和脱耦。
 下列各语言的代码都用于写出两个不同的圆的坐标和半径。
@@ -142,7 +142,7 @@
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/">
-              创建型-桥接模式
+              结构型-桥接模式
             </a>
           </h1>
         </div>
