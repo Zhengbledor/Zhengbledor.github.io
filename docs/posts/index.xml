@@ -8,6 +8,19 @@
     <language>en</language>
     <lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>创建型-原型模式</title>
+      <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>创建型-原型模式 Link to heading 原型模式主要解决的问题就是创建重复对象，而这部分对象内容本身比较复杂，生成过程可能从库或者RPC接口中获取数据的耗时较长，因此采用克隆的方式节省时间。
+这种场景就像CV代码、java中的clone一样。
+模拟场景 Link to heading 一个上机考试丑题服务，做到能够混排题目，混排答案。这个服务用语选择题、问答题的试卷创建。
+数据准备
+public class ChoiceQuestion{ private String name; private Map&amp;lt;String, String&amp;gt; option; private String key; public ChoiceQuestion(String name. Map&amp;lt;String, String&amp;gt; option, String key){ this.name = name; this. option = option; this. key = key; } } public class AnswerQuestion{ private String name; private String key; public AnswerQuestion(String name,String key){ this.name = name; this.key = key; } } 最初设计 Link to heading public class QuestionBankController{ public String createPaper(Stirng candidate, String number){ // do sth // 手工填写不同问题 } } 这样的代码非常容易理解，要什么题目就塞进去，只面向过程，不考虑扩展性。</description>
+    </item>
+    
+    <item>
       <title>创建型-建造者模式</title>
       <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%BB%BA%E9%80%A0%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
