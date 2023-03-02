@@ -15,7 +15,7 @@
 <meta name="description" content="创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
 场景模拟 Link to heading 此前业务使用的数据库为单机Redis
 但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
-很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响目前正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
 ├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
 public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String get(String key) { return dataMap.">
 <meta name="keywords" content="blog">
@@ -25,7 +25,7 @@ public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHas
 <meta name="twitter:description" content="创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
 场景模拟 Link to heading 此前业务使用的数据库为单机Redis
 但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
-很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响目前正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
 ├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
 public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String get(String key) { return dataMap."/>
 
@@ -33,7 +33,7 @@ public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHas
 <meta property="og:description" content="创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
 场景模拟 Link to heading 此前业务使用的数据库为单机Redis
 但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
-很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响目前正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
 ├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
 public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String get(String key) { return dataMap." />
 <meta property="og:type" content="article" />
@@ -194,7 +194,7 @@ public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHas
 <li>很多服务都用到Redis，需要一起升级。</li>
 <li>需要同时兼容集群EGM和IIR</li>
 <li>两套集群的接口不一样，需要同时做兼容</li>
-<li>不能影响u钱正常运行的系统</li>
+<li>不能影响目前正常运行的系统</li>
 </ul>
 <h3 id="最初设计">
   最初设计
@@ -206,7 +206,6 @@ public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHas
 <ul>
 <li>给接口添加Redis集群使用类型，以控制使用哪套集群服务。</li>
 <li>但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。</li>
-<li></li>
 </ul>
 <p><strong>工程结构</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>├─application

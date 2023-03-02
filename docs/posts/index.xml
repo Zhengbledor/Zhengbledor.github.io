@@ -15,7 +15,7 @@
       <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%8E%9F%E5%9E%8B%E6%A8%A1%E5%BC%8F/</guid>
       <description>创建型-原型模式 Link to heading 原型模式主要解决的问题就是创建重复对象，而这部分对象内容本身比较复杂，生成过程可能从库或者RPC接口中获取数据的耗时较长，因此采用克隆的方式节省时间。
 这种场景就像CV代码、java中的clone一样。
-模拟场景 Link to heading 一个上机考试丑题服务，做到能够混排题目，混排答案。这个服务用语选择题、问答题的试卷创建。
+模拟场景 Link to heading 一个上机考试抽题服务，做到能够混排题目，混排答案。这个服务用于选择题、问答题的试卷创建。
 数据准备
 public class ChoiceQuestion{ private String name; private Map&amp;lt;String, String&amp;gt; option; private String key; public ChoiceQuestion(String name. Map&amp;lt;String, String&amp;gt; option, String key){ this.name = name; this. option = option; this. key = key; } } public class AnswerQuestion{ private String name; private String key; public AnswerQuestion(String name,String key){ this.name = name; this.key = key; } } 最初设计 Link to heading public class QuestionBankController{ public String createPaper(Stirng candidate, String number){ // do sth // 手工填写不同问题 } } 这样的代码非常容易理解，要什么题目就塞进去，只面向过程，不考虑扩展性。</description>
     </item>
@@ -43,7 +43,7 @@ public class DecorationPackageController{ public List&amp;lt;Matter&amp;gt; getM
       <description>创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
 场景模拟 Link to heading 此前业务使用的数据库为单机Redis
 但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
-很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响目前正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
 ├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
 public class EGM { private Map&amp;lt;String, String&amp;gt; dataMap = new ConcurrentHashMap&amp;lt;&amp;gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&amp;lt;String, String&amp;gt; dataMap = new ConcurrentHashMap&amp;lt;&amp;gt;(); public String get(String key) { return dataMap.</description>
     </item>

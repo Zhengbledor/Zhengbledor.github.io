@@ -14,7 +14,7 @@
 <meta name="author" content="Zhengbledor">
 <meta name="description" content="创建型-原型模式 Link to heading 原型模式主要解决的问题就是创建重复对象，而这部分对象内容本身比较复杂，生成过程可能从库或者RPC接口中获取数据的耗时较长，因此采用克隆的方式节省时间。
 这种场景就像CV代码、java中的clone一样。
-模拟场景 Link to heading 一个上机考试丑题服务，做到能够混排题目，混排答案。这个服务用语选择题、问答题的试卷创建。
+模拟场景 Link to heading 一个上机考试抽题服务，做到能够混排题目，混排答案。这个服务用于选择题、问答题的试卷创建。
 数据准备
 public class ChoiceQuestion{ private String name; private Map&lt;String, String&gt; option; private String key; public ChoiceQuestion(String name. Map&lt;String, String&gt; option, String key){ this.name = name; this. option = option; this. key = key; } } public class AnswerQuestion{ private String name; private String key; public AnswerQuestion(String name,String key){ this.name = name; this.key = key; } } 最初设计 Link to heading public class QuestionBankController{ public String createPaper(Stirng candidate, String number){ // do sth // 手工填写不同问题 } } 这样的代码非常容易理解，要什么题目就塞进去，只面向过程，不考虑扩展性。">
 <meta name="keywords" content="blog">
@@ -23,14 +23,14 @@ public class ChoiceQuestion{ private String name; private Map&lt;String, String&
 <meta name="twitter:title" content="创建型-原型模式"/>
 <meta name="twitter:description" content="创建型-原型模式 Link to heading 原型模式主要解决的问题就是创建重复对象，而这部分对象内容本身比较复杂，生成过程可能从库或者RPC接口中获取数据的耗时较长，因此采用克隆的方式节省时间。
 这种场景就像CV代码、java中的clone一样。
-模拟场景 Link to heading 一个上机考试丑题服务，做到能够混排题目，混排答案。这个服务用语选择题、问答题的试卷创建。
+模拟场景 Link to heading 一个上机考试抽题服务，做到能够混排题目，混排答案。这个服务用于选择题、问答题的试卷创建。
 数据准备
 public class ChoiceQuestion{ private String name; private Map&lt;String, String&gt; option; private String key; public ChoiceQuestion(String name. Map&lt;String, String&gt; option, String key){ this.name = name; this. option = option; this. key = key; } } public class AnswerQuestion{ private String name; private String key; public AnswerQuestion(String name,String key){ this.name = name; this.key = key; } } 最初设计 Link to heading public class QuestionBankController{ public String createPaper(Stirng candidate, String number){ // do sth // 手工填写不同问题 } } 这样的代码非常容易理解，要什么题目就塞进去，只面向过程，不考虑扩展性。"/>
 
 <meta property="og:title" content="创建型-原型模式" />
 <meta property="og:description" content="创建型-原型模式 Link to heading 原型模式主要解决的问题就是创建重复对象，而这部分对象内容本身比较复杂，生成过程可能从库或者RPC接口中获取数据的耗时较长，因此采用克隆的方式节省时间。
 这种场景就像CV代码、java中的clone一样。
-模拟场景 Link to heading 一个上机考试丑题服务，做到能够混排题目，混排答案。这个服务用语选择题、问答题的试卷创建。
+模拟场景 Link to heading 一个上机考试抽题服务，做到能够混排题目，混排答案。这个服务用于选择题、问答题的试卷创建。
 数据准备
 public class ChoiceQuestion{ private String name; private Map&lt;String, String&gt; option; private String key; public ChoiceQuestion(String name. Map&lt;String, String&gt; option, String key){ this.name = name; this. option = option; this. key = key; } } public class AnswerQuestion{ private String name; private String key; public AnswerQuestion(String name,String key){ this.name = name; this.key = key; } } 最初设计 Link to heading public class QuestionBankController{ public String createPaper(Stirng candidate, String number){ // do sth // 手工填写不同问题 } } 这样的代码非常容易理解，要什么题目就塞进去，只面向过程，不考虑扩展性。" />
 <meta property="og:type" content="article" />
@@ -186,7 +186,7 @@ public class ChoiceQuestion{ private String name; private Map&lt;String, String&
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
-<p>一个上机考试丑题服务，做到能够混排题目，混排答案。这个服务用语选择题、问答题的试卷创建。</p>
+<p>一个上机考试抽题服务，做到能够混排题目，混排答案。这个服务用于选择题、问答题的试卷创建。</p>
 <p><strong>数据准备</strong></p>
 <div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">ChoiceQuestion</span><span style="color:#c7bf54">{</span>
 </span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">name</span><span style="color:#c7bf54">;</span>
