@@ -12,18 +12,30 @@
 
 
 <meta name="author" content="Zhengbledor">
-<meta name="description" content=" 创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
-场景模拟 Link to heading ">
+<meta name="description" content="创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
+场景模拟 Link to heading 此前业务使用的数据库为单机Redis
+但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
+public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String get(String key) { return dataMap.">
 <meta name="keywords" content="blog">
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="创建型-抽象工厂模式"/>
-<meta name="twitter:description" content=" 创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
-场景模拟 Link to heading "/>
+<meta name="twitter:description" content="创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
+场景模拟 Link to heading 此前业务使用的数据库为单机Redis
+但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
+public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String get(String key) { return dataMap."/>
 
 <meta property="og:title" content="创建型-抽象工厂模式" />
-<meta property="og:description" content=" 创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
-场景模拟 Link to heading " />
+<meta property="og:description" content="创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
+场景模拟 Link to heading 此前业务使用的数据库为单机Redis
+但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。
+很多服务都用到Redis，需要一起升级。 需要同时兼容集群EGM和IIR 两套集群的接口不一样，需要同时做兼容 不能影响u钱正常运行的系统 最初设计 Link to heading 给接口添加Redis集群使用类型，以控制使用哪套集群服务。 但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。 工程结构
+├─application │ ├─CacheService.java │ └─CacheServiceImpl.java └─redis ├─RedisUtils.java └─cluster ├─EGM.java └─IIR.java 服务定义
+public class EGM { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String gain(String key) { return dataMap.get(key); } public void set(String key, String value) { dataMap.put(key, value); } public void delete(String key) { dataMap.remove(key); } } public class IIR { private Map&lt;String, String&gt; dataMap = new ConcurrentHashMap&lt;&gt;(); public String get(String key) { return dataMap." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" /><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2023-03-01T00:00:00+00:00" />
@@ -150,7 +162,7 @@
             </span>
             <span class="reading-time">
               <i class="fa fa-clock-o" aria-hidden="true"></i>
-              One-minute read
+              3-minute read
             </span>
           </div>
           
@@ -176,6 +188,229 @@
     <span class="sr-only">Link to heading</span>
   </a>
 </h3>
+<p>此前业务使用的数据库为单机Redis</p>
+<p>但是随着业务的发展，此前的单机Redis已经无法适用于项目，所以需要升级成健壮的Redis集群服务。</p>
+<ul>
+<li>很多服务都用到Redis，需要一起升级。</li>
+<li>需要同时兼容集群EGM和IIR</li>
+<li>两套集群的接口不一样，需要同时做兼容</li>
+<li>不能影响u钱正常运行的系统</li>
+</ul>
+<h3 id="最初设计">
+  最初设计
+  <a class="heading-link" href="#%e6%9c%80%e5%88%9d%e8%ae%be%e8%ae%a1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>给接口添加Redis集群使用类型，以控制使用哪套集群服务。</li>
+<li>但是不能停止已经使用的集群，所以还保留了此前单机的Redis接口。</li>
+<li></li>
+</ul>
+<p><strong>工程结构</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>├─application
+</span></span><span style="display:flex;"><span>│ ├─CacheService.java
+</span></span><span style="display:flex;"><span>│ └─CacheServiceImpl.java
+</span></span><span style="display:flex;"><span>└─redis
+</span></span><span style="display:flex;"><span>	├─RedisUtils.java
+</span></span><span style="display:flex;"><span>	└─cluster
+</span></span><span style="display:flex;"><span>			├─EGM.java
+</span></span><span style="display:flex;"><span>			└─IIR.java
+</span></span></code></pre></div><p><strong>服务定义</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">EGM</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c1abea">Map</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">String</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">dataMap</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">ConcurrentHashMap</span><span style="color:#c7bf54">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">gain</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">put</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">delete</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">remove</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">IIR</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c1abea">Map</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">String</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">dataMap</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">ConcurrentHashMap</span><span style="color:#c7bf54">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">put</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">remove</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">RedisUtils</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c1abea">Map</span><span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">String</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">dataMap</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">ConcurrentHashMap</span><span style="color:#c7bf54">&lt;&gt;();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">put</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">dataMap</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">remove</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p><strong>Redis使用</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">CacheService</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c678dd">final</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">type</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">type</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ef8383">void</span> <span style="color:#00b1f7">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">type</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">CacheServiceImpl</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">CacheService</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c1abea">RedisUtils</span> <span style="color:#c1abea">redisUtils</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">RedisUtils</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c1abea">EGM</span> <span style="color:#c1abea">egm</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">EGM</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c678dd">final</span> <span style="color:#c1abea">IIR</span> <span style="color:#c1abea">iir</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">IIR</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">type</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">if</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">type</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">1</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c678dd">return</span> <span style="color:#c1abea">egm</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">gain</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c7bf54">}</span> <span style="color:#c678dd">else</span> <span style="color:#c678dd">if</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">type</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">2</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c678dd">return</span> <span style="color:#c1abea">iir</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">redisUtils</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">type</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">if</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">type</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">1</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c1abea">egm</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c7bf54">}</span> <span style="color:#c678dd">else</span> <span style="color:#c678dd">if</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">type</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">2</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c1abea">iir</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">redisUtils</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#ef8383">int</span> <span style="color:#c1abea">type</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">if</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">type</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">1</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c1abea">egm</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">delete</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c7bf54">}</span> <span style="color:#c678dd">else</span> <span style="color:#c678dd">if</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">type</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">2</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c1abea">iir</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">redisUtils</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><h3 id="改进方案">
+  改进方案
+  <a class="heading-link" href="#%e6%94%b9%e8%bf%9b%e6%96%b9%e6%a1%88">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><strong>工程结构</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>├─application
+</span></span><span style="display:flex;"><span>│ ├─CacheService.java
+</span></span><span style="display:flex;"><span>│ └─CacheServiceImpl.java
+</span></span><span style="display:flex;"><span>├─factory
+</span></span><span style="display:flex;"><span>│ ├─JDKInvocationHandler.java
+</span></span><span style="display:flex;"><span>│ └─JDKProxyFactory.java
+</span></span><span style="display:flex;"><span>├─util
+</span></span><span style="display:flex;"><span>│ └─CalssLoaderUtils.java
+</span></span><span style="display:flex;"><span>└─workshop
+</span></span><span style="display:flex;"><span>	├─impl
+</span></span><span style="display:flex;"><span>	│ ├─EGMCacheAdapter.java
+</span></span><span style="display:flex;"><span>	│ └─IIRCacheAdapter.java
+</span></span><span style="display:flex;"><span>	└─ICacheAdapter.java
+</span></span></code></pre></div><p>工程主要分为三个部分：工厂包（facoty），工具包（util），车间包（workshop）。</p>
+<ul>
+<li>工厂包：JDKProxyFactory、JDKInvocationHandler两个类是代理类的定义和实现，这部分代码主要通过代理类和反射调用的方式获取工厂及方法调用。</li>
+<li>工具包：ClassLoaderUtils类主要用于支撑反射的方法调用中的参数的处理。</li>
+<li>车间包：EGMCacheAdapter、IIRCacheAdapter两个类主要是通过适配器的方式使用两个不同的集群方案。</li>
+</ul>
+<p><strong>实现集训适配器接口</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">interface</span> <span style="color:#76a9f9">ICacheAdapter</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#ef8383">void</span> <span style="color:#00b1f7">delete</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">EGMCacheAdapter</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">ICacheAdapter</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c1abea">EGM</span> <span style="color:#c1abea">egm</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">EGM</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">egm</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">gain</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">egm</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">delete</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">egm</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">delete</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">IIRCacheAdapter</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">ICacheAdapter</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c1abea">IIR</span> <span style="color:#c1abea">iir</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">IIR</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">String</span> <span style="color:#00b1f7">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">iir</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">get</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">String</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">iir</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">set</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">value</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">delete</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span> <span style="color:#c1abea">key</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">iir</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">del</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">key</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p><strong>代理方式的抽象工厂</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">JDKProxyFactory</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c678dd">static</span> <span style="color:#c7bf54">&lt;</span><span style="color:#c1abea">T</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">T</span> <span style="color:#00b1f7">getProxy</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">Class</span> <span style="color:#c1abea">cacheClazz</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">Class</span><span style="color:#c7bf54">&lt;?</span> <span style="color:#c678dd">extends</span> <span style="color:#c1abea">ICacheAdapter</span><span style="color:#c7bf54">&gt;</span> <span style="color:#c1abea">cacheAdapter</span><span style="color:#c7bf54">)</span> <span style="color:#c678dd">throws</span> <span style="color:#c1abea">Exception</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">InvocationHandler</span> <span style="color:#c1abea">handler</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">JDKInvocationHandler</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">cacheAdapter</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">newInstance</span><span style="color:#c7bf54">());</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">ClassLoader</span> <span style="color:#c1abea">classLoader</span> <span style="color:#c7bf54">=</span> <span style="color:#c1abea">Thread</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">currentThread</span><span style="color:#c7bf54">().</span><span style="color:#b3d23c">getContextClassLoader</span><span style="color:#c7bf54">();</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c7bf54">(</span><span style="color:#c1abea">T</span><span style="color:#c7bf54">)</span> <span style="color:#c1abea">Proxy</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">newProxyInstance</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">classLoader</span><span style="color:#c7bf54">,</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">Class</span><span style="color:#c7bf54">[]{</span><span style="color:#c1abea">cacheClazz</span><span style="color:#c7bf54">},</span> <span style="color:#c1abea">handler</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p>这里有一点非常重要，为什么要选择代理方式去实现抽象工厂。</p>
+<p>因为把原来的单体Redis服务替换为两套Redis集群服务EGM和IIR，在不破坏原有单体Redis服务和实现类的额情况下，也就是CacheServiceImpl，通过一个代理类的方式实现另一个处理类，就可以非常方便的在Spring、SpringBoot等框架中通过注入的方式替换原有的Impl实现。</p>
+<p><strong>反射调用方法</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">JDKInvocationHandler</span> <span style="color:#c678dd">implements</span> <span style="color:#c1abea">InvocationHandler</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c1abea">ICacheAdapter</span> <span style="color:#c1abea">cacheAdapter</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#00b1f7">JDKInvocationHandler</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">ICacheAdapter</span> <span style="color:#c1abea">cacheAdapter</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">this</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">cacheAdapter</span> <span style="color:#c7bf54">=</span> <span style="color:#c1abea">cacheAdapter</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#e5c07b">@Override</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c1abea">Object</span> <span style="color:#00b1f7">invoke</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">Object</span> <span style="color:#c1abea">o</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">Method</span> <span style="color:#c1abea">method</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">Object</span><span style="color:#c7bf54">[]</span> <span style="color:#c1abea">objects</span><span style="color:#c7bf54">)</span> <span style="color:#c678dd">throws</span> <span style="color:#c1abea">Throwable</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">ICacheAdapter</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">class</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getMethod</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">method</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getName</span><span style="color:#c7bf54">(),</span> <span style="color:#c1abea">ClassLoaderUtils</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getClassByArgs</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">objects</span><span style="color:#c7bf54">))</span>
+</span></span><span style="display:flex;"><span>                <span style="color:#c7bf54">.</span><span style="color:#b3d23c">invoke</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">cacheAdapter</span><span style="color:#c7bf54">,</span> <span style="color:#c1abea">objects</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p>不同redis的方法调用会在这里体现</p>
 
       </div>
 
