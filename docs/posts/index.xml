@@ -49,6 +49,16 @@ public class EGM { private Map&amp;lt;String, String&amp;gt; dataMap = new Concu
     </item>
     
     <item>
+      <title>创建型-单例模式</title>
+      <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</guid>
+      <description>创建型-单例模式 Link to heading 7种单例模式的创建 Link to heading 单例模式的实现方式比较多，主要在实现上是否支持懒汉模式、是否线程安全中运用各种技巧。 当然也有一些场景不需要考虑懒加载的情况，会直接使用static静态累或属性和方法的方式进行处理，供外部调用。
+0. 静态类使用 Link to heading public class Singleton_00{ public static Map&amp;lt;String, String&amp;gt; cache = new ConcurrentHashMap&amp;lt;String, String&amp;gt;(); } 这样的静态类的方式可以在第一次运行的时候直接初始化Map类，不需要到延迟加载在使用。 1. 懒汉模式（线程不安全） Link to heading public class Singleton_01 { private static Singleton_01 instance; private Singleton_01() { } public static Singleton_01 getInstance(){ if (null != instance) return instance; instance = new Singleton_01(); return instance; } } 有一个特点就是外部不允许直接创建，只能通过Singleton_01.getInstance()来初始化创建该单例。 这种方式的范例确实满足了懒加载，但是如果多个访问者同时进入getInstance()中可能会出现同时存在多个实例的问题。 2. 懒汉模式（线程安全） Link to heading public class Singleton_02 { private static Singleton_02 instance; private Singleton_02() { } public static synchronized Singleton_02 getInstance(){ if (null !</description>
+    </item>
+    
+    <item>
       <title>创建型-工厂模式</title>
       <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
