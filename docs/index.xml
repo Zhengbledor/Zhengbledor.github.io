@@ -49,6 +49,35 @@ public class EGM { private Map&amp;lt;String, String&amp;gt; dataMap = new Concu
     </item>
     
     <item>
+      <title>创建型-桥接模式</title>
+      <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F/</guid>
+      <description>结构型-桥接模式 Link to heading 桥接模式是将抽象部分与它的实现部分分离，使它们都可以独立地变化。
+【GOF95】在提出桥梁模式的时候指出，桥梁模式的用意是&amp;quot;将抽象化(Abstraction)与实现化(Implementation)脱耦，使得二者可以独立地变化&amp;quot;。这句话有三个关键词，也就是抽象化、实现化和脱耦。
+下列各语言的代码都用于写出两个不同的圆的坐标和半径。
+/** &amp;#34;Implementor&amp;#34; */ interface DrawingAPI{ public void drawCircle(double x, double y, double radius); } /** &amp;#34;ConcreteImplementor&amp;#34; 1/2 */ class DrawingAPI1 implements DrawingAPI{ public void drawCircle(double x, double y, double radius){ System.out.printf(&amp;#34;API1.circle at %f:%f radius %f\n&amp;#34;, x, y, radius); } } /** &amp;#34;ConcreteImplementor&amp;#34; 2/2 */ class DrawingAPI2 implements DrawingAPI{ public void drawCircle(double x, double y, double radius){ System.out.printf(&amp;#34;API2.circle at %f:%f radius %f\n&amp;#34;, x, y, radius); } }/** &amp;#34;Abstraction&amp;#34; */ interface Shape{ public void draw(); // low-level public void resizeByPercentage(double pct); // high-level } /** &amp;#34;Refined Abstraction&amp;#34; */ class CircleShape implements Shape{ private double x, y, radius; private DrawingAPI drawingAPI; public CircleShape(double x, double y, double radius, DrawingAPI drawingAPI){ this.</description>
+    </item>
+    
+    <item>
+      <title>创建型-适配器模式</title>
+      <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E9%80%82%E9%85%8D%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <description>结构型-适配器模式 Link to heading 将一个类的接口转换成客户希望的另一个接口。Adapter模式使得原本由于接口不兼容而不能一起工作的哪些类可以一起工作。
+其中主要有三个角色
+目标角色：该角色定义把其他类转换为何种接口，也就是我们的期望接口。
+源角色：你想把谁转换成目标角色，这个“谁”就是源角色，它是已经存在的、运行良好的类或对象。
+适配器角色：通过继承或是类关联的方式把源角色转换为目标角色。
+场景模拟 Link to heading 中国的充电器无法在英国使用，需要使用适配器。
+类适配器 Link to heading 适配器通过类来实现，以类来继承和实现接口的方式，来获取被适配类的信息并转换输出重写到适配接口。
+public class ChineseStandard{ public String getChineseStandard(){ return &amp;#34;中式插座&amp;#34;; } } public class interfaceBritishStandard{ String getBritishStandard(); } public StandardAdapter extends ChineseStandard implements interfaceBritishStandard{ @Override public String getBritishStandard(){ return this.getChineseStandard(); } } 对象适配器 Link to heading 通过实例对象（构造器传递）来实现适配器，而不是再用继承，其余基本同类适配器。
+public StandardAdapter implements interfaceBritishStandard{ private ChineseStandard chineseStandard = new ChineseStandard(); @Override public String getBritishStandard(){ return chineseStandard.</description>
+    </item>
+    
+    <item>
       <title>创建型-单例模式</title>
       <link>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E5%8D%95%E4%BE%8B%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
