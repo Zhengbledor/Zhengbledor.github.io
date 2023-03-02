@@ -247,7 +247,6 @@ public class Teacher{
   private List<Student> studentList;
   
   public double classTotalScore(){
-    teacher.getStudentList();
     // do more
   }
 }

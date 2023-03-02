@@ -30,7 +30,8 @@ public class PrizeController{ public AwardRes awardToUser(AwardReq req){ if(req.
       <pubDate>Wed, 01 Mar 2023 00:00:00 +0000</pubDate>
       
       <guid>https://zhengbledor.github.io/posts/%E5%88%9B%E5%BB%BA%E5%9E%8B-%E6%8A%BD%E8%B1%A1%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/</guid>
-      <description> 创建型-抽象工厂模式 Link to heading </description>
+      <description> 创建型-抽象工厂模式 Link to heading 抽象工厂模式也可以叫其他工厂模式，它可以在抽象工厂中创建出其他工厂，与工厂模式一样，都是用来解决接口选择的问题。
+场景模拟 Link to heading </description>
     </item>
     
     <item>
