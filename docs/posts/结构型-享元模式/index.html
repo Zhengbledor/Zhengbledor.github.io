@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  结构型-享元模式 · Zhengbledor
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Zhengbledor">
+<meta name="description" content="结构型-享元模式 Link to heading 它使用共享物件，用来尽可能减少内存使用量以及分享资讯给尽可能多的相似物件；它适合用于只是因重复而导致使用无法令人接受的大量内存的大量物件。
+通常物件中的部分状态是可以分享。常见做法是把它们放在外部数据结构，当需要使用时再将它们传递给享元。
+public static void main(String[] args) { String str1 = &#34;abcdefg&#34;; String str2 = &#34;abcd&#34;; } // 优化 public static void main(String[] args) { String tempo1 = &#34;efg&#34;; String str2 = &#34;abcd&#34;; System.out.println(&#34;str1 = &#34;&#43;str2&#43;tempo1); } 我们可以将那些重复出现的内容作为共享部分取出，这样当我们拥有大量对象时，我们把其中共同的部分抽取出来，由于提取的部分是多个对象共享只有一份，那么就可以减轻内存的压力。
+比如现在我们有两个服务，但是他们都需要使用数据库工具类来操作，实际上这个工具类没必要创建多个，我们这时就可以使用享元模式，让数据库工具类作为享元类，通过享元工厂来提供一个共享的数据库工具类：
+public class DBUtil { public void selectDB(){ System.out.println(&#34;我是数据库操作...&#34;); } } public class DBUtilFactory { private static final DBUtil UTIL = new DBUtil(); //享元对象被存放在工厂中 public static DBUtil getFlyweight(){ //获取享元对象 return UTIL; } } 最后当我们需要使用享元对象时，直接找享元工厂要就行了：">
+<meta name="keywords" content="blog">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="结构型-享元模式"/>
+<meta name="twitter:description" content="结构型-享元模式 Link to heading 它使用共享物件，用来尽可能减少内存使用量以及分享资讯给尽可能多的相似物件；它适合用于只是因重复而导致使用无法令人接受的大量内存的大量物件。
+通常物件中的部分状态是可以分享。常见做法是把它们放在外部数据结构，当需要使用时再将它们传递给享元。
+public static void main(String[] args) { String str1 = &#34;abcdefg&#34;; String str2 = &#34;abcd&#34;; } // 优化 public static void main(String[] args) { String tempo1 = &#34;efg&#34;; String str2 = &#34;abcd&#34;; System.out.println(&#34;str1 = &#34;&#43;str2&#43;tempo1); } 我们可以将那些重复出现的内容作为共享部分取出，这样当我们拥有大量对象时，我们把其中共同的部分抽取出来，由于提取的部分是多个对象共享只有一份，那么就可以减轻内存的压力。
+比如现在我们有两个服务，但是他们都需要使用数据库工具类来操作，实际上这个工具类没必要创建多个，我们这时就可以使用享元模式，让数据库工具类作为享元类，通过享元工厂来提供一个共享的数据库工具类：
+public class DBUtil { public void selectDB(){ System.out.println(&#34;我是数据库操作...&#34;); } } public class DBUtilFactory { private static final DBUtil UTIL = new DBUtil(); //享元对象被存放在工厂中 public static DBUtil getFlyweight(){ //获取享元对象 return UTIL; } } 最后当我们需要使用享元对象时，直接找享元工厂要就行了："/>
+
+<meta property="og:title" content="结构型-享元模式" />
+<meta property="og:description" content="结构型-享元模式 Link to heading 它使用共享物件，用来尽可能减少内存使用量以及分享资讯给尽可能多的相似物件；它适合用于只是因重复而导致使用无法令人接受的大量内存的大量物件。
+通常物件中的部分状态是可以分享。常见做法是把它们放在外部数据结构，当需要使用时再将它们传递给享元。
+public static void main(String[] args) { String str1 = &#34;abcdefg&#34;; String str2 = &#34;abcd&#34;; } // 优化 public static void main(String[] args) { String tempo1 = &#34;efg&#34;; String str2 = &#34;abcd&#34;; System.out.println(&#34;str1 = &#34;&#43;str2&#43;tempo1); } 我们可以将那些重复出现的内容作为共享部分取出，这样当我们拥有大量对象时，我们把其中共同的部分抽取出来，由于提取的部分是多个对象共享只有一份，那么就可以减轻内存的压力。
+比如现在我们有两个服务，但是他们都需要使用数据库工具类来操作，实际上这个工具类没必要创建多个，我们这时就可以使用享元模式，让数据库工具类作为享元类，通过享元工厂来提供一个共享的数据库工具类：
+public class DBUtil { public void selectDB(){ System.out.println(&#34;我是数据库操作...&#34;); } } public class DBUtilFactory { private static final DBUtil UTIL = new DBUtil(); //享元对象被存放在工厂中 public static DBUtil getFlyweight(){ //获取享元对象 return UTIL; } } 最后当我们需要使用享元对象时，直接找享元工厂要就行了：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-02T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.01bd429dda63a16d76996eaf0b8da061429b76e714515cb1b246aac7fe7f4b2a.css" integrity="sha256-Ab1CndpjoW12mW6vC42gYUKbducUUVyxskaqx/5/Syo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Zhengbledor
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/">
+              结构型-享元模式
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-02T00:00:00Z">
+                March 2, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="结构型-享元模式">
+  结构型-享元模式
+  <a class="heading-link" href="#%e7%bb%93%e6%9e%84%e5%9e%8b-%e4%ba%ab%e5%85%83%e6%a8%a1%e5%bc%8f">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>它使用共享物件，用来尽可能减少内存使用量以及分享资讯给尽可能多的相似物件；它适合用于只是因重复而导致使用无法令人接受的大量内存的大量物件。</p>
+<p>通常物件中的部分状态是可以分享。常见做法是把它们放在外部数据结构，当需要使用时再将它们传递给享元。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">static</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">main</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span><span style="color:#c7bf54">[]</span> <span style="color:#c1abea">args</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">String</span> <span style="color:#c1abea">str1</span> <span style="color:#c7bf54">=</span> <span style="color:#98c379">&#34;abcdefg&#34;</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">String</span> <span style="color:#c1abea">str2</span> <span style="color:#c7bf54">=</span> <span style="color:#98c379">&#34;abcd&#34;</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 优化
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">public</span> <span style="color:#c678dd">static</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">main</span><span style="color:#c7bf54">(</span><span style="color:#c1abea">String</span><span style="color:#c7bf54">[]</span> <span style="color:#c1abea">args</span><span style="color:#c7bf54">)</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">String</span> <span style="color:#c1abea">tempo1</span> <span style="color:#c7bf54">=</span> <span style="color:#98c379">&#34;efg&#34;</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">String</span> <span style="color:#c1abea">str2</span> <span style="color:#c7bf54">=</span> <span style="color:#98c379">&#34;abcd&#34;</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">System</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">out</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">println</span><span style="color:#c7bf54">(</span><span style="color:#98c379">&#34;str1 = &#34;</span><span style="color:#c7bf54">+</span><span style="color:#c1abea">str2</span><span style="color:#c7bf54">+</span><span style="color:#c1abea">tempo1</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p>我们可以将那些重复出现的内容作为共享部分取出，这样当我们拥有大量对象时，我们把其中共同的部分抽取出来，由于提取的部分是多个对象共享只有一份，那么就可以减轻内存的压力。</p>
+<hr>
+<p>比如现在我们有两个服务，但是他们都需要使用数据库工具类来操作，实际上这个工具类没必要创建多个，我们这时就可以使用享元模式，让数据库工具类作为享元类，通过享元工厂来提供一个共享的数据库工具类：</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">DBUtil</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">selectDB</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">System</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">out</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">println</span><span style="color:#c7bf54">(</span><span style="color:#98c379">&#34;我是数据库操作...&#34;</span><span style="color:#c7bf54">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">DBUtilFactory</span> <span style="color:#c7bf54">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">private</span> <span style="color:#c678dd">static</span> <span style="color:#c678dd">final</span> <span style="color:#c1abea">DBUtil</span> <span style="color:#c1abea">UTIL</span> <span style="color:#c7bf54">=</span> <span style="color:#c678dd">new</span> <span style="color:#c1abea">DBUtil</span><span style="color:#c7bf54">();</span>   <span style="color:#8a93a5;font-style:italic">//享元对象被存放在工厂中
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#c678dd">static</span> <span style="color:#c1abea">DBUtil</span> <span style="color:#00b1f7">getFlyweight</span><span style="color:#c7bf54">(){</span>   <span style="color:#8a93a5;font-style:italic">//获取享元对象
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>        <span style="color:#c678dd">return</span> <span style="color:#c1abea">UTIL</span><span style="color:#c7bf54">;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p>最后当我们需要使用享元对象时，直接找享元工厂要就行了：</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c678dd">public</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">UserService</span> <span style="color:#c7bf54">{</span>   <span style="color:#8a93a5;font-style:italic">//用户服务
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">public</span> <span style="color:#ef8383">void</span> <span style="color:#00b1f7">service</span><span style="color:#c7bf54">(){</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#c1abea">DBUtil</span> <span style="color:#c1abea">util</span> <span style="color:#c7bf54">=</span> <span style="color:#c1abea">DBUtilFactory</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">getFlyweight</span><span style="color:#c7bf54">();</span>   <span style="color:#8a93a5;font-style:italic">//通过享元工厂拿到DBUtil对象
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>        <span style="color:#c1abea">util</span><span style="color:#c7bf54">.</span><span style="color:#b3d23c">selectDB</span><span style="color:#c7bf54">();</span>    <span style="color:#8a93a5;font-style:italic">//该干嘛干嘛
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>    <span style="color:#c7bf54">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Zhengbledor 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

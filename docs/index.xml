@@ -49,6 +49,19 @@ public class EGM { private Map&amp;lt;String, String&amp;gt; dataMap = new Concu
     </item>
     
     <item>
+      <title>结构型-享元模式</title>
+      <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BA%AB%E5%85%83%E6%A8%A1%E5%BC%8F/</guid>
+      <description>结构型-享元模式 Link to heading 它使用共享物件，用来尽可能减少内存使用量以及分享资讯给尽可能多的相似物件；它适合用于只是因重复而导致使用无法令人接受的大量内存的大量物件。
+通常物件中的部分状态是可以分享。常见做法是把它们放在外部数据结构，当需要使用时再将它们传递给享元。
+public static void main(String[] args) { String str1 = &amp;#34;abcdefg&amp;#34;; String str2 = &amp;#34;abcd&amp;#34;; } // 优化 public static void main(String[] args) { String tempo1 = &amp;#34;efg&amp;#34;; String str2 = &amp;#34;abcd&amp;#34;; System.out.println(&amp;#34;str1 = &amp;#34;+str2+tempo1); } 我们可以将那些重复出现的内容作为共享部分取出，这样当我们拥有大量对象时，我们把其中共同的部分抽取出来，由于提取的部分是多个对象共享只有一份，那么就可以减轻内存的压力。
+比如现在我们有两个服务，但是他们都需要使用数据库工具类来操作，实际上这个工具类没必要创建多个，我们这时就可以使用享元模式，让数据库工具类作为享元类，通过享元工厂来提供一个共享的数据库工具类：
+public class DBUtil { public void selectDB(){ System.out.println(&amp;#34;我是数据库操作...&amp;#34;); } } public class DBUtilFactory { private static final DBUtil UTIL = new DBUtil(); //享元对象被存放在工厂中 public static DBUtil getFlyweight(){ //获取享元对象 return UTIL; } } 最后当我们需要使用享元对象时，直接找享元工厂要就行了：</description>
+    </item>
+    
+    <item>
       <title>结构型-代理模式</title>
       <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F/</link>
       <pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate>
@@ -164,6 +177,18 @@ public class PrizeController{ public AwardRes awardToUser(AwardReq req){ if(req.
       
       <guid>https://zhengbledor.github.io/about/</guid>
       <description>郑布利多的博客，平时记载一点技术、生活的文章(万一哪天被裁了)</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/</guid>
+      <description> 结构型-外观模式 Link to heading 外观模式充分体现了迪米特法则。可能我们的整个项目有很多个子系统，但是我们可以在这些子系统的上面加一个门面（Facade）当我们外部需要与各个子系统交互时，无需再去直接使用各个子系统，而是与门面进行交互，再由门面与后面的各个子系统操作，这样，我们以后需要办什么事情，就统一找门面就行了。这样的好处是，首先肯定方便了代码的编写，统一找门面就行，不需要去详细了解子系统，并且，当子系统需要修改时，也只需要修改门面中的逻辑，不需要大面积的变动，遵循迪米特法则尽可能少的交互。
+比如现在我们设计了三个子系统，分别是排队、结婚、领证，正常情况下我们是需要分别去找这三个部门去完成的，但是现在我们通过门面统一来完成：
+public class SubSystemA { public void test1(){ System.out.println(&amp;#34;排队&amp;#34;); } } public class SubSystemB { public void test2(){ System.out.println(&amp;#34;结婚&amp;#34;); } } public class SubSystemC { public void test3(){ System.out.println(&amp;#34;领证&amp;#34;); } } 现在三个系统太复杂了，我们添加一个门面：
+public class Facade { SubSystemA a = new SubSystemA(); SubSystemB b = new SubSystemB(); SubSystemC c = new SubSystemC(); public void marry(){ //红白喜事一条龙服务 a.test1(); b.test2(); c.test3(); } } </description>
     </item>
     
     <item>
