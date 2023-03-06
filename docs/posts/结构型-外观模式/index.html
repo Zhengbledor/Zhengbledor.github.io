@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <title>
-   · Zhengbledor
+  结构型-外观模式 · Zhengbledor
 </title>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,21 +19,21 @@ public class Facade { SubSystemA a = new SubSystemA(); SubSystemB b = new SubSys
 <meta name="keywords" content="blog">
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
+<meta name="twitter:title" content="结构型-外观模式"/>
 <meta name="twitter:description" content=" 结构型-外观模式 Link to heading 外观模式充分体现了迪米特法则。可能我们的整个项目有很多个子系统，但是我们可以在这些子系统的上面加一个门面（Facade）当我们外部需要与各个子系统交互时，无需再去直接使用各个子系统，而是与门面进行交互，再由门面与后面的各个子系统操作，这样，我们以后需要办什么事情，就统一找门面就行了。这样的好处是，首先肯定方便了代码的编写，统一找门面就行，不需要去详细了解子系统，并且，当子系统需要修改时，也只需要修改门面中的逻辑，不需要大面积的变动，遵循迪米特法则尽可能少的交互。
 比如现在我们设计了三个子系统，分别是排队、结婚、领证，正常情况下我们是需要分别去找这三个部门去完成的，但是现在我们通过门面统一来完成：
 public class SubSystemA { public void test1(){ System.out.println(&#34;排队&#34;); } } public class SubSystemB { public void test2(){ System.out.println(&#34;结婚&#34;); } } public class SubSystemC { public void test3(){ System.out.println(&#34;领证&#34;); } } 现在三个系统太复杂了，我们添加一个门面：
 public class Facade { SubSystemA a = new SubSystemA(); SubSystemB b = new SubSystemB(); SubSystemC c = new SubSystemC(); public void marry(){ //红白喜事一条龙服务 a.test1(); b.test2(); c.test3(); } } "/>
 
-<meta property="og:title" content="" />
+<meta property="og:title" content="结构型-外观模式" />
 <meta property="og:description" content=" 结构型-外观模式 Link to heading 外观模式充分体现了迪米特法则。可能我们的整个项目有很多个子系统，但是我们可以在这些子系统的上面加一个门面（Facade）当我们外部需要与各个子系统交互时，无需再去直接使用各个子系统，而是与门面进行交互，再由门面与后面的各个子系统操作，这样，我们以后需要办什么事情，就统一找门面就行了。这样的好处是，首先肯定方便了代码的编写，统一找门面就行，不需要去详细了解子系统，并且，当子系统需要修改时，也只需要修改门面中的逻辑，不需要大面积的变动，遵循迪米特法则尽可能少的交互。
 比如现在我们设计了三个子系统，分别是排队、结婚、领证，正常情况下我们是需要分别去找这三个部门去完成的，但是现在我们通过门面统一来完成：
 public class SubSystemA { public void test1(){ System.out.println(&#34;排队&#34;); } } public class SubSystemB { public void test2(){ System.out.println(&#34;结婚&#34;); } } public class SubSystemC { public void test3(){ System.out.println(&#34;领证&#34;); } } 现在三个系统太复杂了，我们添加一个门面：
 public class Facade { SubSystemA a = new SubSystemA(); SubSystemB b = new SubSystemB(); SubSystemC c = new SubSystemC(); public void marry(){ //红白喜事一条龙服务 a.test1(); b.test2(); c.test3(); } } " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/" /><meta property="article:section" content="posts" />
-
-
+<meta property="article:published_time" content="2023-03-02T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-02T00:00:00+00:00" />
 
 
 
@@ -142,7 +142,7 @@ public class Facade { SubSystemA a = new SubSystemA(); SubSystemB b = new SubSys
         <div class="post-title">
           <h1 class="title">
             <a class="title-link" href="https://zhengbledor.github.io/posts/%E7%BB%93%E6%9E%84%E5%9E%8B-%E5%A4%96%E8%A7%82%E6%A8%A1%E5%BC%8F/">
-              
+              结构型-外观模式
             </a>
           </h1>
         </div>
@@ -150,8 +150,8 @@ public class Facade { SubSystemA a = new SubSystemA(); SubSystemB b = new SubSys
           <div class="date">
             <span class="posted-on">
               <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="0001-01-01T00:00:00Z">
-                January 1, 0001
+              <time datetime="2023-03-02T00:00:00Z">
+                March 2, 2023
               </time>
             </span>
             <span class="reading-time">
