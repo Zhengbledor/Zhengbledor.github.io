@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Kotlin编程实战-阅读记录 · Zhengbledor
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Zhengbledor">
+<meta name="description" content="Kotlin编程实战 Link to heading 第2章 从Java角度了解Kotlin的基本知识 Link to heading 2.1 减少输入 Link to heading 分号是可选的
+变量类型规范是可选的
+类和函数是可选的
+函数可以在类外面执行
+下面的脚本包含一个不属于任何类的函数和一些不属于任何函数的独立代码。
+kotlin/standalone.kts
+fun nofluff(){ println(&#34;nofluff called&#34;) throw RuntimeException(&#34;oops&#34;) } println(&#34;no in a function, calling nofluff()&#34;) try{ nofluff() }catch(ex: Exception){ val stackTrace = ex.getStackTrace() println(stackTrace[0]) println(stackTrace[1]) } // 打印结果 no in a function, calling nofluff() nofluff called.. Standalone.nofluff(...) Standalone.&lt;init&gt;(...) Kotlin悄悄将函数nofluff()转换成一个名为Standalone的合成类的方法（通过文件名推断出的名称）
+将独立代码转换为类的构造函数，输出了&lt;init&gt;
+try-catch是可选的
+2.2 合理的警告 Link to heading 2.3 选择val而不是var Link to heading 2.">
+<meta name="keywords" content="blog">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kotlin编程实战-阅读记录"/>
+<meta name="twitter:description" content="Kotlin编程实战 Link to heading 第2章 从Java角度了解Kotlin的基本知识 Link to heading 2.1 减少输入 Link to heading 分号是可选的
+变量类型规范是可选的
+类和函数是可选的
+函数可以在类外面执行
+下面的脚本包含一个不属于任何类的函数和一些不属于任何函数的独立代码。
+kotlin/standalone.kts
+fun nofluff(){ println(&#34;nofluff called&#34;) throw RuntimeException(&#34;oops&#34;) } println(&#34;no in a function, calling nofluff()&#34;) try{ nofluff() }catch(ex: Exception){ val stackTrace = ex.getStackTrace() println(stackTrace[0]) println(stackTrace[1]) } // 打印结果 no in a function, calling nofluff() nofluff called.. Standalone.nofluff(...) Standalone.&lt;init&gt;(...) Kotlin悄悄将函数nofluff()转换成一个名为Standalone的合成类的方法（通过文件名推断出的名称）
+将独立代码转换为类的构造函数，输出了&lt;init&gt;
+try-catch是可选的
+2.2 合理的警告 Link to heading 2.3 选择val而不是var Link to heading 2."/>
+
+<meta property="og:title" content="Kotlin编程实战-阅读记录" />
+<meta property="og:description" content="Kotlin编程实战 Link to heading 第2章 从Java角度了解Kotlin的基本知识 Link to heading 2.1 减少输入 Link to heading 分号是可选的
+变量类型规范是可选的
+类和函数是可选的
+函数可以在类外面执行
+下面的脚本包含一个不属于任何类的函数和一些不属于任何函数的独立代码。
+kotlin/standalone.kts
+fun nofluff(){ println(&#34;nofluff called&#34;) throw RuntimeException(&#34;oops&#34;) } println(&#34;no in a function, calling nofluff()&#34;) try{ nofluff() }catch(ex: Exception){ val stackTrace = ex.getStackTrace() println(stackTrace[0]) println(stackTrace[1]) } // 打印结果 no in a function, calling nofluff() nofluff called.. Standalone.nofluff(...) Standalone.&lt;init&gt;(...) Kotlin悄悄将函数nofluff()转换成一个名为Standalone的合成类的方法（通过文件名推断出的名称）
+将独立代码转换为类的构造函数，输出了&lt;init&gt;
+try-catch是可选的
+2.2 合理的警告 Link to heading 2.3 选择val而不是var Link to heading 2." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-06T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-06T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.01bd429dda63a16d76996eaf0b8da061429b76e714515cb1b246aac7fe7f4b2a.css" integrity="sha256-Ab1CndpjoW12mW6vC42gYUKbducUUVyxskaqx/5/Syo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Zhengbledor
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/">
+              Kotlin编程实战-阅读记录
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-06T00:00:00Z">
+                March 6, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="kotlin编程实战">
+  Kotlin编程实战
+  <a class="heading-link" href="#kotlin%e7%bc%96%e7%a8%8b%e5%ae%9e%e6%88%98">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="第2章-从java角度了解kotlin的基本知识">
+  第2章 从Java角度了解Kotlin的基本知识
+  <a class="heading-link" href="#%e7%ac%ac2%e7%ab%a0-%e4%bb%8ejava%e8%a7%92%e5%ba%a6%e4%ba%86%e8%a7%a3kotlin%e7%9a%84%e5%9f%ba%e6%9c%ac%e7%9f%a5%e8%af%86">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="21-减少输入">
+  2.1 减少输入
+  <a class="heading-link" href="#21-%e5%87%8f%e5%b0%91%e8%be%93%e5%85%a5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>分号是可选的</p>
+</li>
+<li>
+<p>变量类型规范是可选的</p>
+</li>
+<li>
+<p>类和函数是可选的</p>
+<p>函数可以在类外面执行</p>
+<p><strong>下面的脚本包含一个不属于任何类的函数和一些不属于任何函数的独立代码。</strong></p>
+<p><code>kotlin/standalone.kts</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">nofluff</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;nofluff called&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">throw</span> <span style="color:#c1abea">RuntimeException</span>(<span style="color:#63c381">&#34;oops&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;no in a function, calling nofluff()&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">try</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">nofluff</span>()
+</span></span><span style="display:flex;"><span>}<span style="color:#c678dd">catch</span>(<span style="color:#c1abea">ex</span>: <span style="color:#c1abea">Exception</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">stackTrace</span> = <span style="color:#c1abea">ex</span>.<span style="color:#c1abea">getStackTrace</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#c1abea">stackTrace</span>[<span style="color:#d19a66">0</span>])
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#c1abea">stackTrace</span>[<span style="color:#d19a66">1</span>])
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 打印结果
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">no</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">a</span> <span style="color:#c1abea">function</span>, <span style="color:#c1abea">calling</span> <span style="color:#c1abea">nofluff</span>()
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">nofluff</span> <span style="color:#c1abea">called</span><span style="color:#c7bf54">..</span>
+</span></span><span style="display:flex;"><span><span style="color:#76a9f9">Standalone</span>.<span style="color:#c1abea">nofluff</span>(<span style="color:#c7bf54">..</span>.)
+</span></span><span style="display:flex;"><span><span style="color:#76a9f9">Standalone</span>.&lt;<span style="color:#c678dd">init</span>&gt;(<span style="color:#c7bf54">..</span>.)
+</span></span></code></pre></div><p>Kotlin悄悄将函数nofluff()转换成一个名为Standalone的合成类的方法（通过文件名推断出的名称）</p>
+<p>将独立代码转换为类的构造函数，输出了<code>&lt;init&gt;</code></p>
+</li>
+<li>
+<p>try-catch是可选的</p>
+</li>
+</ul>
+<h3 id="22-合理的警告">
+  2.2 合理的警告
+  <a class="heading-link" href="#22-%e5%90%88%e7%90%86%e7%9a%84%e8%ad%a6%e5%91%8a">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h3 id="23-选择val而不是var">
+  2.3 选择val而不是var
+  <a class="heading-link" href="#23-%e9%80%89%e6%8b%a9val%e8%80%8c%e4%b8%8d%e6%98%afvar">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h3 id="24-改进的相等性检查">
+  2.4 改进的相等性检查
+  <a class="heading-link" href="#24-%e6%94%b9%e8%bf%9b%e7%9a%84%e7%9b%b8%e7%ad%89%e6%80%a7%e6%a3%80%e6%9f%a5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Java中的equals()，或者Kotlin中的==运算符，是值的比较，称为结构相等。</p>
+<p>Java中的==运算符，或者Kotlin中的===，是引用的比较。</p>
+<h3 id="25-字符串模板">
+  2.5 字符串模板
+  <a class="heading-link" href="#25-%e5%ad%97%e7%ac%a6%e4%b8%b2%e6%a8%a1%e6%9d%bf">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><code>val message = &quot;The factor is $factor&quot;</code></p>
+<h3 id="26-原始字符串">
+  2.6 原始字符串
+  <a class="heading-link" href="#26-%e5%8e%9f%e5%a7%8b%e5%ad%97%e7%ac%a6%e4%b8%b2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 通过三个双引号来实现原始字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">escaped</span> = <span style="color:#63c381">&#34;The kid asked, </span><span style="color:#d26464;font-weight:bold">\&#34;</span><span style="color:#63c381">How&#39;s it going, </span><span style="color:#98c379">$name</span><span style="color:#63c381">?</span><span style="color:#d26464;font-weight:bold">\&#34;</span><span style="color:#63c381">&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">raw</span> = <span style="color:#98c379">&#34;&#34;&#34;The kid asked, &#34;How&#39;s it going, </span><span style="color:#98c379">$name</span><span style="color:#98c379">&#34;&#34;&#34;</span><span style="color:#63c381">&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 通过三个双引号实现多行字符串
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// one （缩进也会同时打印出来）
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">memo</span> = <span style="color:#98c379">&#34;&#34;&#34;Dear </span><span style="color:#98c379">$name</span><span style="color:#98c379">,
+</span></span></span><span style="display:flex;"><span><span style="color:#98c379">							How it going.
+</span></span></span><span style="display:flex;"><span><span style="color:#98c379">							I am missing you.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// two
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">memo</span> = <span style="color:#98c379">&#34;&#34;&#34;Dear </span><span style="color:#98c379">$name</span><span style="color:#98c379">,
+</span></span></span><span style="display:flex;"><span><span style="color:#98c379">							|How it going.
+</span></span></span><span style="display:flex;"><span><span style="color:#98c379">							|I am missing you.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">memo</span>.<span style="color:#c1abea">traimMargin</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// three
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">memo</span> = <span style="color:#98c379">&#34;&#34;&#34;Dear </span><span style="color:#98c379">$name</span><span style="color:#98c379">,
+</span></span></span><span style="display:flex;"><span><span style="color:#98c379">							~How it going.
+</span></span></span><span style="display:flex;"><span><span style="color:#98c379">							~I am missing you.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">memo</span>.<span style="color:#c1abea">traimMargin</span>(<span style="color:#63c381">&#34;~&#34;</span>)
+</span></span></code></pre></div><h3 id="27-更多表达式">
+  2.7 更多表达式
+  <a class="heading-link" href="#27-%e6%9b%b4%e5%a4%9a%e8%a1%a8%e8%be%be%e5%bc%8f">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h2 id="第3章-使用函数">
+  第3章 使用函数
+  <a class="heading-link" href="#%e7%ac%ac3%e7%ab%a0-%e4%bd%bf%e7%94%a8%e5%87%bd%e6%95%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Java中，类是最小的可重用的部分。Kotlin采用一种非常实用的方法来创建高质量的代码——在合适 的地方，创建小且简单的独立函数，并在必要时将代码放入类的方法 中。</p>
+<h3 id="31-创建函数">
+  3.1 创建函数
+  <a class="heading-link" href="#31-%e5%88%9b%e5%bb%ba%e5%87%bd%e6%95%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>KISS函数</p>
+<p>Kotlin遵循“保持简单和愚蠢”的KISS(Keep it simple, stupid.)原则来定义函数。小函数应该写起来简单，不混乱，没有小 错误。</p>
+</li>
+<li>
+<p>返回类型和类型推断</p>
+<p>在写没有非块体的函数时，可以不声明返回值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">greet</span>() = <span style="color:#63c381">&#34;Hello&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>所有的函数都是表达式</p>
+<p>Kotlin使用一种称为Unit的特殊类型，其对应于Java的void类 型。Unit这个名字来自类型理论，它表示一个不包含任何信息的单 例。你可以始终使用Unit来指定不返回任何有用的内容。此外，如果 函数没有返回任何内容，Kotlin将把类型推断为Unit。</p>
+</li>
+<li>
+<p>定义参数</p>
+<p>形式 <code>candidate : Type</code></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">greet</span>(<span style="color:#c1abea">name</span>: <span style="color:#c1abea">String</span>): <span style="color:#c1abea">String</span> = <span style="color:#63c381">&#34;Hello </span><span style="color:#98c379">$name</span><span style="color:#63c381">&#34;</span>
+</span></span></code></pre></div><p>在函数或方法中更改参数值的任何努力都将导致编译错误。</p>
+</li>
+<li>
+<p>带有块体的函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">max</span>(<span style="color:#c1abea">numbers</span>: <span style="color:#c1abea">IntArray</span>): <span style="color:#c1abea">Int</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">var</span> <span style="color:#cebc3a">large</span> = <span style="color:#76a9f9">Int</span>.<span style="color:#c1abea">MIN_VALUE</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">for</span>(<span style="color:#c1abea">number</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">numbers</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">large</span> = <span style="color:#c678dd">if</span>(<span style="color:#c1abea">number</span> &gt; <span style="color:#c1abea">large</span>) <span style="color:#c1abea">number</span> <span style="color:#c678dd">else</span> <span style="color:#c1abea">large</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">return</span> <span style="color:#c1abea">large</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>需要注意的一点是，不要使用后面跟着块体{}的=。如果显式地指定返回类型，并在其后面加上=，然后是块体，编译器将会报错。</p>
+<p>如果省略了返回类型，但使用了=，然后是一个块体而不是单表达式。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#c1abea">fun</span> <span style="color:#00b1f7">notReally</span><span style="color:#c7bf54">()={</span><span style="color:#d19a66">2</span><span style="color:#c7bf54">}</span>
+</span></span></code></pre></div><p>Kotlin不会通过进入代码块来推断返回类型。但是，它将假设整 个块是一个lambda表达式或一个匿名函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">f1</span>() = <span style="color:#d19a66">2</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">f2</span>() = {<span style="color:#d19a66">2</span>}
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">f3</span>(<span style="color:#c1abea">factor</span>: <span style="color:#c1abea">Int</span>) = {<span style="color:#c1abea">n</span>:<span style="color:#c1abea">Int</span> <span style="color:#c7bf54">-&gt;</span> <span style="color:#c1abea">n</span> * <span style="color:#c1abea">factor</span> }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">printfln</span>(<span style="color:#c1abea">f1</span>())  <span style="color:#8a93a5;font-style:italic">//2
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">printfln</span>(<span style="color:#c1abea">f2</span>())  <span style="color:#8a93a5;font-style:italic">//-&gt;Kotlin.Int
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">printfln</span>(<span style="color:#c1abea">f2</span>()()) <span style="color:#8a93a5;font-style:italic">//2
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">printfln</span>(<span style="color:#c1abea">f3</span>(<span style="color:#d19a66">2</span>))  <span style="color:#8a93a5;font-style:italic">//(Kotlin.Int) -&gt; Kotlin.Int
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">printfln</span>(<span style="color:#c1abea">f3</span>(<span style="color:#d19a66">2</span>)(<span style="color:#d19a66">3</span>)) <span style="color:#8a93a5;font-style:italic">//6
+</span></span></span></code></pre></div></li>
+</ul>
+<h3 id="32-默认参数和命名参数">
+  3.2 默认参数和命名参数
+  <a class="heading-link" href="#32-%e9%bb%98%e8%ae%a4%e5%8f%82%e6%95%b0%e5%92%8c%e5%91%bd%e5%90%8d%e5%8f%82%e6%95%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>演化带有默认参数的函数</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">greet</span>(<span style="color:#c1abea">name</span>: <span style="color:#c1abea">String</span>, <span style="color:#c1abea">msg</span>: <span style="color:#c1abea">String</span> = <span style="color:#63c381">&#34;Hello&#34;</span>): <span style="color:#c1abea">String</span> = <span style="color:#63c381">&#34;</span><span style="color:#98c379">$msg</span><span style="color:#63c381"> </span><span style="color:#98c379">$name</span><span style="color:#63c381">&#34;</span>
+</span></span></code></pre></div><p>具有默认参数的参数放置在常规参数(即没有默认参数的参数)之后。</p>
+<p>默认参数不必是字面量，它可以是表达式。另外，可以使用参数
+左边的参数计算参数的默认参数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">greet</span>(<span style="color:#c1abea">name</span>: <span style="color:#c1abea">String</span>, <span style="color:#c1abea">msg</span>: <span style="color:#c1abea">String</span> = <span style="color:#63c381">&#34;Hi </span><span style="color:#98c379">${name.length}</span><span style="color:#63c381">&#34;</span>) = <span style="color:#63c381">&#34;</span><span style="color:#98c379">$msg</span><span style="color:#63c381"> </span><span style="color:#98c379">$name</span><span style="color:#63c381">&#34;</span>
+</span></span></code></pre></div></li>
+<li>
+<p>使用命名参数提高可读性</p>
+</li>
+</ul>
+<h3 id="33-vararg和spread">
+  3.3 Vararg和Spread
+  <a class="heading-link" href="#33-vararg%e5%92%8cspread">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>像println()这样的函数接受可变数量的参数。Kotlin的vararg特 性提供了一种类型安全的方法来创建可以接收可变数量参数的函数。 spread(伸展)运算符用于将集合中的值展开或扩展为离散参数。</p>
+<ul>
+<li>
+<p>vararg</p>
+<p>在Kotlin中，函数可以接受可变数量的实参。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">max</span>(<span style="color:#c678dd">vararg</span> <span style="color:#c1abea">numbers</span>: <span style="color:#c1abea">Int</span>):<span style="color:#c1abea">Int</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">var</span> <span style="color:#cebc3a">large</span> = <span style="color:#76a9f9">Int</span>.<span style="color:#c1abea">MIN_VALUE</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">for</span>(<span style="color:#c1abea">number</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">numbers</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">large</span> = <span style="color:#c678dd">if</span>(<span style="color:#c1abea">number</span> &gt; <span style="color:#c1abea">large</span>) <span style="color:#c1abea">number</span> <span style="color:#c678dd">else</span> <span style="color:#c1abea">large</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">return</span> <span style="color:#c1abea">large</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>但是当一个函数同时接受多个参数 时，你可以使用vararg。但是只有一个参数可以注释为vararg。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">greetMany</span>(<span style="color:#c1abea">msg</span>: <span style="color:#c1abea">String</span>, <span style="color:#c678dd">vararg</span> <span style="color:#c1abea">names</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$msg</span><span style="color:#63c381"> </span><span style="color:#98c379">${names.joinToString(&#34;,&#34;)}</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>vararg参数不必是末尾的参数，但是我强烈建议要这样做。</p>
+</li>
+<li>
+<p>spread运算符 *</p>
+<p>有时我们可能希望将数组或列表中的值 传递给具有vararg的函数。即使函数可以接受可变数量的参数，也不 能直接发送数组或列表。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">values</span> = <span style="color:#c1abea">intArrayOf</span>(<span style="color:#d19a66">1</span>,<span style="color:#d19a66">2</span>,<span style="color:#d19a66">3</span>)
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">max</span>(<span style="color:#c1abea">values</span>)) <span style="color:#8a93a5;font-style:italic">// ERROR!!!
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">max</span>(*<span style="color:#c1abea">values</span>)) <span style="color:#8a93a5;font-style:italic">// 3
+</span></span></span></code></pre></div><p>通过在参数前面放置一个*，要求Kotlin将该数组中的 值作为vararg参数的离散值来展开。不需要编写冗长的代码，vararg 与spread的结合很和谐。</p>
+</li>
+</ul>
+<h3 id="34-解耦">
+  3.4 解耦
+  <a class="heading-link" href="#34-%e8%a7%a3%e8%80%a6">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">getFullName</span>() = <span style="color:#c1abea">Triple</span>(<span style="color:#63c381">&#34;A&#34;</span>,<span style="color:#63c381">&#34;B&#34;</span>,<span style="color:#63c381">&#34;C&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// BAD
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">result</span> = <span style="color:#c1abea">getFullName</span>()
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">first</span> = <span style="color:#c1abea">result</span>.<span style="color:#c1abea">first</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">middle</span> = <span style="color:#c1abea">result</span>.<span style="color:#c1abea">second</span>;
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">last</span> = <span style="color:#c1abea">result</span>.<span style="color:#c1abea">third</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// GOOD
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> (<span style="color:#cebc3a">first</span>, <span style="color:#c1abea">middle</span>, <span style="color:#c1abea">last</span>) = <span style="color:#c1abea">getFullName</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$first</span><span style="color:#63c381"> </span><span style="color:#98c379">$middle</span><span style="color:#63c381"> </span><span style="color:#98c379">$last</span><span style="color:#63c381">&#34;</span>) <span style="color:#8a93a5;font-style:italic">//&#34;A B C&#34;
+</span></span></span></code></pre></div><p>getFullName()函数似乎突然返 回了多个值——这是一种错觉。因为Triple类有专 门的方法来帮助进行解构.</p>
+<p>假设我们不关心返回对象的某个属性。例如，如果我们不想要中 间的名字，可以使用下划线(_)来跳过它。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> (<span style="color:#cebc3a">first</span>, <span style="color:#c1abea">_</span>, <span style="color:#c1abea">last</span>) = <span style="color:#c1abea">getFullName</span>()
+</span></span></code></pre></div><h2 id="第4章-外部迭代和参数匹配">
+  第4章 外部迭代和参数匹配
+  <a class="heading-link" href="#%e7%ac%ac4%e7%ab%a0-%e5%a4%96%e9%83%a8%e8%bf%ad%e4%bb%a3%e5%92%8c%e5%8f%82%e6%95%b0%e5%8c%b9%e9%85%8d">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Kotlin提供了用于命令式编程风格的外部迭代器和用于函数式编 程风格的内部迭代器。对于外部迭代，作为程序员，你可以显式地控 制迭代的顺序。内部迭代负责排序，让程序 员专注于每个迭代的操作或计算，从而减少代码和错误。</p>
+<h3 id="41-迭代与范围">
+  4.1 迭代与范围
+  <a class="heading-link" href="#41-%e8%bf%ad%e4%bb%a3%e4%b8%8e%e8%8c%83%e5%9b%b4">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>范围类</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">oneToFive</span>: <span style="color:#c1abea">IntRange</span> = <span style="color:#d19a66">1.</span>.<span style="color:#d19a66">5</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">aToE</span>: <span style="color:#c1abea">CharRange</span> = <span style="color:#98c379">&#39;a&#39;</span><span style="color:#c7bf54">..</span><span style="color:#98c379">&#39;e&#39;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">seekHelp</span>: <span style="color:#c1abea">CloaseRange</span>&lt;<span style="color:#c1abea">String</span>&gt; = <span style="color:#63c381">&#34;hell&#34;</span><span style="color:#c7bf54">..</span><span style="color:#63c381">&#34;help&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">seekHelp</span>.<span style="color:#c1abea">contains</span>(<span style="color:#63c381">&#34;helm&#34;</span>))<span style="color:#8a93a5;font-style:italic">//false
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">seekHelp</span>.<span style="color:#c1abea">contains</span>(<span style="color:#63c381">&#34;helq&#34;</span>))<span style="color:#8a93a5;font-style:italic">//true
+</span></span></span></code></pre></div></li>
+<li>
+<p>正向迭代</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">i</span> <span style="color:#c678dd">in</span> <span style="color:#d19a66">1.</span>.<span style="color:#d19a66">5</span>){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$i</span><span style="color:#63c381">&#34;</span>)} <span style="color:#8a93a5;font-style:italic">//12345
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">ch</span> <span style="color:#c678dd">in</span> <span style="color:#98c379">&#39;a&#39;</span><span style="color:#c7bf54">..</span><span style="color:#98c379">&#39;e&#39;</span>){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$ch</span><span style="color:#63c381">&#34;</span>)}<span style="color:#8a93a5;font-style:italic">//abcde
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">word</span> <span style="color:#c678dd">in</span> <span style="color:#63c381">&#34;hell&#34;</span><span style="color:#c7bf54">..</span><span style="color:#63c381">&#34;help&#34;</span>){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$word</span><span style="color:#63c381">&#34;</span>)}<span style="color:#8a93a5;font-style:italic">// ERROR!
+</span></span></span></code></pre></div><p>失败的原因是，虽然像IntRange和CharRange这样的类有 iterator()函数/运算符，而它们的基类ClosedRange<!-- raw HTML omitted -->没有。</p>
+</li>
+<li>
+<p>反向迭代</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">i</span> <span style="color:#c678dd">in</span> <span style="color:#d19a66">5.</span><span style="color:#c1abea">downTo</span>(<span style="color:#d19a66">1</span>)){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$i</span><span style="color:#63c381">&#34;</span>)}<span style="color:#8a93a5;font-style:italic">//54321
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">i</span> <span style="color:#c678dd">in</span> <span style="color:#d19a66">5</span> <span style="color:#c1abea">downTo</span> <span style="color:#d19a66">1</span>){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$i</span><span style="color:#63c381">&#34;</span>)}<span style="color:#8a93a5;font-style:italic">//54321
+</span></span></span></code></pre></div></li>
+<li>
+<p>跳过范围值的内容</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">i</span> <span style="color:#c678dd">in</span> <span style="color:#d19a66">1</span> <span style="color:#c1abea">until</span> <span style="color:#d19a66">5</span>){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$i</span><span style="color:#63c381">&#34;</span>)}<span style="color:#8a93a5;font-style:italic">//1234
+</span></span></span></code></pre></div><p>使用until()创建的迭代不包括最后一个值5，而我们之前使用.. 创建的范围会包括。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">i</span> <span style="color:#c678dd">in</span> <span style="color:#d19a66">1</span> <span style="color:#c1abea">until</span> <span style="color:#d19a66">10</span> <span style="color:#c1abea">step</span> <span style="color:#d19a66">3</span>){<span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$i</span><span style="color:#63c381">&#34;</span>)}<span style="color:#8a93a5;font-style:italic">//147
+</span></span></span></code></pre></div><p>step()方法将使用..、until、downTo等创建的IntRange或 IntProgression转换为跳过某些值的IntProgression。让我们使用 step()来反向迭代，同时跳过一些值:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">i</span> <span style="color:#c678dd">in</span> (<span style="color:#d19a66">1.</span>.<span style="color:#d19a66">9</span>).<span style="color:#c1abea">filter</span>{ <span style="color:#c678dd">it</span> % <span style="color:#d19a66">3</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">0</span> <span style="color:#c7bf54">||</span> <span style="color:#c678dd">it</span> % <span style="color:#d19a66">5</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">0</span>}){
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">print</span>(<span style="color:#63c381">&#34;%i&#34;</span>)
+</span></span><span style="display:flex;"><span>}<span style="color:#8a93a5;font-style:italic">// 3569
+</span></span></span></code></pre></div><p>filter()方法接受一个断言(一个lambda表达式)作为参数。</p>
+</li>
+</ul>
+<h3 id="42-遍历数组和列表">
+  4.2 遍历数组和列表
+  <a class="heading-link" href="#42-%e9%81%8d%e5%8e%86%e6%95%b0%e7%bb%84%e5%92%8c%e5%88%97%e8%a1%a8">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">e</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">array</span>){
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">for</span>(<span style="color:#c1abea">index</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">array</span>.<span style="color:#c1abea">indicaes</span>){
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">for</span>((<span style="color:#c1abea">index</span>, <span style="color:#c1abea">e</span>) <span style="color:#c678dd">in</span> <span style="color:#c1abea">array</span>.<span style="color:#c1abea">withIndex</span>()){
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="43-when">
+  4.3 when
+  <a class="heading-link" href="#43-when">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">isAlive</span>(<span style="color:#c1abea">alive</span>: <span style="color:#c1abea">Boolean</span>, <span style="color:#c1abea">number</span>:<span style="color:#c1abea">Int</span>) = <span style="color:#c678dd">when</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">number</span> &lt; <span style="color:#d19a66">2</span> <span style="color:#c7bf54">-&gt;</span><span style="color:#c678dd">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">number</span> &gt;<span style="color:#d19a66">3</span> <span style="color:#c7bf54">-&gt;</span><span style="color:#c678dd">false</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">number</span> <span style="color:#c7bf54">==</span><span style="color:#d19a66">3</span> <span style="color:#c7bf54">-&gt;</span><span style="color:#c678dd">true</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">else</span> <span style="color:#c7bf54">-&gt;</span> <span style="color:#c1abea">alive</span> <span style="color:#c7bf54">&amp;&amp;</span> <span style="color:#c1abea">number</span> <span style="color:#c7bf54">==</span> <span style="color:#d19a66">2</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h2 id="第5章-使用集合">
+  第5章 使用集合
+  <a class="heading-link" href="#%e7%ac%ac5%e7%ab%a0-%e4%bd%bf%e7%94%a8%e9%9b%86%e5%90%88">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="51-集合的类型">
+  5.1 集合的类型
+  <a class="heading-link" href="#51-%e9%9b%86%e5%90%88%e7%9a%84%e7%b1%bb%e5%9e%8b">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Pair</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#63c381">&#34;abc&#34;</span> <span style="color:#c1abea">to</span> <span style="color:#63c381">&#34;cde&#34;</span> <span style="color:#8a93a5;font-style:italic">// Pair(&#34;abc&#34;,&#34;cde&#34;)
+</span></span></span></code></pre></div></li>
+<li>
+<p>Triple</p>
+</li>
+<li>
+<p>Array</p>
+<p><code>Array&lt;T&gt;</code>类在Kotlin中表示一个值数组。创建数组的最简单的方法是使用顶级函数arrayOf()。一旦创建了 数组，就可以使用index[]运算符来访问元素。</p>
+<p>对象的类型是 <code>Kotlin.Array</code>，即<code>Array&lt;T&gt;</code>，但在JVM上运行时，底层的实际类型是一 个Java字符串数组。</p>
+<p>在创建数组时，不必将值写死，如果愿意，还可以计算值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">Array</span>(<span style="color:#d19a66">5</span>){<span style="color:#c1abea">i</span> <span style="color:#c7bf54">-&gt;</span> (<span style="color:#c1abea">i</span>+<span style="color:#d19a66">1</span>)*(<span style="color:#c1abea">i</span>+<span style="color:#d19a66">1</span>)}.<span style="color:#c1abea">sum</span>) <span style="color:#8a93a5;font-style:italic">//55
+</span></span></span></code></pre></div></li>
+<li>
+<p>List</p>
+<p>作为创建列表的第一步，Kotlin希望你声明意图——不可变的或 可变的。要创建一个不可变列表，需要使用listOf()，不可变是隐含 的，当有选择的时候，这也是我们的首选。但是如果你真的需要创建 一个可变列表，那么使用mutableListOf()。</p>
+</li>
+<li>
+<p>Set</p>
+<p>Set是元素的无序集合。</p>
+<p>可以使用<code>setOf()</code>创建<code>Set&lt;T&gt;</code>的实例，或 者使用<code>mutableSetOf()</code>创建<code>MutableSet&lt;T&gt;</code>的实例。你还可以使用<code> hashSetOf()</code>来获取<code>LinkedHashSet</code>的类型<code>java.util.HashSet&lt;T&gt;: linkedSetOf()</code>的引用和<code>TreeSet&lt;T&gt;</code>的<code>sortedSetOf()</code>引用。</p>
+</li>
+<li>
+<p>Map</p>
+<p>映射保存键–值对的集合。</p>
+<p>你可以使用<code>mapOf()</code>创建映射并获取对只读接口<code>Map&lt;K, V&gt;</code>的引 用。或者，使用<code>mutableMapOf()</code>访问<code>MutableMap&lt;K, V&gt;</code>。另外，你可 以使用<code>hashMapOf()</code>获得对JDK <code>HashMap</code>的引用，使用<code>linkedMapOf()</code>获 得对<code>LinkedHashMap</code>的引用，使用<code>sortedMapOf()</code>获得对<code>SortedMap</code>的引 用。</p>
+</li>
+</ul>
+<h2 id="第6章-使用类型安全性解决问题">
+  第6章 使用类型安全性解决问题
+  <a class="heading-link" href="#%e7%ac%ac6%e7%ab%a0-%e4%bd%bf%e7%94%a8%e7%b1%bb%e5%9e%8b%e5%ae%89%e5%85%a8%e6%80%a7%e8%a7%a3%e5%86%b3%e9%97%ae%e9%a2%98">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="61-any和nothing">
+  6.1 Any和Nothing
+  <a class="heading-link" href="#61-any%e5%92%8cnothing">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>Any是基类</p>
+<p>Kotlin中所有的类都继承自Any</p>
+</li>
+<li>
+<p>Nothing</p>
+<p>在Java等语言中，我们使用void表示方法不返回任何东西。但是 在Kotlin中，使用Unit来告诉我们什么时候函数(也就是表达式)没 有返回任何有用的东西。</p>
+<p>但是也有一些情况，一个函数实际上什么也 没有返回，这就是Nothing类出现的地方。Nothing类没有实例，它表 示一个永远不存在的值或结果。</p>
+<p>当用作方法的返回类型时，这意味着 函数永远不会返回——<strong>函数调用只会导致异常</strong>。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">computeSqrt</span>(<span style="color:#c1abea">n</span>: <span style="color:#c1abea">Double</span>):<span style="color:#c1abea">Double</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">if</span>(<span style="color:#c1abea">n</span><span style="color:#c7bf54">&gt;=</span><span style="color:#d19a66">0</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#76a9f9">Math</span>.<span style="color:#c1abea">sqrt</span>(<span style="color:#c1abea">n</span>)
+</span></span><span style="display:flex;"><span>  }<span style="color:#c678dd">else</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">throw</span> <span style="color:#c1abea">RuntimeException</span>(<span style="color:#63c381">&#34;No negative please&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>if部分返回一个Double，而else部分抛出一个异常。异常部分由 类型Nothing表示。</p>
+<p>因此，Nothing的唯一目的是能够帮助编译器 验证程序中类型的完整性是健全的。</p>
+</li>
+</ul>
+<h3 id="62-范型参数类型的变化和约束">
+  6.2 范型：参数类型的变化和约束
+  <a class="heading-link" href="#62-%e8%8c%83%e5%9e%8b%e5%8f%82%e6%95%b0%e7%b1%bb%e5%9e%8b%e7%9a%84%e5%8f%98%e5%8c%96%e5%92%8c%e7%ba%a6%e6%9d%9f">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>类型不变型</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">open</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Fruit</span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Banana</span> : <span style="color:#c1abea">Fruit</span>()
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Orange</span> : <span style="color:#c1abea">Fruit</span>()
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// Array&lt;T&gt;是不可变的
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">receiveFruits</span>(<span style="color:#c1abea">fruits</span>: <span style="color:#c1abea">Array</span>&lt;<span style="color:#c1abea">Fruit</span>&gt;){
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// do sth
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">bananas</span>: <span style="color:#c1abea">Array</span>&lt;<span style="color:#c1abea">Banana</span>&gt; = <span style="color:#c1abea">arrayOf</span>()
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">receiveFruits</span>(<span style="color:#c1abea">bananas</span>) <span style="color:#8a93a5;font-style:italic">// ERROR: Type mismatch
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// List&lt;T&gt;是可变的
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">receiveFruitsList</span>(<span style="color:#c1abea">fruits</span>: <span style="color:#c1abea">List</span>&lt;<span style="color:#c1abea">Fruit</span>&gt;){
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// do sth
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">bananasList</span>:<span style="color:#c1abea">List</span>&lt;<span style="color:#c1abea">Banana</span>&gt; = <span style="color:#c1abea">ListOf</span>()
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">receiveFruitsList</span>(<span style="color:#c1abea">bananasList</span>) <span style="color:#8a93a5;font-style:italic">//OK
+</span></span></span></code></pre></div><p>如果想要往<code>Array&lt;Fruit&gt;</code>传入Banana，则需要做一些改变</p>
+<p>语法<code>Array&lt;out Fruit&gt;</code>用于传递Fruit参数类型的协变。 Kotlin将断言没有对允许传入数据的from引用进行任何方法调用。 Kotlin将通过检查被调用方法的签名来确定这一点。</p>
+<p><code>Array&lt;T&gt;</code>类具有读取和设置类型为T的对象的方法。任何使用<code> Array&lt;T&gt;</code>的函数都可以调用这两种方法中的任何一种。但要使用协 变，我们向Kotlin编译器保证，不会调用任何方法，来对<code>Array&lt;T&gt;</code>发 送具有给定参数类型的任何值。</p>
+<p>这种在使用泛型类时使用协变的行为 称为“使用点型变”或“类型预测”。</p>
+</li>
+<li>
+<p>协变</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c1abea">Array</span>&lt;<span style="color:#c678dd">out</span> <span style="color:#c1abea">Fruit</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>逆变</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c1abea">Array</span>&lt;<span style="color:#c678dd">in</span> <span style="color:#c1abea">Fruit</span>&gt;
+</span></span></code></pre></div></li>
+<li>
+<p>使用where的参数类型约束</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> &lt;<span style="color:#76a9f9">T</span>&gt; <span style="color:#00b1f7">useAndClose</span>(<span style="color:#c1abea">input</span>: <span style="color:#c1abea">T</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">where</span> <span style="color:#c1abea">T</span>: <span style="color:#c1abea">AutoCloseable</span>,
+</span></span><span style="display:flex;"><span>  			<span style="color:#c1abea">T</span>: <span style="color:#c1abea">Appendable</span>{
+</span></span><span style="display:flex;"><span>          <span style="color:#c1abea">input</span>.<span style="color:#c1abea">append</span>(<span style="color:#63c381">&#34;aa&#34;</span>)
+</span></span><span style="display:flex;"><span>          <span style="color:#c1abea">input</span>.<span style="color:#c1abea">close</span>()
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>星投影</p>
+<p>当你想表达对类型不太了解但又希望类型安全时，请使用星投影。星投影只允许读出，不允许写入。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">printValues</span>(<span style="color:#c1abea">values</span>: <span style="color:#c1abea">Array</span>&lt;*&gt;){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">for</span>(<span style="color:#c678dd">value</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">values</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">println</span>(<span style="color:#c678dd">value</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#8a93a5;font-style:italic">// values[0] = values[1] //ERROR!!
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>}
+</span></span></code></pre></div><p>这里的星 投影<code>&lt;*&gt;</code>，相当于<code>out T</code>，但写起来更简洁。</p>
+<p>如果将星投影用于逆变参数(其在“声明点型变”中被定义为<code>&lt;in T&gt;</code>)，那么它就相当于<code>in Nothing</code>，以强调编写任何内容都会导致编译错误。</p>
+</li>
+</ul>
+<h3 id="63-具体化的类型参数">
+  6.3 具体化的类型参数
+  <a class="heading-link" href="#63-%e5%85%b7%e4%bd%93%e5%8c%96%e7%9a%84%e7%b1%bb%e5%9e%8b%e5%8f%82%e6%95%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Zhengbledor 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
