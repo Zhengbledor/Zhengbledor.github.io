@@ -6,7 +6,72 @@
     <description>Recent content on Zhengbledor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 06 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 07 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>行为型-命令模式</title>
+      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</guid>
+      <description>行为型-命令模式 Link to heading 在软件系统中，“行为请求者”与“行为实现者”通常呈现一种“紧耦合”。但在某些场合，比如要对行为进行“记录、撤销/重做、事务”等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将“行为请求者”与“行为实现者”解耦？将一组行为抽象为对象，实现二者之间的松耦合。这就是命令模式（Command Pattern）。
+模式结构 Link to heading Command：
+定义命令的接口，声明执行的方法。
+ConcreteCommand：
+命令接口实现对象，是“虚”的实现；通常会持有接收者，并调用接收者的功能来完成命令要执行的操作。
+Receiver：
+接收者，真正执行命令的对象。任何类都可能成为一个接收者，只要它能够实现命令要求实现的相应功能。
+Invoker：
+要求命令对象执行请求，通常会持有命令对象，可以持有很多的命令对象。这个是客户端真正触发命令并要求命令执行相应操作的地方，也就是说相当于使用命令对象的入口。
+Client：
+创建具体的命令对象，并且设置命令对象的接收者。注意这个不是我们常规意义上的客户端，而是在组装命令对象和接收者，或许，把这个Client称为装配者会更好理解，因为真正使用命令的客户端是从Invoker来触发执行。
+场景模拟 Link to heading 比如现在我们有很多的类，彩电、冰箱、空调、洗衣机、热水器等，既然现在我们要通过一个遥控器去控制他们，那么我们就需要将控制这些电器的指令都给设计好才行，并且还不能有太强的关联性。
+所有的电器肯定需要通过蓝牙或是红外线接受遥控器发送的请求，所以所有的电器都是接收者：
+public interface Receiver { void action(); //具体行为，这里就写一个算了 } 接着我们要控制这些电器，那么肯定需要一个指令才能控制：
+public abstract class Command { //指令抽象，不同的电器有指令 private final Receiver receiver; protected Command(Receiver receiver){ //指定此命令对应的电器（接受者） this.receiver = receiver; } public void execute() { receiver.action(); //执行命令，实际上就是让接收者开始干活 } } 最后我们来安排一个遥控器：
+public class Controller { //遥控器只需要把我们的指令发出去就行了 public static void call(Command command){ command.</description>
+    </item>
+    
+    <item>
+      <title>行为型-模板方法模式</title>
+      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
+      <description> 行为型-模板方法模式 Link to heading 模板方法模式定义了一个算法的步骤，并允许子类别为一个或多个步骤提供其实践方式。让子类别在不改变算法架构的情况下，重新定义算法中的某些步骤。
+有些时候，我们的业务可能需要经历很多个步骤来完成，比如我们生病了在医院看病，首先是去门诊挂号，然后等待叫号，然后是去找医生看病，确定病因后，就根据医生的处方去前台开药，最后付钱。这一整套流程看似是规规矩矩的，但是在这其中，某些步骤并不是确定的，比如医生看病这一步，由于不同的病因，可能会进行不同的处理，最后开出来的药方也会不同，所以，整套流程中，有些操作是固定的，有些操作可能需要根据具体情况而定。
+在我们的程序中也是如此，可能某些操作是固定的，我们就可以直接在类中对应方法进行编写，但是可能某些操作需要视情况而定，由不同的子类实现来决定，这时，我们就需要让这些操作由子类来延迟实现了。现在我们就需要用到模板方法模式。
+/** * 抽象诊断方法，因为现在只知道挂号和看医生是固定模式，剩下的开处方和拿药都是不确定的 */ public abstract class AbstractDiagnosis { public void test(){ System.out.println(&amp;#34;今天头好晕，不想起床，开摆，先跟公司请个假&amp;#34;); System.out.println(&amp;#34;去医院看病了~&amp;#34;); System.out.println(&amp;#34;1 &amp;gt;&amp;gt; 先挂号&amp;#34;); System.out.println(&amp;#34;2 &amp;gt;&amp;gt; 等待叫号&amp;#34;); //由于现在不知道该开什么处方，所以只能先定义一下行为，然后具体由子类实现 //大致的流程先定义好就行 this.prescribe(); this.medicine(); //开药同理 } public abstract void prescribe(); //开处方操作根据具体病症决定了 public abstract void medicine(); //拿药也是根据具体的处方去拿 } 现在我们定义好了抽象方法，只是将具体的流程先定义出来了，但是部分方法需要根据实现决定：
+/** * 感冒相关的具体实现子类 */ public class ColdDiagnosis extends AbstractDiagnosis{ @Override public void prescribe() { System.out.println(&amp;#34;3 &amp;gt;&amp;gt; 一眼丁真，鉴定为假，你这不是感冒，纯粹是想摆烂&amp;#34;); } @Override public void medicine() { System.out.println(&amp;#34;4 &amp;gt;&amp;gt; 开点头孢回去吃吧&amp;#34;); } } </description>
+    </item>
+    
+    <item>
+      <title>行为型-责任链模式</title>
+      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
+      <description>行为型-责任链模式 Link to heading 在责任链模式里，很多对象由每一个对象对其下家的引用而连接起来形成一条链。请求在这个链上传递，直到链上的某一个对象决定处理此请求。发出这个请求的客户端并不知道链上的哪一个对象最终处理这个请求，这使得系统可以在不影响客户端的情况下动态地重新组织和分配责任。
+比如我们的钉钉审批，实际上就是一条流水线一样的操作，由你发起申请，然后经过多个部门主管审批，最后才能通过，所以你的申请表相当于是在一条责任链上传递。当然除了这样的直线型责任链之外，还有环形、树形等。
+实际上我们之前也遇到过很多种责任链，比如JavaWeb中学习的Filter过滤器，正是采用的责任链模式，通过将请求一级一级不断向下传递，来对我们所需要的请求进行过滤和处理。
+请求-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Servlet 这里我们就使用责任链模式来模拟一个简单的面试过程，我们面试也是一面二面三面这样走的流程，这里我们先设计一下责任链上的各个处理器：
+public abstract class Handler { protected Handler successor; //这里我们就设计责任链以单链表形式存在，这里存放后继节点 public Handler connect(Handler successor){ //拼接后续节点 this.successor = successor; return successor; //这里返回后继节点，方便我们一会链式调用 } public void handle(){ this.doHandle(); //由不同的子类实现具体处理过程 Optional.ofNullable(successor) .ifPresent(Handler::handle); //责任链上如果还有后继节点，就继续向下传递 } public abstract void doHandle(); //结合上节课学习的模板方法，交给子类实现 } 因为面试有很多轮，所以我们这里创建几个处理器的实现：
+public class FirstHandler extends Handler{ //用于一面的处理器 @Override public void doHandle() { System.out.println(&amp;#34;============= 白马程序员一面 ==========&amp;#34;); System.out.println(&amp;#34;1. 谈谈你对static关键字的理解？&amp;#34;); System.out.println(&amp;#34;2. 内部类可以调用外部的数据吗？如果是静态的呢？&amp;#34;); System.</description>
+    </item>
+    
+    <item>
+      <title>行为型-迭代器模式</title>
+      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
+      <pubDate>Tue, 07 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
+      <description>行为型-迭代器模式 Link to heading 提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。
+正是因为有迭代器的存在，我们才能更加优雅的使用foreach语法。
+public static void main(String[] args) { List&amp;lt;String&amp;gt; list = Arrays.asList(&amp;#34;AAA&amp;#34;, &amp;#34;BBB&amp;#34;, &amp;#34;CCC&amp;#34;); for (String s : list) { //使用foreach语法糖进行迭代，依次获取每一个元素 System.out.println(s); //打印一下 } } 编译之后的代码如下：
+public static void main(String[] args) { List&amp;lt;String&amp;gt; list = Arrays.asList(&amp;#34;AAA&amp;#34;, &amp;#34;BBB&amp;#34;, &amp;#34;CCC&amp;#34;); Iterator var2 = list.iterator(); //实际上这里本质是通过List生成的迭代器来遍历我们每个元素的 while(var2.hasNext()) { //判断是否还有元素可以迭代，没有就false String s = (String)var2.next(); //通过next方法得到下一个元素，每调用一次，迭代器会向后移动一位 System.out.println(s); //打印一下 } } 可以看到，当我们使用迭代器对List进行遍历时，实际上就像一个指向列表头部的指针，我们通过不断向后移动指针来依次获取所指向的元素：
+这里，我们依照JDK提供的迭代器接口（JDK已经为我们定义好了一个迭代器的具体相关操作），也来设计一个迭代器：
+public class ArrayCollection&amp;lt;T&amp;gt; { //首先设计一个简单的数组集合，一会我们就迭代此集合内的元素 private final T[] array; //底层使用一个数组来存放数据 private ArrayCollection(T[] array){ //private掉，自己用 this.</description>
+    </item>
+    
     <item>
       <title>Kotlin编程实战-阅读记录</title>
       <link>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/</link>
@@ -207,80 +272,6 @@ public class PrizeController{ public AwardRes awardToUser(AwardReq req){ if(req.
       
       <guid>https://zhengbledor.github.io/about/</guid>
       <description>郑布利多的博客，平时记载一点技术、生活的文章(万一哪天被裁了)</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E4%B8%AD%E4%BB%8B%E8%80%85%E6%A8%A1%E5%BC%8F/</guid>
-      <description> 行为型-中介者模式 Link to heading </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</guid>
-      <description>行为型-命令模式 Link to heading 在软件系统中，“行为请求者”与“行为实现者”通常呈现一种“紧耦合”。但在某些场合，比如要对行为进行“记录、撤销/重做、事务”等处理，这种无法抵御变化的紧耦合是不合适的。在这种情况下，如何将“行为请求者”与“行为实现者”解耦？将一组行为抽象为对象，实现二者之间的松耦合。这就是命令模式（Command Pattern）。
-模式结构 Link to heading Command：
-定义命令的接口，声明执行的方法。
-ConcreteCommand：
-命令接口实现对象，是“虚”的实现；通常会持有接收者，并调用接收者的功能来完成命令要执行的操作。
-Receiver：
-接收者，真正执行命令的对象。任何类都可能成为一个接收者，只要它能够实现命令要求实现的相应功能。
-Invoker：
-要求命令对象执行请求，通常会持有命令对象，可以持有很多的命令对象。这个是客户端真正触发命令并要求命令执行相应操作的地方，也就是说相当于使用命令对象的入口。
-Client：
-创建具体的命令对象，并且设置命令对象的接收者。注意这个不是我们常规意义上的客户端，而是在组装命令对象和接收者，或许，把这个Client称为装配者会更好理解，因为真正使用命令的客户端是从Invoker来触发执行。
-场景模拟 Link to heading 比如现在我们有很多的类，彩电、冰箱、空调、洗衣机、热水器等，既然现在我们要通过一个遥控器去控制他们，那么我们就需要将控制这些电器的指令都给设计好才行，并且还不能有太强的关联性。
-所有的电器肯定需要通过蓝牙或是红外线接受遥控器发送的请求，所以所有的电器都是接收者：
-public interface Receiver { void action(); //具体行为，这里就写一个算了 } 接着我们要控制这些电器，那么肯定需要一个指令才能控制：
-public abstract class Command { //指令抽象，不同的电器有指令 private final Receiver receiver; protected Command(Receiver receiver){ //指定此命令对应的电器（接受者） this.receiver = receiver; } public void execute() { receiver.action(); //执行命令，实际上就是让接收者开始干活 } } 最后我们来安排一个遥控器：
-public class Controller { //遥控器只需要把我们的指令发出去就行了 public static void call(Command command){ command.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E6%A8%A1%E6%9D%BF%E6%96%B9%E6%B3%95%E6%A8%A1%E5%BC%8F/</guid>
-      <description> 行为型-模板方法模式 Link to heading 模板方法模式定义了一个算法的步骤，并允许子类别为一个或多个步骤提供其实践方式。让子类别在不改变算法架构的情况下，重新定义算法中的某些步骤。
-有些时候，我们的业务可能需要经历很多个步骤来完成，比如我们生病了在医院看病，首先是去门诊挂号，然后等待叫号，然后是去找医生看病，确定病因后，就根据医生的处方去前台开药，最后付钱。这一整套流程看似是规规矩矩的，但是在这其中，某些步骤并不是确定的，比如医生看病这一步，由于不同的病因，可能会进行不同的处理，最后开出来的药方也会不同，所以，整套流程中，有些操作是固定的，有些操作可能需要根据具体情况而定。
-在我们的程序中也是如此，可能某些操作是固定的，我们就可以直接在类中对应方法进行编写，但是可能某些操作需要视情况而定，由不同的子类实现来决定，这时，我们就需要让这些操作由子类来延迟实现了。现在我们就需要用到模板方法模式。
-/** * 抽象诊断方法，因为现在只知道挂号和看医生是固定模式，剩下的开处方和拿药都是不确定的 */ public abstract class AbstractDiagnosis { public void test(){ System.out.println(&amp;#34;今天头好晕，不想起床，开摆，先跟公司请个假&amp;#34;); System.out.println(&amp;#34;去医院看病了~&amp;#34;); System.out.println(&amp;#34;1 &amp;gt;&amp;gt; 先挂号&amp;#34;); System.out.println(&amp;#34;2 &amp;gt;&amp;gt; 等待叫号&amp;#34;); //由于现在不知道该开什么处方，所以只能先定义一下行为，然后具体由子类实现 //大致的流程先定义好就行 this.prescribe(); this.medicine(); //开药同理 } public abstract void prescribe(); //开处方操作根据具体病症决定了 public abstract void medicine(); //拿药也是根据具体的处方去拿 } 现在我们定义好了抽象方法，只是将具体的流程先定义出来了，但是部分方法需要根据实现决定：
-/** * 感冒相关的具体实现子类 */ public class ColdDiagnosis extends AbstractDiagnosis{ @Override public void prescribe() { System.out.println(&amp;#34;3 &amp;gt;&amp;gt; 一眼丁真，鉴定为假，你这不是感冒，纯粹是想摆烂&amp;#34;); } @Override public void medicine() { System.out.println(&amp;#34;4 &amp;gt;&amp;gt; 开点头孢回去吃吧&amp;#34;); } } </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/</guid>
-      <description>行为型-责任链模式 Link to heading 在责任链模式里，很多对象由每一个对象对其下家的引用而连接起来形成一条链。请求在这个链上传递，直到链上的某一个对象决定处理此请求。发出这个请求的客户端并不知道链上的哪一个对象最终处理这个请求，这使得系统可以在不影响客户端的情况下动态地重新组织和分配责任。
-比如我们的钉钉审批，实际上就是一条流水线一样的操作，由你发起申请，然后经过多个部门主管审批，最后才能通过，所以你的申请表相当于是在一条责任链上传递。当然除了这样的直线型责任链之外，还有环形、树形等。
-实际上我们之前也遇到过很多种责任链，比如JavaWeb中学习的Filter过滤器，正是采用的责任链模式，通过将请求一级一级不断向下传递，来对我们所需要的请求进行过滤和处理。
-请求-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Filter-&amp;gt; Servlet 这里我们就使用责任链模式来模拟一个简单的面试过程，我们面试也是一面二面三面这样走的流程，这里我们先设计一下责任链上的各个处理器：
-public abstract class Handler { protected Handler successor; //这里我们就设计责任链以单链表形式存在，这里存放后继节点 public Handler connect(Handler successor){ //拼接后续节点 this.successor = successor; return successor; //这里返回后继节点，方便我们一会链式调用 } public void handle(){ this.doHandle(); //由不同的子类实现具体处理过程 Optional.ofNullable(successor) .ifPresent(Handler::handle); //责任链上如果还有后继节点，就继续向下传递 } public abstract void doHandle(); //结合上节课学习的模板方法，交给子类实现 } 因为面试有很多轮，所以我们这里创建几个处理器的实现：
-public class FirstHandler extends Handler{ //用于一面的处理器 @Override public void doHandle() { System.out.println(&amp;#34;============= 白马程序员一面 ==========&amp;#34;); System.out.println(&amp;#34;1. 谈谈你对static关键字的理解？&amp;#34;); System.out.println(&amp;#34;2. 内部类可以调用外部的数据吗？如果是静态的呢？&amp;#34;); System.</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E8%BF%AD%E4%BB%A3%E5%99%A8%E6%A8%A1%E5%BC%8F/</guid>
-      <description>行为型-迭代器模式 Link to heading 提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。
-正是因为有迭代器的存在，我们才能更加优雅的使用foreach语法。
-public static void main(String[] args) { List&amp;lt;String&amp;gt; list = Arrays.asList(&amp;#34;AAA&amp;#34;, &amp;#34;BBB&amp;#34;, &amp;#34;CCC&amp;#34;); for (String s : list) { //使用foreach语法糖进行迭代，依次获取每一个元素 System.out.println(s); //打印一下 } } 编译之后的代码如下：
-public static void main(String[] args) { List&amp;lt;String&amp;gt; list = Arrays.asList(&amp;#34;AAA&amp;#34;, &amp;#34;BBB&amp;#34;, &amp;#34;CCC&amp;#34;); Iterator var2 = list.iterator(); //实际上这里本质是通过List生成的迭代器来遍历我们每个元素的 while(var2.hasNext()) { //判断是否还有元素可以迭代，没有就false String s = (String)var2.next(); //通过next方法得到下一个元素，每调用一次，迭代器会向后移动一位 System.out.println(s); //打印一下 } } 可以看到，当我们使用迭代器对List进行遍历时，实际上就像一个指向列表头部的指针，我们通过不断向后移动指针来依次获取所指向的元素：
-这里，我们依照JDK提供的迭代器接口（JDK已经为我们定义好了一个迭代器的具体相关操作），也来设计一个迭代器：
-public class ArrayCollection&amp;lt;T&amp;gt; { //首先设计一个简单的数组集合，一会我们就迭代此集合内的元素 private final T[] array; //底层使用一个数组来存放数据 private ArrayCollection(T[] array){ //private掉，自己用 this.</description>
     </item>
     
     <item>
