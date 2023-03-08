@@ -6,7 +6,29 @@
     <description>Recent content on Zhengbledor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 07 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于清晰度「K」与「P」的定义</title>
+      <link>https://zhengbledor.github.io/posts/%E5%85%B3%E4%BA%8E%E6%B8%85%E6%99%B0%E5%BA%A6k%E4%B8%8Ep%E7%9A%84%E5%AE%9A%E4%B9%89/</link>
+      <pubDate>Wed, 08 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/%E5%85%B3%E4%BA%8E%E6%B8%85%E6%99%B0%E5%BA%A6k%E4%B8%8Ep%E7%9A%84%E5%AE%9A%E4%B9%89/</guid>
+      <description>关于清晰度「K」与「P」的定义 Link to heading （源自知乎答案：https://www.zhihu.com/question/24205632/answer/648608086）
+定义 Link to heading P（Progressive scanning）是逐行扫描，几P就是纵向有多少行像素，例如，1080p就是纵向有1080行像素。
+（其实现在的视频已经没有“扫描”这个概念了，扫描是从摄影机和模拟电视延续下来的一个概念，用来描述电子快门和电子枪的工作方式，在视频中的“逐行扫描”其实就相当于摄影机中的全域快门）
+K （kilo）是指横向大约有几个1000列（等效）像素，1K就是1000，2K就是2000，4K就是4000。
+（但在电视领域，这些“几K”都被加上了一个固定分辨率标准，比如1080p是1920x1080，4K是3840x2160，其他答主平时所说的这些所谓标准，都是16：9的电视标准）
+注意：横边!=长边，横边是指与石视平线平行的边，如果一个视频/屏幕/图片是竖向的，则横边是短边，竖边是长边
+举例 Link to heading 1920x1080是几K？
+答：1.9K或2K
+1440x1440是几K？
+答：1.4k
+iPhone Xr是几K几P屏？
+答：iPhone Xr分辨率为828x1792，所以是0.8k屏，1792p
+某电脑的屏幕最高能显示2560x1440分辨率，请问它是几K显示器？
+答：2.5K</description>
+    </item>
+    
     <item>
       <title>行为型-命令模式</title>
       <link>https://zhengbledor.github.io/posts/%E8%A1%8C%E4%B8%BA%E5%9E%8B-%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/</link>
