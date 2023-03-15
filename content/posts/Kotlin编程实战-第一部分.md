@@ -1,8 +1,10 @@
 +++
-title = "Kotlin编程实战-阅读记录"
+title = "Kotlin编程实战-阅读记录-第一部分"
 date = "2023-03-06"
 +++
-# Kotlin编程实战
+# Kotlin编程实战-第一部分
+
+## 第一部分 使用Kotlin编写脚本
 
 ## 第2章 从Java角度了解Kotlin的基本知识
 
@@ -480,5 +482,3 @@ fun isAlive(alive: Boolean, number:Int) = when{
   这里的星 投影``<*>``，相当于``out T``，但写起来更简洁。
 
   如果将星投影用于逆变参数(其在“声明点型变”中被定义为``<in T>``)，那么它就相当于``in Nothing``，以强调编写任何内容都会导致编译错误。
-
-### 6.3 具体化的类型参数

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Kotlin编程实战-阅读记录-第二部分 · Zhengbledor
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Zhengbledor">
+<meta name="description" content="Kotlin编程实战-第二部分 Link to heading 第二部分 面向对象的Kotlin Link to heading 第7章 对象和类 Link to heading Kotlin不需要类， 当顶级函数足够时，你可以使用它们。
+7.1 对象和单例 Link to heading 带有对象表达式的匿名对象
+fun drawCircle(){ val circle = object { val x = 10 val y = 20 val radius = 30 } } 在最基本的形式中，对象表达式是后跟一个块{}的关键字 object。
+匿名对象有以下几个限制
+匿名对象的内部类型不能作为函数或方法的返回类型。 匿名对象的内部类型不能作用函数或方法的参数类型。 如果他们作为属性存储在类中，他们将被视为Any类型，他们的任何属性或方法都将无法直接访问。 只需稍加修改，匿名对象就可以用作接口的实现者。
+fun createRunnable():Runnable{ val runnable = object: Runnable{ override fun run(){....} } return runnable } 如果通过匿名内部类实现的接口是单一抽象方法接口（只有一个需要实现的方法），那么我们可以直接提供实现，而不需要指定方法 名，如下所示:
+fun createRunnable():Runnable = Runnable{.">
+<meta name="keywords" content="blog">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kotlin编程实战-阅读记录-第二部分"/>
+<meta name="twitter:description" content="Kotlin编程实战-第二部分 Link to heading 第二部分 面向对象的Kotlin Link to heading 第7章 对象和类 Link to heading Kotlin不需要类， 当顶级函数足够时，你可以使用它们。
+7.1 对象和单例 Link to heading 带有对象表达式的匿名对象
+fun drawCircle(){ val circle = object { val x = 10 val y = 20 val radius = 30 } } 在最基本的形式中，对象表达式是后跟一个块{}的关键字 object。
+匿名对象有以下几个限制
+匿名对象的内部类型不能作为函数或方法的返回类型。 匿名对象的内部类型不能作用函数或方法的参数类型。 如果他们作为属性存储在类中，他们将被视为Any类型，他们的任何属性或方法都将无法直接访问。 只需稍加修改，匿名对象就可以用作接口的实现者。
+fun createRunnable():Runnable{ val runnable = object: Runnable{ override fun run(){....} } return runnable } 如果通过匿名内部类实现的接口是单一抽象方法接口（只有一个需要实现的方法），那么我们可以直接提供实现，而不需要指定方法 名，如下所示:
+fun createRunnable():Runnable = Runnable{."/>
+
+<meta property="og:title" content="Kotlin编程实战-阅读记录-第二部分" />
+<meta property="og:description" content="Kotlin编程实战-第二部分 Link to heading 第二部分 面向对象的Kotlin Link to heading 第7章 对象和类 Link to heading Kotlin不需要类， 当顶级函数足够时，你可以使用它们。
+7.1 对象和单例 Link to heading 带有对象表达式的匿名对象
+fun drawCircle(){ val circle = object { val x = 10 val y = 20 val radius = 30 } } 在最基本的形式中，对象表达式是后跟一个块{}的关键字 object。
+匿名对象有以下几个限制
+匿名对象的内部类型不能作为函数或方法的返回类型。 匿名对象的内部类型不能作用函数或方法的参数类型。 如果他们作为属性存储在类中，他们将被视为Any类型，他们的任何属性或方法都将无法直接访问。 只需稍加修改，匿名对象就可以用作接口的实现者。
+fun createRunnable():Runnable{ val runnable = object: Runnable{ override fun run(){....} } return runnable } 如果通过匿名内部类实现的接口是单一抽象方法接口（只有一个需要实现的方法），那么我们可以直接提供实现，而不需要指定方法 名，如下所示:
+fun createRunnable():Runnable = Runnable{." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-15T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.01bd429dda63a16d76996eaf0b8da061429b76e714515cb1b246aac7fe7f4b2a.css" integrity="sha256-Ab1CndpjoW12mW6vC42gYUKbducUUVyxskaqx/5/Syo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Zhengbledor
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/">
+              Kotlin编程实战-阅读记录-第二部分
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-15T00:00:00Z">
+                March 15, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              4-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="kotlin编程实战-第二部分">
+  Kotlin编程实战-第二部分
+  <a class="heading-link" href="#kotlin%e7%bc%96%e7%a8%8b%e5%ae%9e%e6%88%98-%e7%ac%ac%e4%ba%8c%e9%83%a8%e5%88%86">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="第二部分-面向对象的kotlin">
+  第二部分 面向对象的Kotlin
+  <a class="heading-link" href="#%e7%ac%ac%e4%ba%8c%e9%83%a8%e5%88%86-%e9%9d%a2%e5%90%91%e5%af%b9%e8%b1%a1%e7%9a%84kotlin">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="第7章-对象和类">
+  第7章 对象和类
+  <a class="heading-link" href="#%e7%ac%ac7%e7%ab%a0-%e5%af%b9%e8%b1%a1%e5%92%8c%e7%b1%bb">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Kotlin不需要类， 当顶级函数足够时，你可以使用它们。</p>
+<h3 id="71-对象和单例">
+  7.1 对象和单例
+  <a class="heading-link" href="#71-%e5%af%b9%e8%b1%a1%e5%92%8c%e5%8d%95%e4%be%8b">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>带有对象表达式的匿名对象</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">drawCircle</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">circle</span> = <span style="color:#c678dd">object</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">val</span> <span style="color:#cebc3a">x</span> = <span style="color:#d19a66">10</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">val</span> <span style="color:#cebc3a">y</span> = <span style="color:#d19a66">20</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">val</span> <span style="color:#cebc3a">radius</span> = <span style="color:#d19a66">30</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在最基本的形式中，对象表达式是后跟一个块{}的关键字 object。</p>
+<p>匿名对象有以下几个限制</p>
+<ul>
+<li>匿名对象的内部类型不能作为函数或方法的返回类型。</li>
+<li>匿名对象的内部类型不能作用函数或方法的参数类型。</li>
+<li>如果他们作为属性存储在类中，他们将被视为Any类型，他们的任何属性或方法都将无法直接访问。</li>
+</ul>
+<p><strong>只需稍加修改，匿名对象就可以用作接口的实现者。</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">createRunnable</span>():<span style="color:#c1abea">Runnable</span>{
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">runnable</span> = <span style="color:#c678dd">object</span>: <span style="color:#c1abea">Runnable</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">run</span>(){<span style="color:#c7bf54">....</span>}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">return</span> <span style="color:#c1abea">runnable</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>如果通过匿名内部类实现的接口是单一抽象方法接口（只有一个需要实现的方法），那么我们可以直接提供实现，而不需要指定方法 名，如下所示:</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">createRunnable</span>():<span style="color:#c1abea">Runnable</span> = <span style="color:#c1abea">Runnable</span>{<span style="color:#c7bf54">..</span>.}
+</span></span></code></pre></div><p>除了使用单一抽象方法实现语法外，在上面的示例中，通过删除块体和return关键字，将createRunnable()函数转换为简洁的单表达 式函数。</p>
+</li>
+<li>
+<p>带有对象声明的单例</p>
+<p>如果在object关键字和块{}之间放置一个名称，那么Kotlin将认为定义是语句或声明，而不是表达式。</p>
+<p>使用一个对象表达式来创建一 个匿名内部类的实例，使用一个对象声明来创建一个单例——一个只有单个实例的类。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">object</span> <span style="color:#76a9f9">Util</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">numberOfProcessors</span>() = <span style="color:#76a9f9">Runtime</span>.<span style="color:#c1abea">getRuntime</span>().<span style="color:#c1abea">availableProcessors</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>顶级函数和单例</p>
+<p>如果一组函数是高级的、通用的和广泛使用的，那么就把它们直接放在一个包中。</p>
+<p>另一方面，如果一些函数之间的关系比其他函数更为密切，那么就把它们放在一个单例中。</p>
+<p>此外，如果一组函数需要依赖于状态，你可以将此状态与那些相关的函数一起放在一个单例中，尽管类对此可能是一个更好的选择。</p>
+</li>
+</ul>
+<h3 id="72-创建类">
+  7.2 创建类
+  <a class="heading-link" href="#72-%e5%88%9b%e5%bb%ba%e7%b1%bb">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>当调用car.yearOfMake的时候，你实际上调用的是car.getYearOfMake()——编译器会遵循旧的JavaBean约定。</p>
+<p>Kotlin会自动帮你所有的属性添加get和set方法</p>
+<ul>
+<li>
+<p>控制对属性的修改</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Car</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">var</span> <span style="color:#cebc3a">color</span> = <span style="color:#76a9f9">Colors</span>.<span style="color:#c1abea">white</span>
+</span></span><span style="display:flex;"><span>  	<span style="color:#c678dd">set</span>(<span style="color:#c678dd">value</span>){
+</span></span><span style="display:flex;"><span>      <span style="color:#c678dd">if</span>(<span style="color:#c678dd">value</span>.<span style="color:#c1abea">isBlank</span>()){
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">throw</span> <span style="color:#c1abea">RuntimeException</span>(<span style="color:#63c381">&#34;ss&#34;</span>)
+</span></span><span style="display:flex;"><span>      }
+</span></span><span style="display:flex;"><span>      <span style="color:#c1abea">fileId</span> = <span style="color:#c678dd">value</span>
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>访问修饰符</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">private</span> <span style="color:#c678dd">var</span> <span style="color:#cebc3a">level</span> = <span style="color:#d19a66">1000</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">var</span> <span style="color:#cebc3a">fuelLevel</span> = <span style="color:#d19a66">100</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#c678dd">private</span> <span style="color:#c678dd">set</span>
+</span></span></code></pre></div><p>在kotlin中，类的属性和方法默认是public，可能的访问修饰符有public、private、protected和internal。</p>
+<p>前两个与Java中的含义相同。protected修饰符允许派生类的方法访问该属性。internal修饰符允许同一模块中的任何代码访问属性或方法，其中模块定义为一 起编译的所有源代码文件。</p>
+<p>internal修饰符没有直接的字节码表示。它由Kotlin编译器使用一些命名约定来处理，而不会带来任何运行时开销。</p>
+<p>对getter的访问权限与对属性的访问权限相同。如果你愿意，可以为setter提供不同的访问权限。让我们修改对fuelLevel的访问修饰符，使其只能从类中访问。</p>
+</li>
+<li>
+<p>初始化代码</p>
+<p>一个类可以有零个或多个init块。这些块作为主构造函数执行的 一部分来执行。init块的执行顺序是自上而下的。在init块中，只能 访问已经在块上面定义的属性。因为在主构造函数中声明的属性和参 数在整个类中都是可见的，所以类中的任何init块都可以使用它们。 但是要使用在类中定义的属性，必须在该属性的定义之后编写init 块。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Car</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">var</span> <span style="color:#cebc3a">color</span> = <span style="color:#63c381">&#34;1&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">init</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">color</span> = <span style="color:#63c381">&#34;2&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>二级构造函数</p>
+<p>如果不编写主构造函数，那么Kotlin将创建一个无参数的默认构 造函数。如果主构造函数对所有参数都有默认实参，那么除了主构造 函数之外，Kotlin还会创建一个无实参的构造函数。在任何情况下， 你都可以创建多个构造函数，称为二级构造函数。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Person</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">constructor</span>(<span style="color:#c1abea">first</span>: <span style="color:#c1abea">String</span>, <span style="color:#c1abea">last</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c7bf54">..</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h3 id="73-伴生对象和类成员">
+  7.3 伴生对象和类成员
+  <a class="heading-link" href="#73-%e4%bc%b4%e7%94%9f%e5%af%b9%e8%b1%a1%e5%92%8c%e7%b1%bb%e6%88%90%e5%91%98">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">MachineOperator</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">companion</span> <span style="color:#c678dd">object</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">var</span> <span style="color:#cebc3a">checkedIn</span> = <span style="color:#d19a66">0</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">minimumBreak</span>() = <span style="color:#63c381">&#34;abc&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">test</span>(){
+</span></span><span style="display:flex;"><span>  <span style="color:#76a9f9">MechineOperator</span>.<span style="color:#c1abea">checkedIn</span>;
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在类中，使用这些关键字定义的伴生对象是嵌套的。在伴生对象中属性checkedIn成为MachineOperator的类级别属性。同样，方法minimumBreak不属于任何实例，它是类的一部分。</p>
+<p><strong>可以使用class.Companion来获取类的同伴</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">ref</span> = <span style="color:#76a9f9">MachineOperator</span>.<span style="color:#c1abea">Companion</span>
+</span></span></code></pre></div><p>当然可以给伴生同伴加上名字</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">companion</span> <span style="color:#c678dd">object</span> <span style="color:#c1abea">MachineOperatorFactory</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c7bf54">..</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">ref</span> = <span style="color:#76a9f9">MachineOperator</span>.<span style="color:#c1abea">MachineOperatorFactory</span>
+</span></span></code></pre></div><p>可以使用伴生对象来作为工厂，创建所属类的对象</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">companion</span> <span style="color:#c678dd">object</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">create</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">return</span> <span style="color:#c1abea">MachineOperator</span>()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">ref</span> = <span style="color:#76a9f9">MachineOperator</span>.<span style="color:#c1abea">create</span>()
+</span></span></code></pre></div><p><strong>伴生中的方法不是类的静态方法</strong></p>
+<p>当你引用一个伴生对象的成员时，Kotlin编译器会负责将调用路 由到适当的单例实例。静态方法应该使用@JvmStatic注释</p>
+<h3 id="75-数据类">
+  7.5 数据类
+  <a class="heading-link" href="#75-%e6%95%b0%e6%8d%ae%e7%b1%bb">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">data</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Task</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">id</span>:<span style="color:#c1abea">Int</span>, <span style="color:#c678dd">val</span> <span style="color:#cebc3a">name</span>: <span style="color:#c1abea">String</span>)
+</span></span></code></pre></div><p>类主体{}中定义的任何属性(如果存在)，将不会在生成的 equals()、hashCode()和toString()方法中使用。同样，也不会为它 们生成componentN()方法。</p>
+<p>对于数据类，Kotlin生成一个copy()方法，该方法创建一个新对 象，并将接收端对象的所有属性复制到结果对象中。类似于protocol的copyWith。copy()函数只对基元和引用执 行了浅拷贝。方法不会深度复制内部引用的对象。</p>
+<h2 id="第8章类层次结构和继承">
+  第8章、类层次结构和继承
+  <a class="heading-link" href="#%e7%ac%ac8%e7%ab%a0%e7%b1%bb%e5%b1%82%e6%ac%a1%e7%bb%93%e6%9e%84%e5%92%8c%e7%bb%a7%e6%89%bf">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="81-创建接口和抽象类">
+  8.1 创建接口和抽象类
+  <a class="heading-link" href="#81-%e5%88%9b%e5%bb%ba%e6%8e%a5%e5%8f%a3%e5%92%8c%e6%8a%bd%e8%b1%a1%e7%b1%bb">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>创建接口</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">interface</span> <span style="color:#76a9f9">Remote</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">up</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">down</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">doubleUp</span>(){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">up</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">up</span>()
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>在接口中实现的方法——也就是Kotlin类型的默认方法</p>
+<p>创建抽象类</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">abstract</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Musician</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">name</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">abstract</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">instrumentType</span>(): <span style="color:#c1abea">String</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Cellist</span>(<span style="color:#c1abea">name</span> <span style="color:#c1abea">String</span>): <span style="color:#c1abea">Musician</span>(<span style="color:#c1abea">name</span>){
+</span></span><span style="display:flex;"><span> <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">instrumentType</span>() = <span style="color:#63c381">&#34;name&#34;</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>抽象类和接口的主要区别是：</p>
+<ul>
+<li>在接口中定义的属性没有幕后字段，它们必须依赖抽象方法来从实现类中获得属性。另外抽象类的属性可以使用幕后字段。</li>
+<li>你可以实现多个接口，但最多可以从一个类扩展。</li>
+</ul>
+<h3 id="82-嵌套类和内部类">
+  8.2 嵌套类和内部类
+  <a class="heading-link" href="#82-%e5%b5%8c%e5%a5%97%e7%b1%bb%e5%92%8c%e5%86%85%e9%83%a8%e7%b1%bb">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在Kotlin中，一个类可以嵌套在另一个类中。Kotlin嵌套类不能访问嵌套外部类的私有成员。但是如果用inner关键字标记嵌套类，那么它们就会变成内部类，并且限制也消失了。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">TV</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c678dd">var</span> <span style="color:#cebc3a">volume</span> = <span style="color:#d19a66">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">remote</span>: <span style="color:#c1abea">Remote</span>
+</span></span><span style="display:flex;"><span>  		<span style="color:#c678dd">get</span>() = <span style="color:#c1abea">TVRemote</span>()
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">to</span> <span style="color:#c1abea">String</span>() = <span style="color:#63c381">&#34;Volume = </span><span style="color:#98c379">$volume</span><span style="color:#63c381">&#34;</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">inner</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">TVRemote</span>: <span style="color:#c1abea">Remote</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">up</span>(){ <span style="color:#c1abea">volume</span><span style="color:#c7bf54">++</span> }
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">down</span>(){ <span style="color:#c1abea">volume</span><span style="color:#c7bf54">--</span> }
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">toString</span>() = <span style="color:#63c381">&#34;remote </span><span style="color:#98c379">${this@TV.toString()}</span><span style="color:#63c381">&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>此外，我们也可以在方法中创 建匿名内部类，而不是在类中创建内部类。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">TV</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c678dd">var</span> <span style="color:#cebc3a">volume</span> = <span style="color:#d19a66">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">remote</span>: <span style="color:#c1abea">Remote</span> <span style="color:#c678dd">get</span>() = <span style="color:#c678dd">object</span>: <span style="color:#c1abea">Remote</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">up</span>(){<span style="color:#c1abea">volume</span><span style="color:#c7bf54">++</span>}
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">down</span>(){<span style="color:#c1abea">volume</span><span style="color:#c7bf54">--</span>}
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>inner关键字不用于匿名内部类。匿名实例实现了Remote接口，当然，它没有名称。除了这些区别之外，这个类与它所替换的TVRemote内部类没有任何不同。</p>
+<h3 id="83-继承">
+  8.3 继承
+  <a class="heading-link" href="#83-%e7%bb%a7%e6%89%bf">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>与接口不同，Kotlin中的类默认是final的——也就是说，你不能从它们继承。只能继承标记为open(开放)的类。只有开放类的开放方法可以在派生类中重写，并且必须在派生类中标记为override。重写方法可以标记为finaloverride，以防止子类进一步重写该方法。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">open</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Vehicle</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">year</span>: <span style="color:#c1abea">Int</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">open</span> <span style="color:#c678dd">val</span> <span style="color:#cebc3a">km</span> = <span style="color:#d19a66">0</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">repaint</span>(<span style="color:#c1abea">newColor</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">color</span> = <span style="color:#c1abea">newColor</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Car</span>(<span style="color:#c1abea">year</span>: <span style="color:#c1abea">Int</span>): <span style="color:#c1abea">Vehicle</span>(<span style="color:#c1abea">year</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c1abea">km</span>: <span style="color:#c1abea">Int</span> = <span style="color:#d19a66">0</span>
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c1abea">repaint</span>(<span style="color:#c1abea">newColor</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">color</span> = <span style="color:#c1abea">newColors</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="84-sealed类">
+  8.4 Sealed类
+  <a class="heading-link" href="#84-sealed%e7%b1%bb">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在Kotlin中，存在一种极端情况，我们有final类——即未标记为open的类，它们不能有任何派生类。在另一种极端情况，我们有open类和abstract类，不知道哪个类可以继承它们。最好能有一个中间地带，让一个类只作为几个类的基，这几个类是由类的创建者指定的。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">sealed</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Expr</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Num</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">value</span>:<span style="color:#c1abea">Int</span>):<span style="color:#c1abea">Expr</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Sum</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">left</span>:<span style="color:#c1abea">Expr</span>,<span style="color:#c678dd">val</span> <span style="color:#cebc3a">right</span>:<span style="color:#c1abea">Expr</span>):<span style="color:#c1abea">Expr</span>()
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">data</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Data</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">value</span>: <span style="color:#c1abea">Int</span>):<span style="color:#c1abea">Expr</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">eval</span>(<span style="color:#c1abea">e</span>:<span style="color:#c1abea">Expr</span>):<span style="color:#c1abea">Int</span> =
+</span></span><span style="display:flex;"><span>        <span style="color:#c678dd">when</span>(<span style="color:#c1abea">e</span>){
+</span></span><span style="display:flex;"><span>            <span style="color:#c678dd">is</span> <span style="color:#76a9f9">Expr</span>.<span style="color:#c1abea">Num</span> <span style="color:#c7bf54">-&gt;</span> <span style="color:#c1abea">e</span>.<span style="color:#c678dd">value</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#c678dd">is</span> <span style="color:#76a9f9">Expr</span>.<span style="color:#c1abea">Sum</span> <span style="color:#c7bf54">-&gt;</span> <span style="color:#c1abea">eval</span>(<span style="color:#c1abea">e</span>.<span style="color:#c1abea">left</span>) + <span style="color:#c1abea">eval</span>(<span style="color:#c1abea">e</span>.<span style="color:#c1abea">right</span>)
+</span></span><span style="display:flex;"><span>            <span style="color:#c678dd">is</span> <span style="color:#76a9f9">Expr</span>.<span style="color:#c1abea">Data</span> <span style="color:#c7bf54">-&gt;</span> <span style="color:#c1abea">e</span>.<span style="color:#c678dd">value</span>
+</span></span><span style="display:flex;"><span>        }
+</span></span></code></pre></div><p>这样就不用在when的时候写else了</p>
+<h3 id="85-创建和使用枚举">
+  8.5 创建和使用枚举
+  <a class="heading-link" href="#85-%e5%88%9b%e5%bb%ba%e5%92%8c%e4%bd%bf%e7%94%a8%e6%9e%9a%e4%b8%be">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">enum</span> <span style="color:#c678dd">class</span> <span style="color:#76a9f9">Suit</span> {<span style="color:#c1abea">CLUBS</span>, <span style="color:#c1abea">DIAMONDS</span>, <span style="color:#c1abea">HEARTS</span>, <span style="color:#c1abea">SPADES</span>}
+</span></span></code></pre></div><h2 id="第9章-通过委托进行扩展">
+  第9章 通过委托进行扩展
+  <a class="heading-link" href="#%e7%ac%ac9%e7%ab%a0-%e9%80%9a%e8%bf%87%e5%a7%94%e6%89%98%e8%bf%9b%e8%a1%8c%e6%89%a9%e5%b1%95">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="91-继承和委托的选择">
+  9.1 继承和委托的选择
+  <a class="heading-link" href="#91-%e7%bb%a7%e6%89%bf%e5%92%8c%e5%a7%94%e6%89%98%e7%9a%84%e9%80%89%e6%8b%a9">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>如果你想用一个类的对象来代替另一个类的对象，请使用继承。</li>
+<li>如果你想让一个类的对象只使用另一个类的对象，请使用委托。</li>
+</ul>
+<h3 id="92-使用委托进行设计">
+  9.2 使用委托进行设计
+  <a class="heading-link" href="#92-%e4%bd%bf%e7%94%a8%e5%a7%94%e6%89%98%e8%bf%9b%e8%a1%8c%e8%ae%be%e8%ae%a1">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>想象有一个应用程序，其模拟公司团队执行软件项目</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">interface</span> <span style="color:#76a9f9">Work</span>{
+</span></span><span style="display:flex;"><span>	<span style="color:#c678dd">fun</span> <span style="color:#00b1f7">work</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">takeVacation</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">JavaProgrammer</span> : <span style="color:#c1abea">Work</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">work</span>() = <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;write java&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">takeVacation</span>() = <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;code at the beach&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">CSharpProgrammer</span> : <span style="color:#c1abea">Work</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">work</span>() = <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;write c#&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">takeVacation</span> = <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;code at the ranch&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>公司希望为团队配备一名软件开发经理</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Manager</span>
+</span></span></code></pre></div><p><strong>使用委托-纯JAVA工具</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Manager</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">worker</span>: <span style="color:#c1abea">Work</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">work</span>() = <span style="color:#c1abea">worker</span>.<span style="color:#c1abea">work</span>()
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">takeVacation</span> = <span style="color:#c1abea">worker</span>.<span style="color:#c1abea">work</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p><strong>使用委托-Kotlin</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Manager</span>(): <span style="color:#c1abea">Worker</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">JavaProgrammer</span>()
+</span></span></code></pre></div><p>使用</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">doe</span> = <span style="color:#c1abea">Manager</span>()
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">deo</span>: <span style="color:#c1abea">JavaProgrammer</span> = <span style="color:#c1abea">Manager</span>() <span style="color:#8a93a5;font-style:italic">// ERROR: type mismatch
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">doe</span>.<span style="color:#c1abea">work</span>()
+</span></span></code></pre></div><h3 id="93-给委托传递参数">
+  9.3 给委托传递参数
+  <a class="heading-link" href="#93-%e7%bb%99%e5%a7%94%e6%89%98%e4%bc%a0%e9%80%92%e5%8f%82%e6%95%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>但是！这里只建立了Manager到JavaProgrammer的委托，没有实现到CSharpProgrammer的委托。</p>
+<p>其次，Manager的实例没有访问委托的权限，也就是说，如果要在Manager类中编写一个方法，我们就不能从该方法访问委托。</p>
+<p>过将委托绑定到传递给构造函数的参数而不是隐式创建的实例，就可以很容易地修复这些限制。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Manager</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">staff</span>: <span style="color:#c1abea">Worker</span>): <span style="color:#c1abea">Worker</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">staff</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">meeting</span>() = <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;call worker to have a meeting </span><span style="color:#98c379">$staff</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="94-处理方法冲突">
+  9.4 处理方法冲突
+  <a class="heading-link" href="#94-%e5%a4%84%e7%90%86%e6%96%b9%e6%b3%95%e5%86%b2%e7%aa%81">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kotlin编译器在委托类中为委托中的每个方法创建一个包装类。如果在委托类中有一个方法与委托中的方法具有相同的名称和签名，该怎么办?</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Manager</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">staff</span>: <span style="color:#c1abea">Worker</span>): <span style="color:#c1abea">Worker</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">staff</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">override</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">takeVacation</span>() = <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;of course&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>看到这一点，Kotlin编译器不会为takeVacation()生成包装类，但会为work()方法生成包装类。</p>
+<p>对Manager实例的work()方法的调用被路由到委托，但是对takeVacation()方法的调用由Manager处理——那里没有委托。</p>
+<h3 id="95-kotlin委托的注意事项">
+  9.5 Kotlin委托的注意事项
+  <a class="heading-link" href="#95-kotlin%e5%a7%94%e6%89%98%e7%9a%84%e6%b3%a8%e6%84%8f%e4%ba%8b%e9%a1%b9">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在我们目前创建的示例中，Manager可以将调用委托给JavaProgrammer实例，但是对Manager的引用不能分配给对JavaProgrammer的引用。</p>
+<p>即Manager可以用JavaProgrammer但是它不是JavaProgrammer。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">coder</span>: <span style="color:#c1abea">JavaProgrammer</span> = <span style="color:#c1abea">Manager</span>() <span style="color:#8a93a5;font-style:italic">// ERROR
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">employee</span>: <span style="color:#c1abea">Worker</span> = <span style="color:#c1abea">Manager</span>() <span style="color:#8a93a5;font-style:italic">// Right
+</span></span></span></code></pre></div><p>这意味着Manager是一个或一种Worker。委托的真正目的是让Manager使用一个Worker，但是Kotlin的委托实现带来了一个副作用，即Manager可能被当作Worker来对待。</p>
+<h3 id="96-委托变量和属性">
+  9.6 委托变量和属性
+  <a class="heading-link" href="#96-%e5%a7%94%e6%89%98%e5%8f%98%e9%87%8f%e5%92%8c%e5%b1%9e%e6%80%a7">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>当你读取一个属性或一个局部变量时，Kotlin会在内部调用getValue()函数。同样，当你修改一个属性或一个变量时，它会调用setValue()函数。</p>
+<p>通过使用这两种方法来委托对象，你可以拦截调用来读写局部变量和对象属性。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">PoliteString</span>(<span style="color:#c678dd">var</span> <span style="color:#cebc3a">content</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">operator</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">getValue</span>(<span style="color:#c1abea">thjisRef</span>: <span style="color:#c1abea">Any</span>?, <span style="color:#c678dd">property</span>: <span style="color:#c1abea">KProperty</span>&lt;*&gt;) = <span style="color:#c1abea">content</span>.<span style="color:#c1abea">replace</span>(<span style="color:#63c381">&#34;stupid&#34;</span>, <span style="color:#63c381">&#34;s*****&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">operator</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">setValue</span>(<span style="color:#c1abea">thisRef</span>: <span style="color:#c1abea">Any</span>?, <span style="color:#c678dd">property</span>: <span style="color:#c1abea">KProperty</span>&lt;*&gt;, <span style="color:#c678dd">value</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">content</span> = <span style="color:#c678dd">value</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">var</span> <span style="color:#cebc3a">comment</span> = <span style="color:#c1abea">String</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">PoliteString</span>(<span style="color:#63c381">&#34;You are nice&#34;</span>)
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">comment</span>) <span style="color:#8a93a5;font-style:italic">// You are nice
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">comment</span> = <span style="color:#63c381">&#34;this is stupid&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">comment</span>) <span style="color:#8a93a5;font-style:italic">// this is s*****
+</span></span></span></code></pre></div><p>使用前面的方法，我们不仅可以委托对局部变量的访问，还可以委托对对象属性的访问。</p>
+<p>当定义一个属性时，不分配值，而是指定by并在其后跟着一个委托。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">PoliteString</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">dataSource</span>: <span style="color:#c1abea">MutableMap</span>&lt;<span style="color:#c1abea">String</span>, <span style="color:#c1abea">Any</span>&gt;){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">operator</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">getValue</span>(<span style="color:#c1abea">thisRef</span>: <span style="color:#c1abea">Any</span>?, <span style="color:#c678dd">property</span>: <span style="color:#c1abea">KProperty</span>&lt;*&gt;){
+</span></span><span style="display:flex;"><span>    (<span style="color:#c1abea">dataSource</span>[<span style="color:#c678dd">property</span>.<span style="color:#c1abea">name</span>] <span style="color:#c678dd">as</span>? <span style="color:#c1abea">String</span>)<span style="color:#c7bf54">?.</span><span style="color:#c1abea">replace</span>(<span style="color:#63c381">&#34;stupid&#34;</span>,<span style="color:#63c381">&#34;s*****&#34;</span>)
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>  
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">operator</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">setValue</span>(<span style="color:#c1abea">thisRef</span>: <span style="color:#c1abea">Any</span>, <span style="color:#c678dd">property</span>: <span style="color:#c1abea">KProperty</span>&lt;*&gt;, <span style="color:#c678dd">value</span>: <span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>    <span style="color:#c1abea">dataSource</span>[<span style="color:#c678dd">property</span>.<span style="color:#c1abea">name</span>] = <span style="color:#c678dd">value</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="97-内置的标准委托">
+  9.7 内置的标准委托
+  <a class="heading-link" href="#97-%e5%86%85%e7%bd%ae%e7%9a%84%e6%a0%87%e5%87%86%e5%a7%94%e6%89%98">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kotlin提供了一些内置的委托，我们可以很容易地从中获益。</p>
+<ul>
+<li>Lazy委托对于延迟创建对象非常有用或者直到真正需要结果时才执行计算。</li>
+<li>observable委托用于观察或监视属性值的变化。</li>
+<li>vetoable委托可用于根据某些规则或业务逻辑拒绝对属性的修改。</li>
+</ul>
+<h4 id="lazy">
+  Lazy
+  <a class="heading-link" href="#lazy">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>假设有一个函数，它获取一个城市的当前温度</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">getTemp</span>(<span style="color:#c1abea">city</span>: <span style="color:#c1abea">String</span>): <span style="color:#c1abea">Double</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;fetch temp </span><span style="color:#98c379">$city</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">return</span> <span style="color:#d19a66">30.0</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>正常使用时</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">temp</span> = <span style="color:#c1abea">getTemp</span>(<span style="color:#c1abea">city</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">if</span>(<span style="color:#c1abea">showTemp</span> <span style="color:#c7bf54">&amp;&amp;</span> <span style="color:#c1abea">temp</span>&gt;<span style="color:#d19a66">20</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$temp</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>当showTemp为false的时候，其实也会做getTemp的语句，但是实际上这是额外的操作，所以可以对getTemp用lazy，只有真正使用的时候才执行取值。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">temp</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">lazy</span> {<span style="color:#c1abea">getTemp</span>(<span style="color:#c1abea">city</span>)}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">if</span>(<span style="color:#c1abea">showTemp</span> <span style="color:#c7bf54">&amp;&amp;</span> <span style="color:#c1abea">temp</span>&gt;<span style="color:#d19a66">20</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$temp</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>lazy函数接受一个lambda表达式作为参数，该表达式将执行计算，但仅按需执行，而不是急于或立即执行。</p>
+<p>一旦对lambda中的表达式求值，委托将记住结果，以后对该值的请求将接收保存的值。不会重新计算lambda表达式。</p>
+<h4 id="observable">
+  Observable
+  <a class="heading-link" href="#observable">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">var</span> <span style="color:#cebc3a">count</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">observable</span>(<span style="color:#d19a66">0</span>){<span style="color:#c678dd">property</span>, <span style="color:#c1abea">oldValue</span>, <span style="color:#c1abea">newValue</span><span style="color:#c7bf54">-&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;property: </span><span style="color:#98c379">$property</span><span style="color:#63c381"> old: </span><span style="color:#98c379">$oldValue</span><span style="color:#63c381"> new: </span><span style="color:#98c379">$newValue</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$count</span><span style="color:#63c381">&#34;</span>) <span style="color:#8a93a5;font-style:italic">//0
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">count</span><span style="color:#c7bf54">++</span>	<span style="color:#8a93a5;font-style:italic">//property: var Observe.count: Kotlin.Int old: 0 new: 1
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$count</span><span style="color:#63c381">&#34;</span>) <span style="color:#8a93a5;font-style:italic">//1
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">count</span><span style="color:#c7bf54">--</span> <span style="color:#8a93a5;font-style:italic">//property: var Observe.count: Kotlin.Int old: 1 new: 0
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$count</span><span style="color:#63c381">&#34;</span>)<span style="color:#8a93a5;font-style:italic">//0
+</span></span></span></code></pre></div><h4 id="vetoable">
+  Vetoable
+  <a class="heading-link" href="#vetoable">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>与使用observable注册的处理程序不同，其返回类型为Unit。</p>
+<p>我们使用vetoable注册的处理程序返回布尔结果。返回值为true表示同意接受修改，false表示拒绝。如果拒绝，修改将被丢弃。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">var</span> <span style="color:#cebc3a">count</span> <span style="color:#c678dd">by</span> <span style="color:#c1abea">vetoable</span>(<span style="color:#d19a66">0</span>){<span style="color:#c1abea">_</span>, <span style="color:#c1abea">oldValue</span>, <span style="color:#c1abea">newValue</span><span style="color:#c7bf54">-&gt;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#c1abea">newValue</span> &gt; <span style="color:#c1abea">oldValue</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$count</span><span style="color:#63c381">&#34;</span>) <span style="color:#8a93a5;font-style:italic">//0
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">count</span><span style="color:#c7bf54">++</span>	<span style="color:#8a93a5;font-style:italic">//old: 0 new: 1 (true)
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$count</span><span style="color:#63c381">&#34;</span>) <span style="color:#8a93a5;font-style:italic">//1
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">count</span><span style="color:#c7bf54">--</span> <span style="color:#8a93a5;font-style:italic">//old: 1 new: 0 (false)
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;</span><span style="color:#98c379">$count</span><span style="color:#63c381">&#34;</span>)<span style="color:#8a93a5;font-style:italic">//1
+</span></span></span></code></pre></div>
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Zhengbledor 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

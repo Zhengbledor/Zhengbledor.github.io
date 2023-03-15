@@ -6,7 +6,52 @@
     <description>Recent content on Zhengbledor</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://zhengbledor.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Kotlin编程实战-阅读记录-第三部分</title>
+      <link>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%89%E9%83%A8%E5%88%86/</guid>
+      <description>Kotlin编程实战-第三部分 Link to heading 第三部分 函数式Kotlin Link to heading 第10章 使用lambda进行函数式编程 Link to heading 10.2 lambda表达式 Link to heading lambda表达式是没有名称的函数，其返回类型是推断的。
+通常一个函数有四个部分:名称、返回类型、参数列表和主体。
+lambda只保留函数最重要的部分——参数列表和主体。
+{ parameter list -&amp;gt; body } lambda被包裹在{}中。使用连字符箭头(-&amp;gt;)把主体与参数列表分开，主体通常是单个语句或表达式，但也可以是多行。但是尽量只使用单行语句。
+fun isPrime(n: Int) = n&amp;gt;1 &amp;amp;&amp;amp; (2 until n).none{ n % it == 0} 如果传递给函数的lambda只接受一个参数，那么我们可以省略参数声明，而使用一个特殊的隐式名称it。
+接受lambda
+现在让我们看看如何创建一个接收lambda的函数。
+fun walkTo(action: (Int)-&amp;gt;Unit, n: Int) = (1..n).forEach{ action(it) } 在Kotlin中，对于参数，我们先指定变量名，然后是类型，比如n: Int。这种格式也用于lambda参数。
+把lambda作为最后一个参数传递
+修改一下上面这个代码参数的顺序
+fun walkTo(n: Int, action: (Int)-&amp;gt;Unit) = (1..n).forEach{ action(it) } walkTo(5){print(it)} 使用函数引用</description>
+    </item>
+    
+    <item>
+      <title>Kotlin编程实战-阅读记录-第二部分</title>
+      <link>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/</guid>
+      <description>Kotlin编程实战-第二部分 Link to heading 第二部分 面向对象的Kotlin Link to heading 第7章 对象和类 Link to heading Kotlin不需要类， 当顶级函数足够时，你可以使用它们。
+7.1 对象和单例 Link to heading 带有对象表达式的匿名对象
+fun drawCircle(){ val circle = object { val x = 10 val y = 20 val radius = 30 } } 在最基本的形式中，对象表达式是后跟一个块{}的关键字 object。
+匿名对象有以下几个限制
+匿名对象的内部类型不能作为函数或方法的返回类型。 匿名对象的内部类型不能作用函数或方法的参数类型。 如果他们作为属性存储在类中，他们将被视为Any类型，他们的任何属性或方法都将无法直接访问。 只需稍加修改，匿名对象就可以用作接口的实现者。
+fun createRunnable():Runnable{ val runnable = object: Runnable{ override fun run(){....} } return runnable } 如果通过匿名内部类实现的接口是单一抽象方法接口（只有一个需要实现的方法），那么我们可以直接提供实现，而不需要指定方法 名，如下所示:
+fun createRunnable():Runnable = Runnable{.</description>
+    </item>
+    
+    <item>
+      <title>Kotlin编程实战-阅读记录-第四部分</title>
+      <link>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86/</link>
+      <pubDate>Wed, 15 Mar 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86/</guid>
+      <description>Kotlin编程实战-第四部分 Link to heading 第四部分 优雅且高效的Kotlin Link to heading 第12章 Kotlin的流畅性 Link to heading 12.1 重载运算符 Link to heading operator fun Pair&amp;lt;Int, Int&amp;gt;.plus(other: Pair&amp;lt;Int,Int&amp;gt;) = Pair(first + other.first, second + other.second) 12.2 使用扩展函数和属性进行注入 Link to heading fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) + (point.y -cy)*(point.y-cy) &amp;lt; radius*radius circle.contains(point1) 扩展函数有一些限制。当扩展函数和同名的实例方法之间发生冲突时，实例方法总是获胜。
+同时可以通过扩展函数注入运算符
+operator fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) + (point.y -cy)*(point.y-cy) &amp;lt; radius*radius point1 in circle 可以使用扩展属性去注入属性</description>
+    </item>
+    
     <item>
       <title>关于清晰度「K」与「P」的定义</title>
       <link>https://zhengbledor.github.io/posts/%E5%85%B3%E4%BA%8E%E6%B8%85%E6%99%B0%E5%BA%A6k%E4%B8%8Ep%E7%9A%84%E5%AE%9A%E4%B9%89/</link>
@@ -95,12 +140,12 @@ public class ArrayCollection&amp;lt;T&amp;gt; { //首先设计一个简单的数
     </item>
     
     <item>
-      <title>Kotlin编程实战-阅读记录</title>
-      <link>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/</link>
+      <title>Kotlin编程实战-阅读记录-第一部分</title>
+      <link>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/</link>
       <pubDate>Mon, 06 Mar 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98/</guid>
-      <description>Kotlin编程实战 Link to heading 第2章 从Java角度了解Kotlin的基本知识 Link to heading 2.1 减少输入 Link to heading 分号是可选的
+      <guid>https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E4%B8%80%E9%83%A8%E5%88%86/</guid>
+      <description>Kotlin编程实战-第一部分 Link to heading 第一部分 使用Kotlin编写脚本 Link to heading 第2章 从Java角度了解Kotlin的基本知识 Link to heading 2.1 减少输入 Link to heading 分号是可选的
 变量类型规范是可选的
 类和函数是可选的
 函数可以在类外面执行
@@ -109,7 +154,7 @@ kotlin/standalone.kts
 fun nofluff(){ println(&amp;#34;nofluff called&amp;#34;) throw RuntimeException(&amp;#34;oops&amp;#34;) } println(&amp;#34;no in a function, calling nofluff()&amp;#34;) try{ nofluff() }catch(ex: Exception){ val stackTrace = ex.getStackTrace() println(stackTrace[0]) println(stackTrace[1]) } // 打印结果 no in a function, calling nofluff() nofluff called.. Standalone.nofluff(...) Standalone.&amp;lt;init&amp;gt;(...) Kotlin悄悄将函数nofluff()转换成一个名为Standalone的合成类的方法（通过文件名推断出的名称）
 将独立代码转换为类的构造函数，输出了&amp;lt;init&amp;gt;
 try-catch是可选的
-2.2 合理的警告 Link to heading 2.3 选择val而不是var Link to heading 2.</description>
+2.2 合理的警告 Link to heading 2.</description>
     </item>
     
     <item>

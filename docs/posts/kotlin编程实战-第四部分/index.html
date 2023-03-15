@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  Kotlin编程实战-阅读记录-第四部分 · Zhengbledor
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Zhengbledor">
+<meta name="description" content="Kotlin编程实战-第四部分 Link to heading 第四部分 优雅且高效的Kotlin Link to heading 第12章 Kotlin的流畅性 Link to heading 12.1 重载运算符 Link to heading operator fun Pair&lt;Int, Int&gt;.plus(other: Pair&lt;Int,Int&gt;) = Pair(first &#43; other.first, second &#43; other.second) 12.2 使用扩展函数和属性进行注入 Link to heading fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) &#43; (point.y -cy)*(point.y-cy) &lt; radius*radius circle.contains(point1) 扩展函数有一些限制。当扩展函数和同名的实例方法之间发生冲突时，实例方法总是获胜。
+同时可以通过扩展函数注入运算符
+operator fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) &#43; (point.y -cy)*(point.y-cy) &lt; radius*radius point1 in circle 可以使用扩展属性去注入属性">
+<meta name="keywords" content="blog">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kotlin编程实战-阅读记录-第四部分"/>
+<meta name="twitter:description" content="Kotlin编程实战-第四部分 Link to heading 第四部分 优雅且高效的Kotlin Link to heading 第12章 Kotlin的流畅性 Link to heading 12.1 重载运算符 Link to heading operator fun Pair&lt;Int, Int&gt;.plus(other: Pair&lt;Int,Int&gt;) = Pair(first &#43; other.first, second &#43; other.second) 12.2 使用扩展函数和属性进行注入 Link to heading fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) &#43; (point.y -cy)*(point.y-cy) &lt; radius*radius circle.contains(point1) 扩展函数有一些限制。当扩展函数和同名的实例方法之间发生冲突时，实例方法总是获胜。
+同时可以通过扩展函数注入运算符
+operator fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) &#43; (point.y -cy)*(point.y-cy) &lt; radius*radius point1 in circle 可以使用扩展属性去注入属性"/>
+
+<meta property="og:title" content="Kotlin编程实战-阅读记录-第四部分" />
+<meta property="og:description" content="Kotlin编程实战-第四部分 Link to heading 第四部分 优雅且高效的Kotlin Link to heading 第12章 Kotlin的流畅性 Link to heading 12.1 重载运算符 Link to heading operator fun Pair&lt;Int, Int&gt;.plus(other: Pair&lt;Int,Int&gt;) = Pair(first &#43; other.first, second &#43; other.second) 12.2 使用扩展函数和属性进行注入 Link to heading fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) &#43; (point.y -cy)*(point.y-cy) &lt; radius*radius circle.contains(point1) 扩展函数有一些限制。当扩展函数和同名的实例方法之间发生冲突时，实例方法总是获胜。
+同时可以通过扩展函数注入运算符
+operator fun Circle.contains(point:Point) = (point.x - cx)*(point.x - cx) &#43; (point.y -cy)*(point.y-cy) &lt; radius*radius point1 in circle 可以使用扩展属性去注入属性" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-15T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-15T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.01bd429dda63a16d76996eaf0b8da061429b76e714515cb1b246aac7fe7f4b2a.css" integrity="sha256-Ab1CndpjoW12mW6vC42gYUKbducUUVyxskaqx/5/Syo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Zhengbledor
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zhengbledor.github.io/posts/kotlin%E7%BC%96%E7%A8%8B%E5%AE%9E%E6%88%98-%E7%AC%AC%E5%9B%9B%E9%83%A8%E5%88%86/">
+              Kotlin编程实战-阅读记录-第四部分
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-15T00:00:00Z">
+                March 15, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              2-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="kotlin编程实战-第四部分">
+  Kotlin编程实战-第四部分
+  <a class="heading-link" href="#kotlin%e7%bc%96%e7%a8%8b%e5%ae%9e%e6%88%98-%e7%ac%ac%e5%9b%9b%e9%83%a8%e5%88%86">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="第四部分-优雅且高效的kotlin">
+  第四部分 优雅且高效的Kotlin
+  <a class="heading-link" href="#%e7%ac%ac%e5%9b%9b%e9%83%a8%e5%88%86-%e4%bc%98%e9%9b%85%e4%b8%94%e9%ab%98%e6%95%88%e7%9a%84kotlin">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h2 id="第12章-kotlin的流畅性">
+  第12章 Kotlin的流畅性
+  <a class="heading-link" href="#%e7%ac%ac12%e7%ab%a0-kotlin%e7%9a%84%e6%b5%81%e7%95%85%e6%80%a7">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="121-重载运算符">
+  12.1 重载运算符
+  <a class="heading-link" href="#121-%e9%87%8d%e8%bd%bd%e8%bf%90%e7%ae%97%e7%ac%a6">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">operator</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">Pair</span>&lt;<span style="color:#c1abea">Int</span>, <span style="color:#c1abea">Int</span>&gt;.<span style="color:#c1abea">plus</span>(<span style="color:#c1abea">other</span>: <span style="color:#c1abea">Pair</span>&lt;<span style="color:#c1abea">Int</span>,<span style="color:#c1abea">Int</span>&gt;) =
+</span></span><span style="display:flex;"><span>	<span style="color:#c1abea">Pair</span>(<span style="color:#c1abea">first</span> + <span style="color:#c1abea">other</span>.<span style="color:#c1abea">first</span>, <span style="color:#c1abea">second</span> + <span style="color:#c1abea">other</span>.<span style="color:#c1abea">second</span>)
+</span></span></code></pre></div><h3 id="122-使用扩展函数和属性进行注入">
+  12.2 使用扩展函数和属性进行注入
+  <a class="heading-link" href="#122-%e4%bd%bf%e7%94%a8%e6%89%a9%e5%b1%95%e5%87%bd%e6%95%b0%e5%92%8c%e5%b1%9e%e6%80%a7%e8%bf%9b%e8%a1%8c%e6%b3%a8%e5%85%a5">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">Circle</span>.<span style="color:#c1abea">contains</span>(<span style="color:#c1abea">point</span>:<span style="color:#c1abea">Point</span>) = 
+</span></span><span style="display:flex;"><span>	(<span style="color:#c1abea">point</span>.<span style="color:#c1abea">x</span> - <span style="color:#c1abea">cx</span>)*(<span style="color:#c1abea">point</span>.<span style="color:#c1abea">x</span> - <span style="color:#c1abea">cx</span>) + (<span style="color:#c1abea">point</span>.<span style="color:#c1abea">y</span> -<span style="color:#c1abea">cy</span>)*(<span style="color:#c1abea">point</span>.<span style="color:#c1abea">y</span>-<span style="color:#c1abea">cy</span>) &lt; <span style="color:#c1abea">radius</span>*<span style="color:#c1abea">radius</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">circle</span>.<span style="color:#c1abea">contains</span>(<span style="color:#c1abea">point1</span>)
+</span></span></code></pre></div><p>扩展函数有一些限制。当扩展函数和同名的实例方法之间发生冲突时，实例方法总是获胜。</p>
+<p>同时可以通过扩展函数注入运算符</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">operator</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">Circle</span>.<span style="color:#c1abea">contains</span>(<span style="color:#c1abea">point</span>:<span style="color:#c1abea">Point</span>) = 
+</span></span><span style="display:flex;"><span>	(<span style="color:#c1abea">point</span>.<span style="color:#c1abea">x</span> - <span style="color:#c1abea">cx</span>)*(<span style="color:#c1abea">point</span>.<span style="color:#c1abea">x</span> - <span style="color:#c1abea">cx</span>) + (<span style="color:#c1abea">point</span>.<span style="color:#c1abea">y</span> -<span style="color:#c1abea">cy</span>)*(<span style="color:#c1abea">point</span>.<span style="color:#c1abea">y</span>-<span style="color:#c1abea">cy</span>) &lt; <span style="color:#c1abea">radius</span>*<span style="color:#c1abea">radius</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">point1</span> <span style="color:#c678dd">in</span> <span style="color:#c1abea">circle</span>
+</span></span></code></pre></div><p>可以使用扩展属性去注入属性</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">Circle</span>.<span style="color:#c1abea">area</span>: <span style="color:#c1abea">Double</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#c678dd">get</span>() = <span style="color:#76a9f9">Kotlin</span>.<span style="color:#c1abea">math</span>.<span style="color:#c1abea">PI</span> * <span style="color:#c1abea">radius</span> *<span style="color:#c1abea">radius</span>
+</span></span></code></pre></div><p>如果类有伴生对象时，可以注入静态方法</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">fun</span> <span style="color:#00b1f7">String</span>.<span style="color:#76a9f9">Companion</span>.<span style="color:#c1abea">toURL</span>(<span style="color:#c1abea">link</span>: <span style="color:#c1abea">String</span>) = <span style="color:#c1abea">java</span>.<span style="color:#c1abea">net</span>.<span style="color:#c1abea">URL</span>(<span style="color:#c1abea">link</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">url</span>: <span style="color:#c1abea">java</span>.<span style="color:#c1abea">net</span>.<span style="color:#c1abea">URL</span> = <span style="color:#76a9f9">String</span>.<span style="color:#c1abea">toURL</span>(<span style="color:#63c381">&#34;sss&#34;</span>)
+</span></span></code></pre></div><h4 id="124-带中缀的函数流畅性">
+  12.4 带中缀的函数流畅性
+  <a class="heading-link" href="#124-%e5%b8%a6%e4%b8%ad%e7%bc%80%e7%9a%84%e5%87%bd%e6%95%b0%e6%b5%81%e7%95%85%e6%80%a7">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">operator</span> <span style="color:#c678dd">infix</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">Circle</span>.<span style="color:#c1abea">contains</span>(<span style="color:#c1abea">point</span>: <span style="color:#c1abea">Point</span>) = <span style="color:#c7bf54">..</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c1abea">println</span>(<span style="color:#c1abea">circle</span> <span style="color:#c1abea">contains</span> <span style="color:#c1abea">point</span>)
+</span></span></code></pre></div><p>Kotlin为中缀函数提供了一些灵活性，但也有一些限制:中缀方法只能接受一个参数——没有vararg(可变参数)，也没有默认参数。</p>
+<h4 id="125-带any对象的流畅性">
+  12.5 带Any对象的流畅性
+  <a class="heading-link" href="#125-%e5%b8%a6any%e5%af%b9%e8%b1%a1%e7%9a%84%e6%b5%81%e7%95%85%e6%80%a7">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>infix减少了一些混乱，但是当处理Any对象时，Kotlin使代码更简洁，更具表现力。</p>
+<p>具体来说，Kotlin有四个重要的方法可以使代码更加流畅:also()、apply()、let()和run()。</p>
+<table>
+<thead>
+<tr>
+<th>函数名</th>
+<th style="text-align:center">定义</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:right">返回值</th>
+<th style="text-align:right">extension</th>
+<th style="text-align:right">其他</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>let</td>
+<td style="text-align:center">fun &lt;T, R&gt; T.let(f: (T) -&gt; R): R = f(this)</td>
+<td style="text-align:center">it</td>
+<td style="text-align:right">闭包返回</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>apply</td>
+<td style="text-align:center">fun <!-- raw HTML omitted --> T.apply(f: T.() -&gt; Unit): T { f(); return this }</td>
+<td style="text-align:center">无，可以使用this</td>
+<td style="text-align:right">this</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>with</td>
+<td style="text-align:center">fun &lt;T, R&gt; with(receiver: T, f: T.() -&gt; R): R = receiver.f()</td>
+<td style="text-align:center">无，可以使用this</td>
+<td style="text-align:right">闭包返回</td>
+<td style="text-align:right">否</td>
+<td style="text-align:right">调用方式与其他不同</td>
+</tr>
+<tr>
+<td>run</td>
+<td style="text-align:center">fun &lt;T, R&gt; T.run(f: T.() -&gt; R): R = f()</td>
+<td style="text-align:center">无，可以使用this</td>
+<td style="text-align:right">闭包返回</td>
+<td style="text-align:right">是</td>
+<td style="text-align:right"></td>
+</tr>
+</tbody>
+</table>
+<p>总结</p>
+<ul>
+<li>所有四个方法都执行传递给他们的lambda</li>
+<li>let和run执行lambda并将lambda的结果返回</li>
+<li>also和apply忽略lambda的结果，而是将本身返回给调用方</li>
+<li>run和apply在调用他们的context对象的上下文this</li>
+</ul>
+<h4 id="126-隐式接收方">
+  12.6 隐式接收方
+  <a class="heading-link" href="#126-%e9%9a%90%e5%bc%8f%e6%8e%a5%e6%94%b6%e6%96%b9">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c678dd">val</span> <span style="color:#cebc3a">printIt</span>: <span style="color:#76a9f9">String</span>.(<span style="color:#c1abea">Int</span>) <span style="color:#c7bf54">-&gt;</span> <span style="color:#c1abea">Unit</span> = {<span style="color:#c1abea">n</span>: <span style="color:#c1abea">Int</span> <span style="color:#c7bf54">-&gt;</span>
+</span></span><span style="display:flex;"><span>   <span style="color:#c1abea">println</span>(<span style="color:#63c381">&#34;n is </span><span style="color:#98c379">$n</span><span style="color:#63c381">, length is </span><span style="color:#98c379">$length</span><span style="color:#63c381">&#34;</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 接收方作为第一个参数，lambda参数紧跟其后
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c1abea">printIt</span>(<span style="color:#63c381">&#34;hello&#34;</span>,<span style="color:#d19a66">6</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 作为扩展函数
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#63c381">&#34;hello&#34;</span>.<span style="color:#c1abea">printIt</span>(<span style="color:#d19a66">6</span>)
+</span></span></code></pre></div><h2 id="第13章-创建内部dsl">
+  第13章 创建内部DSL
+  <a class="heading-link" href="#%e7%ac%ac13%e7%ab%a0-%e5%88%9b%e5%bb%ba%e5%86%85%e9%83%a8dsl">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="131-dsl的类型和特征">
+  13.1 DSL的类型和特征
+  <a class="heading-link" href="#131-dsl%e7%9a%84%e7%b1%bb%e5%9e%8b%e5%92%8c%e7%89%b9%e5%be%81">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在设计时，你必须在外部DSL和内部DSL之间做出选择。</p>
+<p>如果你选择创建一个外部DSL，那么你可以享受到更大的自由，但是你需要负责创建解析器来解析和处理DSL。</p>
+<p>你可以在宿主语言的范围内设计一个内部或嵌入式DSL。语言的编译器和工具充当解析器。</p>
+<h3 id="132-用于内部dsl的kotlin">
+  13.2 用于内部DSL的kotlin
+  <a class="heading-link" href="#132-%e7%94%a8%e4%ba%8e%e5%86%85%e9%83%a8dsl%e7%9a%84kotlin">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Kotlin是一种非常适合创建内部DSL的语言。静态类型通常会对语言作为内部DSL宿主的能力造成很大的限制。</p>
+<ul>
+<li>
+<p>分号可选</p>
+</li>
+<li>
+<p>点和圆括号不与中缀在一起<code>starts at 14.30</code> or <code>starts.at(14.30)</code></p>
+</li>
+<li>
+<p>使用扩展函数获得特定的域</p>
+<p>尽管Kotlin是静态类型的，但它允许执行编译时函数注入。因此，你可以通过向Int中注入days()这样的函数来为库函数的使用者设计如下代码。</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#d19a66">2.</span><span style="color:#c1abea">days</span>(<span style="color:#c1abea">ago</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 如果使用infix关键字
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#d19a66">2</span> <span style="color:#c1abea">days</span> <span style="color:#c1abea">ago</span>
+</span></span></code></pre></div></li>
+<li>
+<p>传递lambda不需要圆括号</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#63c381">&#34;Planning&#34;</span>.<span style="color:#c1abea">meeting</span>({
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">starts</span>.<span style="color:#c1abea">at</span>(<span style="color:#d19a66">14.30</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">ends</span>.<span style="color:#c678dd">by</span>(<span style="color:#d19a66">15.20</span>)
+</span></span><span style="display:flex;"><span>})
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#63c381">&#34;Planning&#34;</span> <span style="color:#c1abea">metting</span> {
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">starts</span> <span style="color:#c1abea">at</span> <span style="color:#d19a66">14.30</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">ends</span> <span style="color:#c678dd">by</span> <span style="color:#d19a66">15.20</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic">// 创建
+</span></span></span><span style="display:flex;"><span><span style="color:#8a93a5;font-style:italic"></span><span style="color:#c678dd">class</span> <span style="color:#76a9f9">Metting</span>(<span style="color:#c678dd">val</span> <span style="color:#cebc3a">title</span>:<span style="color:#c1abea">String</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">var</span> <span style="color:#cebc3a">startTime</span> = <span style="color:#63c381">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">var</span> <span style="color:#cebc3a">endTime</span> = <span style="color:#63c381">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">start</span> = <span style="color:#c678dd">this</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">end</span> = <span style="color:#c678dd">this</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">private</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">convertToString</span>(<span style="color:#c1abea">time</span>: <span style="color:#c1abea">Double</span>) = <span style="color:#76a9f9">String</span>.<span style="color:#c1abea">format</span>(<span style="color:#63c381">&#34;$0.2f&#34;</span>, <span style="color:#c1abea">time</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">at</span>(<span style="color:#c1abea">time</span>: <span style="color:#c1abea">Double</span>){ <span style="color:#c1abea">startTime</span> = <span style="color:#c1abea">convertToString</span>(<span style="color:#c1abea">time</span>) }
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">by</span>(<span style="color:#c1abea">time</span>: <span style="color:#c1abea">Double</span>){ <span style="color:#c1abea">endTime</span> = <span style="color:#c1abea">convertToString</span>(<span style="color:#c1abea">time</span>) }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#c678dd">infix</span> <span style="color:#c678dd">fun</span> <span style="color:#00b1f7">String</span>.<span style="color:#c1abea">metting</span>(<span style="color:#c1abea">block</span>:<span style="color:#76a9f9">Metting</span>.()<span style="color:#c7bf54">-&gt;</span><span style="color:#c1abea">Unit</span>){
+</span></span><span style="display:flex;"><span>  <span style="color:#c678dd">val</span> <span style="color:#cebc3a">metting</span> = <span style="color:#c1abea">Metting</span>(<span style="color:#c678dd">this</span>)
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">metting</span>.<span style="color:#c1abea">block</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+<li>
+<p>隐式接收方影响DSL的创建</p>
+<p>Kotlin在设计DSL时最重要的特性之一是能够将隐式接收方传递给lambda表达式</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-kotlin" data-lang="kotlin"><span style="display:flex;"><span><span style="color:#c1abea">placeOrder</span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">an</span> <span style="color:#c1abea">item</span> <span style="color:#63c381">&#34;pencil&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">an</span> <span style="color:#c1abea">item</span> <span style="color:#63c381">&#34;eraser&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#c1abea">complete</span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#c678dd">this</span> <span style="color:#c1abea">with</span> <span style="color:#c1abea">creaditcard</span> <span style="color:#c1abea">number</span> <span style="color:#63c381">&#34;123-5678-9100&#34;</span>
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></li>
+</ul>
+<h2 id="第14章-编写递归和记忆">
+  第14章 编写递归和记忆
+  <a class="heading-link" href="#%e7%ac%ac14%e7%ab%a0-%e7%bc%96%e5%86%99%e9%80%92%e5%bd%92%e5%92%8c%e8%ae%b0%e5%bf%86">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Zhengbledor 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
