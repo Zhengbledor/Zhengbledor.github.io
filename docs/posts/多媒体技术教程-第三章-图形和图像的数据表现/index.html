@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+  《多媒体技术教程》-第三章-图形和图像的数据表现 · Zhengbledor
+</title>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+
+
+<meta name="author" content="Zhengbledor">
+<meta name="description" content="第三章-图形和图像的数据表现 Link to heading 1、图形/图像的数据类型 Link to heading 1.1 1位图像 Link to heading 图像由像素组成，像素是数字图像中的图片元素，可以理解为图片中的一个一个点。
+如果一张图片中的像素由Boolean储存，只有“开”和“关”两个属性，展示出来的效果是“黑”和“白”。这样的图像称为“二值图像”
+二值图像又被称为1位单色图像。如果不做其他的压缩操作，一张分辨率（分辨率的定义可以看博客中另一篇文章，后面会在这里加超链接）为640*480的1位单色图像需要38.4kB的存储空间。（防止有些小可爱不知道怎么算的，加上过程= =） $$ (640 * 480) =307,200 (Bit) \ {307,200 \over 8} = {38400(Byte)} ={38.4(kB)} $$
+1.2 8位灰度图像 Link to heading 8位灰度图像指图像的每一个像素都存储了一个0-255(1Byte)的灰度值(gray value)。
+8位图像可以看成由像素值组成的二维数组，其中的两个维度分别为长、宽。这样一个二维数组被称为一幅位图(bitmap)。而存储位图的硬件设备位帧缓存(frame buffer)，而帧缓存被封装在视频卡中。
+帧缓(frame buffer)冲设备提供了显卡的抽象描述。他同时代表了显卡上的显存，应用程序通过定义好的接口可以访问显卡，而不需要知道底层的任何操作。
+每个像素通常用一个字节存储，所以一副640*480的灰度图需要300KB的存储空间。
+如果我们想通过打印机打印这样一幅图片。老式的1位打印机通常只能选择打印一个点或者不打印一个点，不能指定灰度进行打印。所以一个8位的灰度图像可能会被打印成一张1位单色图。
+此时采用抖动(dithering)方法，它的基本操作是以亮度分辨率换取空间分辨率。
+抖动
+如果我们用n*n的开关1位点矩阵来替代，就能表现n^2&#43;1级亮度分辨率。也就是说每一个像素在打印机上都会被视作n*n个像素。并为其中nn个点编号。 $$ \begin{bmatrix} 0 &amp; 2 \ 3 &amp; 1 \end{bmatrix} $$ 比如矩阵中任意三点被打印成黑色可以算作一个亮度级。那么我们就选择使用22的开关去替代，就可以表示5级亮度分辨率。
+首先通过256/5的整数除法把0-255间的图像值映射到一个新的范围0-4。
+如果像素值为0，则打印机在这2*2的矩阵内不输出任何打印，如果像素值是4，那么在这4个点都涂满。
+所以规则如下：
+如果像素亮度比抖动矩阵的某个元素编号大，则在该元素填涂，即用一个n*n的点阵替换每个像素。
+注意，对于一个经过抖动方法处理的图像，其尺寸可能太大，比如使用4*4的点阵替换每个像素，会使图像变为原来的16倍。可以使用有序抖动的方式去解决这个问题
+有序抖动
+假设我们用一个更大的4*4抖动矩阵，如 $$ \begin{bmatrix} 0 &amp; 8 &amp; 2 &amp; 10 \ 12 &amp; 4 &amp; 14 &amp; 6 \ 3 &amp; 11 &amp; 1 &amp; 9 \ 15 &amp; 7 &amp; 13 &amp; 5 \end{bmatrix} $$ 然后假设我们把这个抖动矩阵在同一时刻移动到图像在水平和垂直方向上的四个像素上，如果某个像素的亮度值大于覆盖它的矩阵元素编号，则这个像素被涂黑。">
+<meta name="keywords" content="blog">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="《多媒体技术教程》-第三章-图形和图像的数据表现"/>
+<meta name="twitter:description" content="第三章-图形和图像的数据表现 Link to heading 1、图形/图像的数据类型 Link to heading 1.1 1位图像 Link to heading 图像由像素组成，像素是数字图像中的图片元素，可以理解为图片中的一个一个点。
+如果一张图片中的像素由Boolean储存，只有“开”和“关”两个属性，展示出来的效果是“黑”和“白”。这样的图像称为“二值图像”
+二值图像又被称为1位单色图像。如果不做其他的压缩操作，一张分辨率（分辨率的定义可以看博客中另一篇文章，后面会在这里加超链接）为640*480的1位单色图像需要38.4kB的存储空间。（防止有些小可爱不知道怎么算的，加上过程= =） $$ (640 * 480) =307,200 (Bit) \ {307,200 \over 8} = {38400(Byte)} ={38.4(kB)} $$
+1.2 8位灰度图像 Link to heading 8位灰度图像指图像的每一个像素都存储了一个0-255(1Byte)的灰度值(gray value)。
+8位图像可以看成由像素值组成的二维数组，其中的两个维度分别为长、宽。这样一个二维数组被称为一幅位图(bitmap)。而存储位图的硬件设备位帧缓存(frame buffer)，而帧缓存被封装在视频卡中。
+帧缓(frame buffer)冲设备提供了显卡的抽象描述。他同时代表了显卡上的显存，应用程序通过定义好的接口可以访问显卡，而不需要知道底层的任何操作。
+每个像素通常用一个字节存储，所以一副640*480的灰度图需要300KB的存储空间。
+如果我们想通过打印机打印这样一幅图片。老式的1位打印机通常只能选择打印一个点或者不打印一个点，不能指定灰度进行打印。所以一个8位的灰度图像可能会被打印成一张1位单色图。
+此时采用抖动(dithering)方法，它的基本操作是以亮度分辨率换取空间分辨率。
+抖动
+如果我们用n*n的开关1位点矩阵来替代，就能表现n^2&#43;1级亮度分辨率。也就是说每一个像素在打印机上都会被视作n*n个像素。并为其中nn个点编号。 $$ \begin{bmatrix} 0 &amp; 2 \ 3 &amp; 1 \end{bmatrix} $$ 比如矩阵中任意三点被打印成黑色可以算作一个亮度级。那么我们就选择使用22的开关去替代，就可以表示5级亮度分辨率。
+首先通过256/5的整数除法把0-255间的图像值映射到一个新的范围0-4。
+如果像素值为0，则打印机在这2*2的矩阵内不输出任何打印，如果像素值是4，那么在这4个点都涂满。
+所以规则如下：
+如果像素亮度比抖动矩阵的某个元素编号大，则在该元素填涂，即用一个n*n的点阵替换每个像素。
+注意，对于一个经过抖动方法处理的图像，其尺寸可能太大，比如使用4*4的点阵替换每个像素，会使图像变为原来的16倍。可以使用有序抖动的方式去解决这个问题
+有序抖动
+假设我们用一个更大的4*4抖动矩阵，如 $$ \begin{bmatrix} 0 &amp; 8 &amp; 2 &amp; 10 \ 12 &amp; 4 &amp; 14 &amp; 6 \ 3 &amp; 11 &amp; 1 &amp; 9 \ 15 &amp; 7 &amp; 13 &amp; 5 \end{bmatrix} $$ 然后假设我们把这个抖动矩阵在同一时刻移动到图像在水平和垂直方向上的四个像素上，如果某个像素的亮度值大于覆盖它的矩阵元素编号，则这个像素被涂黑。"/>
+
+<meta property="og:title" content="《多媒体技术教程》-第三章-图形和图像的数据表现" />
+<meta property="og:description" content="第三章-图形和图像的数据表现 Link to heading 1、图形/图像的数据类型 Link to heading 1.1 1位图像 Link to heading 图像由像素组成，像素是数字图像中的图片元素，可以理解为图片中的一个一个点。
+如果一张图片中的像素由Boolean储存，只有“开”和“关”两个属性，展示出来的效果是“黑”和“白”。这样的图像称为“二值图像”
+二值图像又被称为1位单色图像。如果不做其他的压缩操作，一张分辨率（分辨率的定义可以看博客中另一篇文章，后面会在这里加超链接）为640*480的1位单色图像需要38.4kB的存储空间。（防止有些小可爱不知道怎么算的，加上过程= =） $$ (640 * 480) =307,200 (Bit) \ {307,200 \over 8} = {38400(Byte)} ={38.4(kB)} $$
+1.2 8位灰度图像 Link to heading 8位灰度图像指图像的每一个像素都存储了一个0-255(1Byte)的灰度值(gray value)。
+8位图像可以看成由像素值组成的二维数组，其中的两个维度分别为长、宽。这样一个二维数组被称为一幅位图(bitmap)。而存储位图的硬件设备位帧缓存(frame buffer)，而帧缓存被封装在视频卡中。
+帧缓(frame buffer)冲设备提供了显卡的抽象描述。他同时代表了显卡上的显存，应用程序通过定义好的接口可以访问显卡，而不需要知道底层的任何操作。
+每个像素通常用一个字节存储，所以一副640*480的灰度图需要300KB的存储空间。
+如果我们想通过打印机打印这样一幅图片。老式的1位打印机通常只能选择打印一个点或者不打印一个点，不能指定灰度进行打印。所以一个8位的灰度图像可能会被打印成一张1位单色图。
+此时采用抖动(dithering)方法，它的基本操作是以亮度分辨率换取空间分辨率。
+抖动
+如果我们用n*n的开关1位点矩阵来替代，就能表现n^2&#43;1级亮度分辨率。也就是说每一个像素在打印机上都会被视作n*n个像素。并为其中nn个点编号。 $$ \begin{bmatrix} 0 &amp; 2 \ 3 &amp; 1 \end{bmatrix} $$ 比如矩阵中任意三点被打印成黑色可以算作一个亮度级。那么我们就选择使用22的开关去替代，就可以表示5级亮度分辨率。
+首先通过256/5的整数除法把0-255间的图像值映射到一个新的范围0-4。
+如果像素值为0，则打印机在这2*2的矩阵内不输出任何打印，如果像素值是4，那么在这4个点都涂满。
+所以规则如下：
+如果像素亮度比抖动矩阵的某个元素编号大，则在该元素填涂，即用一个n*n的点阵替换每个像素。
+注意，对于一个经过抖动方法处理的图像，其尺寸可能太大，比如使用4*4的点阵替换每个像素，会使图像变为原来的16倍。可以使用有序抖动的方式去解决这个问题
+有序抖动
+假设我们用一个更大的4*4抖动矩阵，如 $$ \begin{bmatrix} 0 &amp; 8 &amp; 2 &amp; 10 \ 12 &amp; 4 &amp; 14 &amp; 6 \ 3 &amp; 11 &amp; 1 &amp; 9 \ 15 &amp; 7 &amp; 13 &amp; 5 \end{bmatrix} $$ 然后假设我们把这个抖动矩阵在同一时刻移动到图像在水平和垂直方向上的四个像素上，如果某个像素的亮度值大于覆盖它的矩阵元素编号，则这个像素被涂黑。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://zhengbledor.github.io/posts/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%9B%BE%E5%BD%A2%E5%92%8C%E5%9B%BE%E5%83%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%8E%B0/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-03-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2023-03-17T00:00:00+00:00" />
+
+
+
+
+<link rel="canonical" href="https://zhengbledor.github.io/posts/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%9B%BE%E5%BD%A2%E5%92%8C%E5%9B%BE%E5%83%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%8E%B0/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.01bd429dda63a16d76996eaf0b8da061429b76e714515cb1b246aac7fe7f4b2a.css" integrity="sha256-Ab1CndpjoW12mW6vC42gYUKbducUUVyxskaqx/5/Syo=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.593028e7f7ac55c003b79c230d1cd411bb4ca53b31556c3abb7f027170e646e9.css" integrity="sha256-WTAo5/esVcADt5wjDRzUEbtMpTsxVWw6u38CcXDmRuk=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/png" href="/images/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+<meta name="generator" content="Hugo 0.110.0">
+
+
+
+
+
+  </head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-dark">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      Zhengbledor
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/contact/">Contact me</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://zhengbledor.github.io/posts/%E5%A4%9A%E5%AA%92%E4%BD%93%E6%8A%80%E6%9C%AF%E6%95%99%E7%A8%8B-%E7%AC%AC%E4%B8%89%E7%AB%A0-%E5%9B%BE%E5%BD%A2%E5%92%8C%E5%9B%BE%E5%83%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%8E%B0/">
+              《多媒体技术教程》-第三章-图形和图像的数据表现
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2023-03-17T00:00:00Z">
+                March 17, 2023
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              One-minute read
+            </span>
+          </div>
+          
+          
+          
+        </div>
+      </header>
+
+      <div class="post-content">
+        
+        <h1 id="第三章-图形和图像的数据表现">
+  第三章-图形和图像的数据表现
+  <a class="heading-link" href="#%e7%ac%ac%e4%b8%89%e7%ab%a0-%e5%9b%be%e5%bd%a2%e5%92%8c%e5%9b%be%e5%83%8f%e7%9a%84%e6%95%b0%e6%8d%ae%e8%a1%a8%e7%8e%b0">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="1图形图像的数据类型">
+  1、图形/图像的数据类型
+  <a class="heading-link" href="#1%e5%9b%be%e5%bd%a2%e5%9b%be%e5%83%8f%e7%9a%84%e6%95%b0%e6%8d%ae%e7%b1%bb%e5%9e%8b">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<h3 id="11-1位图像">
+  1.1 1位图像
+  <a class="heading-link" href="#11-1%e4%bd%8d%e5%9b%be%e5%83%8f">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>图像由像素组成，像素是数字图像中的图片元素，可以理解为图片中的一个一个点。</p>
+<p>如果一张图片中的像素由Boolean储存，只有“开”和“关”两个属性，展示出来的效果是“黑”和“白”。这样的图像称为“<strong>二值图像</strong>”</p>
+<p><strong>二值图像</strong>又被称为<strong>1位单色图像</strong>。如果不做其他的压缩操作，一张分辨率（分辨率的定义可以看博客中另一篇文章，后面会在这里加超链接）为640*480的1位单色图像需要38.4kB的存储空间。（防止有些小可爱不知道怎么算的，加上过程= =）
+$$
+(640 * 480) =307,200 (Bit) \ {307,200 \over 8} = {38400(Byte)} ={38.4(kB)}
+$$</p>
+<h3 id="12-8位灰度图像">
+  1.2 8位灰度图像
+  <a class="heading-link" href="#12-8%e4%bd%8d%e7%81%b0%e5%ba%a6%e5%9b%be%e5%83%8f">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>8位灰度图像指图像的每一个像素都存储了一个0-255(1Byte)的灰度值(gray value)。</p>
+<p>8位图像可以看成由像素值组成的二维数组，其中的两个维度分别为长、宽。这样一个二维数组被称为一幅位图(bitmap)。而存储位图的硬件设备位帧缓存(frame buffer)，而帧缓存被封装在视频卡中。</p>
+<blockquote>
+<p>帧缓(frame buffer)冲设备提供了显卡的抽象描述。他同时代表了显卡上的显存，应用程序通过定义好的接口可以访问显卡，而不需要知道底层的任何操作。</p>
+</blockquote>
+<p>每个像素通常用一个字节存储，所以一副640*480的灰度图需要300KB的存储空间。</p>
+<p>如果我们想通过打印机打印这样一幅图片。老式的1位打印机通常只能选择打印一个点或者不打印一个点，不能指定灰度进行打印。所以一个8位的灰度图像可能会被打印成一张1位单色图。</p>
+<p>此时采用抖动(dithering)方法，它的基本操作是以亮度分辨率换取空间分辨率。</p>
+<p><strong>抖动</strong></p>
+<p>如果我们用n*n的开关1位点矩阵来替代，就能表现n^2+1级亮度分辨率。也就是说每一个像素在打印机上都会被视作n*n个像素。并为其中n<em>n个点编号。
+$$
+\begin{bmatrix}
+0 &amp; 2 \
+3 &amp; 1
+\end{bmatrix}
+$$
+比如矩阵中任意三点被打印成黑色可以算作一个亮度级。那么我们就选择使用2</em>2的开关去替代，就可以表示5级亮度分辨率。</p>
+<p>首先通过256/5的整数除法把0-255间的图像值映射到一个新的范围0-4。</p>
+<p>如果像素值为0，则打印机在这2*2的矩阵内不输出任何打印，如果像素值是4，那么在这4个点都涂满。</p>
+<p>所以规则如下：</p>
+<blockquote>
+<p>如果像素亮度比抖动矩阵的某个元素编号大，则在该元素填涂，即用一个n*n的点阵替换每个像素。</p>
+</blockquote>
+<p>注意，对于一个经过抖动方法处理的图像，其尺寸可能太大，比如使用4*4的点阵替换每个像素，会使图像变为原来的16倍。可以使用有序抖动的方式去解决这个问题</p>
+<p><strong>有序抖动</strong></p>
+<p>假设我们用一个更大的4*4抖动矩阵，如
+$$
+\begin{bmatrix}
+0 &amp; 8 &amp; 2 &amp; 10 \
+12 &amp; 4 &amp; 14 &amp; 6 \
+3 &amp; 11 &amp; 1 &amp; 9 \
+15 &amp; 7 &amp; 13 &amp; 5
+\end{bmatrix}
+$$
+然后假设我们把这个抖动矩阵在同一时刻移动到图像在水平和垂直方向上的四个像素上，如果某个像素的亮度值大于覆盖它的矩阵元素编号，则这个像素被涂黑。</p>
+<p>一个使用n*n抖动矩阵的算法为</p>
+<div class="highlight"><pre tabindex="0" style="color:#b0c4de;background-color:#282c34;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>begin
+</span></span><span style="display:flex;"><span>	for x=0 to xmax
+</span></span><span style="display:flex;"><span>		for y=0 to ymax
+</span></span><span style="display:flex;"><span>			i=x mod n
+</span></span><span style="display:flex;"><span>			j=y mod n
+</span></span><span style="display:flex;"><span>			//I(x,y)为输入，O(x,y)为输出,D为抖动矩阵
+</span></span><span style="display:flex;"><span>			if I(x,y)&gt;D(i,j)
+</span></span><span style="display:flex;"><span>				O(x,y) = 1
+</span></span><span style="display:flex;"><span>			else
+</span></span><span style="display:flex;"><span>				O(x,y) = 0
+</span></span><span style="display:flex;"><span>end
+</span></span></code></pre></div><h3 id="13-24位彩色图像">
+  1.3 24位彩色图像
+  <a class="heading-link" href="#13-24%e4%bd%8d%e5%bd%a9%e8%89%b2%e5%9b%be%e5%83%8f">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>在一个24位彩色图像中，每个像素用3个字节储存，通常表示位RGB（红绿蓝），因为每个值的范围是0-255，所以这种格式支持表示256*256*256种颜色。但是这种灵活性会带来存储的问题。一幅640*480的24位彩色图如果不经过压缩需要921kB的存储空间。</p>
+<p>需要注意的重点是，许多24位彩色图像通常表示为32位图像，除去表示RGB的24位以外，还有8位(1字节)用来表示α(alpha)，用作图像在该像素点的透明度。</p>
+<h3 id="14-8位彩色图">
+  1.4 8位彩色图
+  <a class="heading-link" href="#14-8%e4%bd%8d%e5%bd%a9%e8%89%b2%e5%9b%be">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>许多系统只能通过8位颜色信息(也称作256色)来生成屏幕图像。</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+    2023
+     Zhengbledor 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
